@@ -199,6 +199,11 @@ a.button:hover, a.button:focus {
     margin-right: 0;
     margin-left: 0;
 }
+.wcb {
+    background: #efefef;
+    min-height: 250px;
+}
+
 /* ****************************************************************** */
 /* ************************** VISIBILITY **************************** */
 /* ****************************************************************** */
@@ -553,6 +558,20 @@ li > a:only-child:after { content: ''; }
 /* ****************************************************************** */
 /* ***************************** FOOTER ***************************** */
 /* ****************************************************************** */
+@media only screen and (max-width: 39.9375em) {
+    footer {
+        text-align: center;
+    }
+    ul.footer-about-us {
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 40em) {
+    ul.footer-about-us {
+        text-align: right;
+    }
+}
+
 footer {
     padding: 0 1em 0 1em;
 }
@@ -589,7 +608,6 @@ footer ul.socials li a svg {
 }
 ul.footer-about-us {
     list-style-type: none;
-    text-align: right;
     margin: 0;
 }
 ul.footer-about-us li {
@@ -815,6 +833,15 @@ Email: info@qmedia.de<br /></p>
 
 <p>Web: <a href="https://www.qmedia.de" target="_blank">qmedia.de</a></p>
 
+
+                <div class="wrapper">
+    <div class="pure-g">
+        <div class="qm-sm-12-12 wcb">
+            BANNER
+        </div>
+    </div>
+</div>
+
             </article>
         </div>
     </div>
@@ -858,10 +885,10 @@ Email: info@qmedia.de<br /></p>
 <footer>
     <div class="wrapper">
         <div class="pure-g">
-            <div class="qm-sm-6-12">
+            <div class="qm-md-6-12 qm-sm-12-12">
                 <div class="footer-copyright">&copy;2018 qmedia GmbH</div>
             </div>
-            <div class="qm-sm-6-12">
+            <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
                     <li><a href="/impressum/">Impressum</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
