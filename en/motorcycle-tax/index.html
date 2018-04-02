@@ -769,7 +769,7 @@ ul.footer-about-us li:last-child {
     border: 1px solid #efefef;
 }
 
-.calculator-container label,span,input {
+.calculator-container label,span,button {
     font-weight: bold;
 }
 
@@ -928,10 +928,10 @@ ul.footer-about-us li:last-child {
       <div class="pure-g">
          <label class="qm-sm-12-12 qm-md-3-12">Registration period*</label>
          <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-            <input type="link" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12 qm-lg-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, month_diff: 12}})" value="Standard">
+            <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12 qm-lg-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, month_diff: 12}})">Standard</button>
          </div>
          <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-            <input type="link" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12' : 'button qm-sm-12-12 qm-md-10-12 qm-lg-10-12'" class="button qm-sm-12-12 qm-md-10-12 qm-lg-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, month_diff: (+calculatorState.month_to) - (+calculatorState.month_from) + (+1)}})" value="Season">
+            <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12' : 'button qm-sm-12-12 qm-md-10-12 qm-lg-10-12'" class="button qm-sm-12-12 qm-md-10-12 qm-lg-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, month_diff: (+calculatorState.month_to) - (+calculatorState.month_from) + (+1)}})">Season</button>
          </div>
       </div>
       <div class="pure-g" id="season-div" hidden>
