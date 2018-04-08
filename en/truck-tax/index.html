@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html amp lang="en">
 
 
 <head>
@@ -8,12 +8,14 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <link rel="canonical" href="https://kfz-steuer.wiki/en/">
+    <link rel="canonical" href="https://kfz-steuer.wiki/en/truck-tax/">
     
     
 
-    <title>PKW - KFZ Steuer berechnen » kfz-steuer.wiki </title>
+    <title>Truck Tax » kfz-steuer.wiki </title>
 
+    
+    <meta name="description" content="Truck Tax Title english">
     
 
     <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/en/feed.xml" />
@@ -40,11 +42,16 @@
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="KFZ Steuerrechner" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="PKW - KFZ Steuer berechnen" />
-    <meta name="twitter:title" content="PKW - KFZ Steuer berechnen » kfz-steuer.wiki" />
+    <meta name="twitter:description" content="kfz-steuer.wiki" />
+    <meta name="twitter:title" content="Truck Tax » kfz-steuer.wiki" />
 
     
-    <style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <!--<script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>-->
+
+    <style amp-custom>
         /*@media only screen and (min-width: 40em) {  }*/
 /*@media only screen and (max-width: 39.9375em) {  }*/
 
@@ -762,6 +769,14 @@ ul.footer-about-us li:last-child {
     border: 1px solid #efefef;
 }
 
+.calculator-container input {
+    background-color: white;
+}
+
+.calculator-container .numeric-input {
+    height: 100%;
+}
+
 .calculator-container label,span,button {
     font-weight: bold;
 }
@@ -771,11 +786,59 @@ ul.footer-about-us li:last-child {
     margin: 20px;
     padding: 30px;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 450px;
+    background-color: lightyellow;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    font-weight: normal;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* dropdowns */
+select {
+    min-width: 80%;
+    width:inherit;
+    background: #fff;
+    height: 33px;
+    border-radius:5px;
+    font-size: 15px;
+    padding:5px;
+    border:none;
+    box-shadow: 0px 0px 30px 20px rgba(255,255,255,0.5) inset,0px 0px 0px 1px #ccc;
+}
+select option,select option:hover{
+    padding:5px;
+}
+
 /* ****************************************************************** */
 /* ************************* /kfz.wiki CUSTOM *********************** */
 /* ****************************************************************** */
 
     </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
     
 </head>
 
@@ -798,7 +861,7 @@ ul.footer-about-us li:last-child {
                 
                 
                 <li>
-                    <a href="//">
+                    <a href="/de/lkw-steuer/">
                         <amp-img src="/assets/img/de.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                             <noscript>
                                 <img src="/assets/img/de.svg" alt="kfz-steuer.wiki" height="20" width="30" />
@@ -812,7 +875,7 @@ ul.footer-about-us li:last-child {
                 
                 
                 <li>
-                    <a href="//">
+                    <a href="/es/espanol-truck-tax/">
                         <amp-img src="/assets/img/es.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                             <noscript>
                                 <img src="/assets/img/es.svg" alt="kfz-steuer.wiki" height="20" width="30" />
@@ -843,7 +906,7 @@ ul.footer-about-us li:last-child {
             
             
             <li>
-                <a href="https://kfz-steuer.wikipkw-steuer/">Pkw-Steuer</a>
+                <a href="https://kfz-steuer.wiki/en/car-tax/">Car Tax EN</a>
             </li>
             
             
@@ -885,43 +948,105 @@ ul.footer-about-us li:last-child {
 <div class="wrapper">
     <div class="pure-g">
         <div class="qm-sm-12-12 content-wrapper">
-            
 
             <article>
-                
-                <h1>PKW - KFZ Steuer berechnen</h1>
-                
 
-                
+                <h1>Truck Tax Title english</h1>
 
-                <a href="/en/motorcycle-tax/">Motorcycle Short</a>
-
-<!--<div class="wrapper">
-    <div class="pure-g">
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">PKW Steuer Berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">LKW Steuer Berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Motorradsteuer berechnen</a>
-        </div>
-    </div>
-</div>
-<div class="wrapper">
-    <div class="pure-g">
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Anhänger Steuer Berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Elektrofahrzeug Steuer berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Wohnmobil Steuer berechnen</a>
-        </div>
-    </div>
+<!--<div id="RPROkfzsteuer">
+<script type="text/javascript">
+var RPROkfzsteuerBrand="rechner.pro";
+var RPROkfzsteuerBrandColor="#d80021";
+</script><script src="//qcdn.de/calc/RPRO/en/kfzsteuer/kfzsteuer.js" type="text/javascript"></script>
+<div class="RPROkfzsteuerLink">Powered by <a id="RPROkfzsteuerLink" href="https://www.rechner.pro/">rechner.pro</a></div>
 </div>-->
+
+<div class="calculator-container">
+   <amp-state id="calculatorState">
+      <script type="application/json">
+         {
+            "emmisionClass": "0",
+            "totalMass": "0",
+            "monthFrom"  : "1",
+            "monthTo"    : "12",
+            "monthDiff"  : "12",
+            "season"     : "0",
+            "message1"   : "NEED TRANSLATION Ihre Kfz-Steuer beträgt ",
+            "message2"   : " € im Jahr. NEED TRANSLATION"
+         }
+      </script>
+   </amp-state>
+   <div class="pure-form">
+      <div class="pure-g">
+         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type<span class="tooltiptext">NEED TRANSLATION</span></label></div>
+         <div class="qm-sm-12-12 qm-md-6-12"><span>Truck</span></div>
+      </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Emission class<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <div class="qm-sm-12-12 qm-md-8-12">
+                   <select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}})">
+                       <option value="">Please select</option>
+                       <option value="b1">Euro 3, D3 or better</option>
+                       <option value="b2">Euro 2</option>
+                       <option value="b3">Euro1</option>
+                       <option value="b4">not low-emission with permission while ozone warning</option>
+                       <option value="b5">not low-emission with no permission while ozone warning</option>
+                       <option value="b6">all other</option>
+                   </select>
+               </div>
+           </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Permitted total mass<span class="tooltiptext">Please enter the permitted total mass of the vehicle.</span></label>
+               <div class="qm-sm-12-12 qm-md-4-12">
+                   <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
+               </div>
+           </div>
+        <div class="pure-g" id="season-div" hidden>
+               <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+               </div>
+               <div class="qm-sm-12-12 qm-md-6-12">
+                   <div class="qm-sm-12-12 qm-md-6-12">
+                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthDiff: (+calculatorState.monthTo) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12">
+                           <option value="1">from</option>
+                           <option value="1">January</option>
+                           <option value="2">February</option>
+                           <option value="3">March</option>
+                           <option value="4">April</option>
+                           <option value="5">Mai</option>
+                           <option value="6">June</option>
+                           <option value="7">July</option>
+                           <option value="8">August</option>
+                           <option value="9">September</option>
+                           <option value="10">October</option>
+                           <option value="11">November</option>
+                           <option value="12">December</option>
+                       </select>
+                   </div>
+                   <div class="qm-sm-12-12 qm-md-5-12">
+                       <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
+                           <option value="12">to</option>
+                           <option value="1">January</option>
+                           <option value="2">February</option>
+                           <option value="3">March</option>
+                           <option value="4">April</option>
+                           <option value="5">Mai</option>
+                           <option value="6">June</option>
+                           <option value="7">July</option>
+                           <option value="8">August</option>
+                           <option value="9">September</option>
+                           <option value="10">October</option>
+                           <option value="11">November</option>
+                           <option value="12">December</option>
+                       </select>
+                   </div>
+               </div>
+           </div>
+           <div [class]="calculatorState.emmisionClass>0 && calculatorState.totalMass>0 ? 'calculator-message' : ''">
+               <h4></h4>
+           </div>
+       </div>
+   </div>
+</div>
 
                 <div class="wrapper">
     <div class="pure-g">
@@ -941,11 +1066,11 @@ ul.footer-about-us li:last-child {
             <div class="share-box share-box-content">
                 <div class="share-box-heading">Share this:</div>
                 <div class="share-box-button">
-                    <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/en/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
-                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=PKW - KFZ Steuer berechnen&url=https://kfz-steuer.wiki/en/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
+                    <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/en/truck-tax/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
+                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=Truck Tax&url=https://kfz-steuer.wiki/en/truck-tax/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
                     <a class="x" rel="nofollow" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https://kfz-steuer.wiki"><svg class="icon"><use xlink:href="#xing" /></svg><span> xing</span></a>
-                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/en/&title=PKW - KFZ Steuer berechnen&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
-                    <a class="e" href="mailto:?subject=PKW - KFZ Steuer berechnen&amp;body=Check out this site https://kfz-steuer.wiki/en/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
+                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/en/truck-tax/&title=Truck Tax&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
+                    <a class="e" href="mailto:?subject=Truck Tax&amp;body=Check out this site https://kfz-steuer.wiki/en/truck-tax/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
                 </div>
             </div>
         </div>
@@ -977,7 +1102,7 @@ ul.footer-about-us li:last-child {
             </div>
             <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
-                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="/en/imprint/">Imprint</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
                     <li><a href="/datenschutz/">Datenschutz</a></li>
                 </ul>

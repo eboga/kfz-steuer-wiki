@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="en">
 
 
 <head>
@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <link rel="canonical" href="https://kfz-steuer.wiki/es/">
+    <link rel="canonical" href="https://kfz-steuer.wiki/en/en/">
     
-    
+    <meta name="robots" content="index, follow" />
 
     <title>PKW - KFZ Steuer berechnen » kfz-steuer.wiki </title>
 
     
 
-    <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/es/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/en/feed.xml" />
 
     <link rel="dns-prefetch" href="//qcdn.de">
 
@@ -33,7 +33,7 @@
     <meta name="theme-color" content="#ffffff">
 
 
-    <meta property="og:locale" content="es" />
+    <meta property="og:locale" content="en" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Meine Beispiel-Webseite" />
     <meta property="og:description" content="Diese Beispiel-Webseite wird Sie begeistern!" />
@@ -762,6 +762,14 @@ ul.footer-about-us li:last-child {
     border: 1px solid #efefef;
 }
 
+.calculator-container input {
+    background-color: white;
+}
+
+.calculator-container .numeric-input {
+    height: 100%;
+}
+
 .calculator-container label,span,button {
     font-weight: bold;
 }
@@ -771,6 +779,52 @@ ul.footer-about-us li:last-child {
     margin: 20px;
     padding: 30px;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 450px;
+    background-color: lightyellow;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    font-weight: normal;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* dropdowns */
+select {
+    min-width: 80%;
+    width:inherit;
+    background: #fff;
+    height: 33px;
+    border-radius:5px;
+    font-size: 15px;
+    padding:5px;
+    border:none;
+    box-shadow: 0px 0px 30px 20px rgba(255,255,255,0.5) inset,0px 0px 0px 1px #ccc;
+}
+select option,select option:hover{
+    padding:5px;
+}
+
 /* ****************************************************************** */
 /* ************************* /kfz.wiki CUSTOM *********************** */
 /* ****************************************************************** */
@@ -788,9 +842,9 @@ ul.footer-about-us li:last-child {
         <div class="show-for-medium">
             <ul class="header-language">
                 <li>
-                    <amp-img src="/assets/img/es.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
+                    <amp-img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                         <noscript>
-                            <img src="/assets/img/es.svg" alt="kfz-steuer.wiki" height="20" width="30" />
+                            <img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" height="20" width="30" />
                         </noscript>
                     </amp-img>
                 </li>
@@ -798,7 +852,7 @@ ul.footer-about-us li:last-child {
                 
                 
                 <li>
-                    <a href="//">
+                    <a href="/de/">
                         <amp-img src="/assets/img/de.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                             <noscript>
                                 <img src="/assets/img/de.svg" alt="kfz-steuer.wiki" height="20" width="30" />
@@ -808,20 +862,20 @@ ul.footer-about-us li:last-child {
                 </li>
                 
                 
+                 
                 
                 
                 <li>
-                    <a href="//">
-                        <amp-img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
+                    <a href="/es/es/">
+                        <amp-img src="/assets/img/es.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                             <noscript>
-                                <img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" height="20" width="30" />
+                                <img src="/assets/img/es.svg" alt="kfz-steuer.wiki" height="20" width="30" />
                             </noscript>
                         </amp-img>
                     </a>
                 </li>
                 
                 
-                 
             </ul>
         </div>
 
@@ -837,13 +891,13 @@ ul.footer-about-us li:last-child {
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/spanish-motorcycle-tax/">Motorcycle ES</a>
+                <a href="https://kfz-steuer.wiki/en/motorcycle-tax/">Motorcycle EN</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wikipkw-steuer/">Pkw-Steuer</a>
+                <a href="https://kfz-steuer.wiki/en/car-tax/">Car Tax EN</a>
             </li>
             
             
@@ -894,34 +948,9 @@ ul.footer-about-us li:last-child {
 
                 
 
-                <a href="/es/spanish-motorcycle-tax/">Motorcycle Short</a>
+                <p><a href="/en/motorcycle-tax/">Motorcycle Short</a></p>
 
-<!--<div class="wrapper">
-    <div class="pure-g">
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">PKW Steuer Berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">LKW Steuer Berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Motorradsteuer berechnen</a>
-        </div>
-    </div>
-</div>
-<div class="wrapper">
-    <div class="pure-g">
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Anhänger Steuer Berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Elektrofahrzeug Steuer berechnen</a>
-        </div>
-        <div class="qm-lg-4-12 qm-md-6-12 qm-sm-12-12">
-            <a href="/">Wohnmobil Steuer berechnen</a>
-        </div>
-    </div>
-</div>-->
+
 
                 <div class="wrapper">
     <div class="pure-g">
@@ -941,11 +970,11 @@ ul.footer-about-us li:last-child {
             <div class="share-box share-box-content">
                 <div class="share-box-heading">Share this:</div>
                 <div class="share-box-button">
-                    <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/es/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
-                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=PKW - KFZ Steuer berechnen&url=https://kfz-steuer.wiki/es/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
+                    <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/en/en/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
+                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=PKW - KFZ Steuer berechnen&url=https://kfz-steuer.wiki/en/en/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
                     <a class="x" rel="nofollow" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https://kfz-steuer.wiki"><svg class="icon"><use xlink:href="#xing" /></svg><span> xing</span></a>
-                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/es/&title=PKW - KFZ Steuer berechnen&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
-                    <a class="e" href="mailto:?subject=PKW - KFZ Steuer berechnen&amp;body=Check out this site https://kfz-steuer.wiki/es/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
+                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/en/en/&title=PKW - KFZ Steuer berechnen&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
+                    <a class="e" href="mailto:?subject=PKW - KFZ Steuer berechnen&amp;body=Check out this site https://kfz-steuer.wiki/en/en/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
                 </div>
             </div>
         </div>
@@ -977,7 +1006,7 @@ ul.footer-about-us li:last-child {
             </div>
             <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
-                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="/en/imprint/">Imprint</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
                     <li><a href="/datenschutz/">Datenschutz</a></li>
                 </ul>

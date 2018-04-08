@@ -10,7 +10,7 @@
     
     <link rel="canonical" href="https://kfz-steuer.wiki/es/kontakt/">
     
-    
+    <meta name="robots" content="noindex, follow" />
 
     <title>kfz-steuer.wiki </title>
 
@@ -762,6 +762,14 @@ ul.footer-about-us li:last-child {
     border: 1px solid #efefef;
 }
 
+.calculator-container input {
+    background-color: white;
+}
+
+.calculator-container .numeric-input {
+    height: 100%;
+}
+
 .calculator-container label,span,button {
     font-weight: bold;
 }
@@ -771,6 +779,52 @@ ul.footer-about-us li:last-child {
     margin: 20px;
     padding: 30px;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 450px;
+    background-color: lightyellow;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    font-weight: normal;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* dropdowns */
+select {
+    min-width: 80%;
+    width:inherit;
+    background: #fff;
+    height: 33px;
+    border-radius:5px;
+    font-size: 15px;
+    padding:5px;
+    border:none;
+    box-shadow: 0px 0px 30px 20px rgba(255,255,255,0.5) inset,0px 0px 0px 1px #ccc;
+}
+select option,select option:hover{
+    padding:5px;
+}
+
 /* ****************************************************************** */
 /* ************************* /kfz.wiki CUSTOM *********************** */
 /* ****************************************************************** */
@@ -843,7 +897,7 @@ ul.footer-about-us li:last-child {
             
             
             <li>
-                <a href="https://kfz-steuer.wikipkw-steuer/">Pkw-Steuer</a>
+                <a href="https://kfz-steuer.wiki/es/espanol-car-tax/">Car Tax ES</a>
             </li>
             
             
@@ -960,7 +1014,7 @@ Email: info@qmedia.de<br /></p>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
-                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="/es/imprint-es/">Imprint ES</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
                     <li><a href="/datenschutz/">Datenschutz</a></li>
                 </ul>

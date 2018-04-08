@@ -15,7 +15,7 @@
     <title>Motorcycle Tax » kfz-steuer.wiki </title>
 
     
-    <meta name="description" content="Motorcycle Tax Title spanish">
+    <meta name="description" content="Motorcycle Tax Title Spanish">
     
 
     <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/es/feed.xml" />
@@ -769,6 +769,14 @@ ul.footer-about-us li:last-child {
     border: 1px solid #efefef;
 }
 
+.calculator-container input {
+    background-color: white;
+}
+
+.calculator-container .numeric-input {
+    height: 100%;
+}
+
 .calculator-container label,span,button {
     font-weight: bold;
 }
@@ -778,6 +786,52 @@ ul.footer-about-us li:last-child {
     margin: 20px;
     padding: 30px;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 450px;
+    background-color: lightyellow;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    font-weight: normal;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* dropdowns */
+select {
+    min-width: 80%;
+    width:inherit;
+    background: #fff;
+    height: 33px;
+    border-radius:5px;
+    font-size: 15px;
+    padding:5px;
+    border:none;
+    box-shadow: 0px 0px 30px 20px rgba(255,255,255,0.5) inset,0px 0px 0px 1px #ccc;
+}
+select option,select option:hover{
+    padding:5px;
+}
+
 /* ****************************************************************** */
 /* ************************* /kfz.wiki CUSTOM *********************** */
 /* ****************************************************************** */
@@ -852,7 +906,7 @@ ul.footer-about-us li:last-child {
             
             
             <li>
-                <a href="https://kfz-steuer.wikipkw-steuer/">Pkw-Steuer</a>
+                <a href="https://kfz-steuer.wiki/es/espanol-car-tax/">Car Tax ES</a>
             </li>
             
             
@@ -897,7 +951,7 @@ ul.footer-about-us li:last-child {
 
             <article>
 
-                <h1>Motorcycle Tax Title spanish</h1>
+                <h1>Motorcycle Tax Title Spanish</h1>
 
 <!---->
 
@@ -906,32 +960,34 @@ ul.footer-about-us li:last-child {
       <script type="application/json">
          {
             "displacement": "0",
-            "month_from"  : "1",
-            "month_to"    : "12",
-            "month_diff"  : "12",
+            "monthFrom"  : "1",
+            "monthTo"    : "12",
+            "monthDiff"  : "12",
             "season"      : "0",
-            "message_1"   : "Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit.",
-            "message_2"   : "Ihre Kfz-Steuer beträgt ",
-            "message_3"   :  " € im Jahr."
+            "message1"   : "NEED TRANSLATION",
+            "message2"   : "NEED TRANSLATION",
+            "message3"   : "NEED TRANSLATION"
          }
       </script>
    </amp-state>
    <div class="pure-form">
       <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label>Fahrzeugart ES</label></div>
+         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart ES<span class="tooltiptext">NEED TRANSLATION</span></label></div>
          <div class="qm-sm-12-12 qm-md-6-12"><span>Motorrad ES</span></div>
       </div>
       <div class="pure-g">
-         <label class="qm-sm-12-12 qm-md-3-12">Displacement in ccm*</label>
-         <input type="number" class="qm-sm-12-12 qm-md-6-12 numeric-input" id="as-you-go-name" name="displacement" on="input-debounced:AMP.setState({displacement: event.value})">
+         <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
+         <div class="qm-sm-12-12 qm-md-5-12">
+            <input type="number" class="qm-sm-12-12 qm-md-6-12 numeric-input" name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value}})">
+         </div>
       </div>
       <div class="pure-g">
-         <label class="qm-sm-12-12 qm-md-3-12">Registration period*</label>
+         <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
          <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-            <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12 qm-lg-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, month_diff: 12}})">Standard</button>
+            <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">NEED TRANSLATION</button>
          </div>
          <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-            <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12 qm-lg-10-12' : 'button qm-sm-12-12 qm-md-10-12 qm-lg-10-12'" class="button qm-sm-12-12 qm-md-10-12 qm-lg-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, month_diff: (+calculatorState.month_to) - (+calculatorState.month_from) + (+1)}})">Season</button>
+            <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">NEED TRANSLATION</button>
          </div>
       </div>
       <div class="pure-g" id="season-div" hidden>
@@ -939,7 +995,7 @@ ul.footer-about-us li:last-child {
          </div>
          <div class="qm-sm-12-12 qm-md-6-12">
             <div class="qm-sm-12-12 qm-md-6-12">
-               <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {month_from: event.value, month_diff: (+calculatorState.month_to) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12 qm-lg-10-12">
+               <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthDiff: (+calculatorState.monthTo) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12">
                   <option value="1">von ES</option>
                   <option value="1">Enero</option>
                   <option value="2">Febrero</option>
@@ -956,7 +1012,7 @@ ul.footer-about-us li:last-child {
                </select>
             </div>
             <div class="qm-sm-12-12 qm-md-5-12">
-               <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {month_to: event.value, month_diff: (+event.value) - (+calculatorState.month_from) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12 qm-lg-12-12">
+               <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
                   <option value="12">bis ES</option>
                   <option value="1">Enero</option>
                   <option value="2">Febrero</option>
@@ -974,8 +1030,8 @@ ul.footer-about-us li:last-child {
             </div>
          </div>
       </div>
-      <div [class]="displacement>0 ? 'calculator-message' : ''">
-         <h4 [text]="displacement>0 && displacement<125? calculatorState.message_1 :displacement>0 ? calculatorState.message_2 + floor((floor(ceil(displacement / 25) * 1.84)) / 12 * calculatorState.month_diff) + calculatorState.message_3 : ''"></h4>
+      <div [class]="calculatorState.displacement>0 ? 'calculator-message' : 'hide'">
+         <h4 [text]="calculatorState.displacement<125?calculatorState.message1:calculatorState.displacement>0?calculatorState.message2+floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff)+calculatorState.message3:''"></h4>
       </div>
    </div>
 </div>
@@ -1034,7 +1090,7 @@ ul.footer-about-us li:last-child {
             </div>
             <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
-                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="/es/imprint-es/">Imprint ES</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
                     <li><a href="/datenschutz/">Datenschutz</a></li>
                 </ul>

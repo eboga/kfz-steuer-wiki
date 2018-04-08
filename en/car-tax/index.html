@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html amp lang="en">
 
 
 <head>
@@ -12,10 +12,10 @@
     
     
 
-    <title>BMI Calculator » kfz-steuer.wiki </title>
+    <title>Car Tax » kfz-steuer.wiki </title>
 
     
-    <meta name="description" content="">
+    <meta name="description" content="Car Tax Title english">
     
 
     <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/en/feed.xml" />
@@ -43,10 +43,15 @@
     <meta property="og:site_name" content="KFZ Steuerrechner" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="kfz-steuer.wiki" />
-    <meta name="twitter:title" content="BMI Calculator » kfz-steuer.wiki" />
+    <meta name="twitter:title" content="Car Tax » kfz-steuer.wiki" />
 
     
-    <style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <!--<script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>-->
+
+    <style amp-custom>
         /*@media only screen and (min-width: 40em) {  }*/
 /*@media only screen and (max-width: 39.9375em) {  }*/
 
@@ -764,6 +769,14 @@ ul.footer-about-us li:last-child {
     border: 1px solid #efefef;
 }
 
+.calculator-container input {
+    background-color: white;
+}
+
+.calculator-container .numeric-input {
+    height: 100%;
+}
+
 .calculator-container label,span,button {
     font-weight: bold;
 }
@@ -773,11 +786,59 @@ ul.footer-about-us li:last-child {
     margin: 20px;
     padding: 30px;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 450px;
+    background-color: lightyellow;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    font-weight: normal;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* dropdowns */
+select {
+    min-width: 80%;
+    width:inherit;
+    background: #fff;
+    height: 33px;
+    border-radius:5px;
+    font-size: 15px;
+    padding:5px;
+    border:none;
+    box-shadow: 0px 0px 30px 20px rgba(255,255,255,0.5) inset,0px 0px 0px 1px #ccc;
+}
+select option,select option:hover{
+    padding:5px;
+}
+
 /* ****************************************************************** */
 /* ************************* /kfz.wiki CUSTOM *********************** */
 /* ****************************************************************** */
 
     </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
     
 </head>
 
@@ -845,7 +906,7 @@ ul.footer-about-us li:last-child {
             
             
             <li>
-                <a href="https://kfz-steuer.wikipkw-steuer/">Pkw-Steuer</a>
+                <a href="https://kfz-steuer.wiki/en/car-tax/">Car Tax EN</a>
             </li>
             
             
@@ -887,31 +948,389 @@ ul.footer-about-us li:last-child {
 <div class="wrapper">
     <div class="pure-g">
         <div class="qm-sm-12-12 content-wrapper">
-            
 
             <article>
-                
-                <h1>BMI Calculator</h1>
-                
 
-                
+                <h1>Car Tax Title english</h1>
 
-                
-<p>SEO Title: Car Tax SEO english</p>
-
-<p>User Title: Car Tax User Title english</p>
-
-<p>Meta Title: Car Tax Meta Title english</p>
-
-<div id="RPROkfzsteuer">
+<!--<div id="RPROkfzsteuer">
 <script type="text/javascript">
 var RPROkfzsteuerBrand="rechner.pro";
 var RPROkfzsteuerBrandColor="#d80021";
 </script><script src="//qcdn.de/calc/RPRO/en/kfzsteuer/kfzsteuer.js" type="text/javascript"></script>
 <div class="RPROkfzsteuerLink">Powered by <a id="RPROkfzsteuerLink" href="https://www.rechner.pro/">rechner.pro</a></div>
+</div>-->
+
+<div class="calculator-container">
+   <amp-state id="calculatorState">
+      <script type="application/json">
+         {
+            "month"  : "0",
+            "year"    : "0",
+            "initialRegistration": "",
+            "emmisionClass": "",
+            "engineType": "",
+            "co2Emissions": "0",
+            "displacement": "0",
+            "displacement100": "0",
+            "monthFrom"  : "1",
+            "monthTo"    : "12",
+            "monthDiff"  : "12",
+            "season"     : "0",
+            "co2Diff":    "0",
+            "multiplier": "0",
+            "message1"   : "NEED TRANSLATION Ihre Kfz-Steuer beträgt ",
+            "message2"   : " € im Jahr. NEED TRANSLATION"
+         }
+      </script>
+   </amp-state>
+    <amp-state id="combinations">
+        <script type="application/json">
+            {
+  "a1": {
+    "b1": {
+      "c1": {
+        "multiplier": "6.75"
+      },
+      "c2": {
+        "multiplier": "15.44"
+      }
+    },
+    "b2": {
+      "c1": {
+        "multiplier": "7.36"
+      },
+      "c2": {
+        "multiplier": "16.05"
+      }
+    },
+    "b3": {
+      "c1": {
+        "multiplier": "15.13"
+      },
+      "c2": {
+        "multiplier": "27.35"
+      }
+    },
+    "b4": {
+      "c1": {
+        "multiplier": "21.07"
+      },
+      "c2": {
+        "multiplier": "33.29"
+      }
+    },
+    "b5": {
+      "c1": {
+        "multiplier": "25.36"
+      },
+      "c2": {
+        "multiplier": "37.58"
+      }
+    },
+    "b6": {
+      "c1": {
+        "multiplier": "25.36"
+      },
+      "c2": {
+        "multiplier": "37.58"
+      }
+    },
+    "co2": "0"
+  },
+  "a2": {
+    "b1": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b2": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b3": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b4": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b5": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b6": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "co2": "120"
+  },
+  "a3": {
+    "b1": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b2": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b3": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b4": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b5": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b6": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "co2": "110"
+  },
+  "a4": {
+    "b1": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b2": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b3": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b4": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b5": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "b6": {
+      "c1": {
+        "multiplier": "2.00"
+      },
+      "c2": {
+        "multiplier": "9.50"
+      }
+    },
+    "co2": "95"
+  }
+}
+        </script>
+    </amp-state>
+   <div class="pure-form">
+      <div class="pure-g">
+         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type<span class="tooltiptext">NEED TRANSLATION</span></label></div>
+         <div class="qm-sm-12-12 qm-md-6-12"><span>Car</span></div>
+      </div>
+       <div class="pure-g">
+           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Year<span class="tooltiptext">NEED TRANSLATION</span></label>
+           <div class="qm-sm-12-12 qm-md-4-12">
+               <select class="form-control qm-sm-12-12 qm-md-10-12" name="month" on="change:AMP.setState({calculatorState: {month: event.value}})">
+                   <option value="">Month</option>
+                   <option value="1">01</option>
+                   <option value="2">02</option>
+                   <option value="3">03</option>
+                   <option value="4">04</option>
+                   <option value="5">05</option>
+                   <option value="6">06</option>
+                   <option value="7">07</option>
+                   <option value="8">08</option>
+                   <option value="9">09</option>
+                   <option value="10">10</option>
+                   <option value="11">11</option>
+                   <option value="12">12</option>
+               </select>
+           </div>
+           <div class="qm-sm-12-12 qm-md-4-12">
+               <select class="form-control qm-sm-12-12 qm-md-10-12" name="year" on="change:AMP.setState({calculatorState: {year: event.value}})">
+                   <option value="">Year</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option>
+               </select>
+           </div>
+       </div>
+       <div [class]="calculatorState.year>0 && calculatorState.month>0 ? 'show' : 'hide'" class="hide">
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Initial registration<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <div class="qm-sm-12-12 qm-md-8-12">
+                   <select class="form-control qm-sm-12-12 qm-md-11-12" name="engine-type" on="change:AMP.setState({calculatorState: {initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
+                       <option value="">Please select</option>
+                       <option value="a1">EZ before 30.06.2009</option>
+                       <option value="a2">EZ 01.07.2009 till 31.12.2011</option>
+                       <option value="a3">EZ 01.01.2012 till 31.12.2013</option>
+                       <option value="a4">01.01.2014 and later</option>
+                   </select>
+               </div>
+           </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Engine Type<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <div class="qm-sm-12-12 qm-md-8-12">
+                   <select class="form-control qm-sm-12-12 qm-md-11-12" name="engine-type" on="change:AMP.setState({calculatorState: {engineType: event.value, multiplier: calculatorState.initialRegistration!=0 && calculatorState.emmisionClass!=0 && event.value!=0?combinations[calculatorState.initialRegistration][calculatorState.emmisionClass][event.value].multiplier:'0'}})">
+                       <option value="">Please select</option>
+                       <option value="c1">Gasoline / Petrol / Wankel</option>
+                       <option value="c2">Diesel engine</option>
+                   </select>
+               </div>
+           </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Emission class<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <div class="qm-sm-12-12 qm-md-8-12">
+                   <select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
+                       <option value="">Please select</option>
+                       <option value="b1">Euro 3, D3 or better</option>
+                       <option value="b2">Euro 2</option>
+                       <option value="b3">Euro1</option>
+                       <option value="b4">not low-emission with permission while ozone warning</option>
+                       <option value="b5">not low-emission with no permission while ozone warning</option>
+                       <option value="b6">all other</option>
+                   </select>
+               </div>
+           </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">CO2 emissions in g/km *<span class="tooltiptext">Please enter the CO2 emissions of your vehicle</span></label>
+               <div class="qm-sm-12-12 qm-md-4-12">
+                   <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="co2-emissions" on="input-debounced:AMP.setState({calculatorState: {co2Diff: calculatorState.initialRegistration!=0 && event.value>0?event.value>combinations[calculatorState.initialRegistration].co2?event.value-combinations[calculatorState.initialRegistration].co2:'0':'0'}})">
+               </div>
+               <div class="qm-sm-12-12 qm-md-4-12">
+                   <span>Determine the CO2 value</span>
+               </div>
+           </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Displacement in ccm*<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <div class="qm-sm-12-12 qm-md-4-12">
+                   <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
+               </div>
+           </div>
+           <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                   <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+               </div>
+               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">Season</button>
+               </div>
+           </div>
+        <div class="pure-g" id="season-div" hidden>
+               <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+               </div>
+               <div class="qm-sm-12-12 qm-md-6-12">
+                   <div class="qm-sm-12-12 qm-md-6-12">
+                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthDiff: (+calculatorState.monthTo) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12">
+                           <option value="1">from</option>
+                           <option value="1">January</option>
+                           <option value="2">February</option>
+                           <option value="3">March</option>
+                           <option value="4">April</option>
+                           <option value="5">Mai</option>
+                           <option value="6">June</option>
+                           <option value="7">July</option>
+                           <option value="8">August</option>
+                           <option value="9">September</option>
+                           <option value="10">October</option>
+                           <option value="11">November</option>
+                           <option value="12">December</option>
+                       </select>
+                   </div>
+                   <div class="qm-sm-12-12 qm-md-5-12">
+                       <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
+                           <option value="12">to</option>
+                           <option value="1">January</option>
+                           <option value="2">February</option>
+                           <option value="3">March</option>
+                           <option value="4">April</option>
+                           <option value="5">Mai</option>
+                           <option value="6">June</option>
+                           <option value="7">July</option>
+                           <option value="8">August</option>
+                           <option value="9">September</option>
+                           <option value="10">October</option>
+                           <option value="11">November</option>
+                           <option value="12">December</option>
+                       </select>
+                   </div>
+               </div>
+           </div>
+           <div [class]="calculatorState.displacement>0 ? 'calculator-message' : ''">
+               <h4 [text]="calculatorState.displacement>0?calculatorState.message1+floor(floor((calculatorState.displacement100*calculatorState.multiplier)+(calculatorState.co2Diff*2))/12*calculatorState.monthDiff)+calculatorState.message2:''"></h4>
+           </div>
+       </div>
+   </div>
 </div>
-
-
 
                 <div class="wrapper">
     <div class="pure-g">
@@ -932,10 +1351,10 @@ var RPROkfzsteuerBrandColor="#d80021";
                 <div class="share-box-heading">Share this:</div>
                 <div class="share-box-button">
                     <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/en/car-tax/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
-                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=BMI Calculator&url=https://kfz-steuer.wiki/en/car-tax/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
+                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=Car Tax&url=https://kfz-steuer.wiki/en/car-tax/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
                     <a class="x" rel="nofollow" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https://kfz-steuer.wiki"><svg class="icon"><use xlink:href="#xing" /></svg><span> xing</span></a>
-                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/en/car-tax/&title=BMI Calculator&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
-                    <a class="e" href="mailto:?subject=BMI Calculator&amp;body=Check out this site https://kfz-steuer.wiki/en/car-tax/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
+                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/en/car-tax/&title=Car Tax&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
+                    <a class="e" href="mailto:?subject=Car Tax&amp;body=Check out this site https://kfz-steuer.wiki/en/car-tax/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
                 </div>
             </div>
         </div>
@@ -967,7 +1386,7 @@ var RPROkfzsteuerBrandColor="#d80021";
             </div>
             <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
-                    <li><a href="/impressum/">Impressum</a></li>
+                    <li><a href="/en/imprint/">Imprint</a></li>
                     <li><a href="/kontakt/">Kontakt</a></li>
                     <li><a href="/datenschutz/">Datenschutz</a></li>
                 </ul>
