@@ -125,41 +125,27 @@ a:hover {
         padding: 1em 0 2em 0;
     }
     h1 {
-        font-size: 1em;
-        line-height: 1.5em;
+        font-size: 1.25em;
+        /*line-height: 1.5em;*/
         font-weight: bold;
     }
     h2 {
         font-size: 1em;
-        line-height: 1.5em;
+        /*line-height: 1.5em;*/
         font-weight: bold;
     }
 }
 @media only screen and (min-width: 40em) {
     h1 {
-        font-size: 1.2em;
-        line-height: 1.6em;
+        font-size: 1.25em;
+        /*line-height: 1.6em;*/
     }
     h2 {
         font-size: 1.2em;
-        line-height: 1.6em;
-    }
-    h2:first-child {
-        margin: 1.5em auto 1em auto;
-    }
-    h2:nth-child(n+2):before {
-        content: "";
-        display: block;
-        background-color: #666;
-        width: 6em;
-        height: 4px;
-        margin: 1.5em auto 1em auto;
-    }
-    .siteheader-wrapper {
-        margin: 0 auto;
-        max-width: 67.5em;
+        /*line-height: 1.6em;*/
     }
 }
+
 .float-left {float: left;}
 .float-right {float: right;}
 .float-center {display: block; margin-right: auto;margin-left: auto;}
@@ -253,34 +239,6 @@ a.button:hover, a.button:focus {
 /* ****************************************************************** */
 /* ************************** /VISIBILITY *************************** */
 /* ****************************************************************** */
-
-
-/* ****************************************************************** */
-/* **************************** CALLOUT ***************************** */
-/* ****************************************************************** */
-/*blockquote, .callout {*/
-    /*position: relative;*/
-    /*margin: 0 0 1em 0;*/
-    /*padding: 1em 1em 1em 15%;*/
-    /*border: 1px solid rgba(10, 10, 10, 0.25);*/
-    /*border-radius: 0;*/
-    /*color: #0a0a0a; }*/
-/*blockquote, .callout.primary {*/
-    /*background: white url(/assets/img/002-letter.svg) no-repeat 5% 50%;*/
-    /*background-size: 5%;*/
-    /*color: #0a0a0a;*/
-    /*fill: #aaa;}*/
-/*.callout.alert {*/
-    /*background: #f7e4e1 url(/assets/img/001-exclamation.svg) no-repeat 5% 50%;*/
-    /*background-size: 5%;*/
-    /*color: #0a0a0a; }*/
-
-/*blockquote {*/
-/*}*/
-/* ****************************************************************** */
-/* **************************** /CALLOUT **************************** */
-/* ****************************************************************** */
-
 
 
 /* ****************************************************************** */
@@ -650,7 +608,6 @@ ul.footer-about-us li:last-child {
 .share-box-content {
     padding: .5em 0 1em 0;
     background: #fff;
-    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);*/
 }
 .share-box-heading {
     font-weight: bold;
@@ -662,13 +619,28 @@ ul.footer-about-us li:last-child {
     justify-content: space-between;
 }
 
+
+@media only screen and (max-width: 39.9375em) {
+    .share-box-button a {
+        margin: 0 .5em;
+    }
+    .share-box-heading {
+        margin: 0 .5em;
+    }
+}
+
+@media only screen and (min-width: 40em) {
+    .share-box-button a:not(:last-child) {
+        margin-right: 1.5em;
+    }
+}
+
 .share-box-button a {
     flex-grow: 1;
     flex-basis: 0;
     -webkit-box-shadow: 0 0 1px #777;
     box-shadow: 0 0 1px #777;
     padding: 5px 12px;
-    margin-right: 1em;
     font-size: .9em;
     text-decoration: none; }
 .share-box-button a:last-child {
@@ -1058,26 +1030,22 @@ Wenn ein Nutzer eine Webseite dieses Internetauftritts aufruft, die einer solche
             </article>
         </div>
     </div>
-    <!--
-<div class="share-box-wrapper show-for-medium">
+    <div class="share-box-wrapper">
     <div class="pure-g">
-        <div class="qm-md-8-12">
+        <div class="qm-sm-12-12">
             <div class="share-box share-box-content">
                 <div class="share-box-heading">Share this:</div>
                 <div class="share-box-button">
                     <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/de/datenschutz/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
                     <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=&url=https://kfz-steuer.wiki/de/datenschutz/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
-                    <a class="x" rel="nofollow" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https://kfz-steuer.wiki"><svg class="icon"><use xlink:href="#xing" /></svg><span> xing</span></a>
-                    <a class="l" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/de/datenschutz/&title=&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
-                    <a class="e" href="mailto:?subject=&amp;body=Check out this site https://kfz-steuer.wiki/de/datenschutz/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
+                    <a class="x show-for-medium" rel="nofollow" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https://kfz-steuer.wiki"><svg class="icon"><use xlink:href="#xing" /></svg><span> xing</span></a>
+                    <a class="l show-for-medium" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/de/datenschutz/&title=&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
+                    <a class="e show-for-medium" href="mailto:?subject=&amp;body=Check out this site https://kfz-steuer.wiki/de/datenschutz/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
                 </div>
             </div>
         </div>
-        <div class="pure-u-md-8-24">
-            &nbsp;
-        </div>
     </div>
-</div>-->
+</div>
 </div>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hide-svg">
