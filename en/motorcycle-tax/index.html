@@ -20,7 +20,7 @@
     
     
 
-    <title>Motorcycle Tax » kfz-steuer.wiki </title>
+    <title></title>
 
     
     <meta name="description" content="Motorcycle Tax Title english">
@@ -985,25 +985,25 @@ select option,select option:hover{
             "monthTo"    : "12",
             "monthDiff"  : "12",
             "season"      : "0",
-            "message1"   : "NEED TRANSLATION",
-            "message2"   : "NEED TRANSLATION",
-            "message3"   : "NEED TRANSLATION"
+            "message1"   : "Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit.",
+            "message2"   : "Tax on your motorcycle will be ",
+            "message3"   : "€ per year."
          }
       </script>
    </amp-state>
    <div class="pure-form">
       <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type<span class="tooltiptext">NEED TRANSLATION</span></label></div>
+         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type </label></div>
          <div class="qm-sm-12-12 qm-md-6-12"><span>Motorcycle</span></div>
       </div>
       <div class="pure-g">
-         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Displacement in ccm*<span class="tooltiptext">NEED TRANSLATION</span></label>
+         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Displacement in ccm*<span class="tooltiptext">Please enter your engine size in cc. You find this on your certificate of registration part 1 (Zulassungsbescheinigung) in field P.1.</span></label>
          <div class="qm-sm-12-12 qm-md-5-12">
             <input type="number" class="qm-sm-12-12 qm-md-6-12 numeric-input" name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value}})">
          </div>
       </div>
       <div class="pure-g">
-         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext">NEED TRANSLATION</span></label>
+         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext">For a seasonal license plate please select the months.</span></label>
          <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
             <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
          </div>

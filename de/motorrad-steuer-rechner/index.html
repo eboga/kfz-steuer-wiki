@@ -20,7 +20,7 @@
     
     
 
-    <title>Motorcycle Tax » kfz-steuer.wiki </title>
+    <title></title>
 
     
     <meta name="description" content="Motorrad: Berechnen Sie die Motorrad-Steuer für Ihr Fahrzeug">
@@ -986,24 +986,24 @@ select option,select option:hover{
             "monthDiff"  : "12",
             "season"      : "0",
             "message1"   : "Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit.",
-            "message2"   : "Ihre Kfz-Steuer beträgt",
+            "message2"   : "Ihre Motorrad-Steuer beträgt ",
             "message3"   : "€ im Jahr."
          }
       </script>
    </amp-state>
    <div class="pure-form">
       <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart<span class="tooltiptext">NEED TRANSLATION</span></label></div>
+         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart </label></div>
          <div class="qm-sm-12-12 qm-md-6-12"><span>Motorrad</span></div>
       </div>
       <div class="pure-g">
-         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Hubraum in ccm<span class="tooltiptext">NEED TRANSLATION</span></label>
+         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Hubraum in ccm<span class="tooltiptext">Den Hubraum Ihres Fahrzeuges finden Sie in dem Feld P.1 der Zulassungsbescheinigung Teil I.</span></label>
          <div class="qm-sm-12-12 qm-md-5-12">
             <input type="number" class="qm-sm-12-12 qm-md-6-12 numeric-input" name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value}})">
          </div>
       </div>
       <div class="pure-g">
-         <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
+         <label class="qm-sm-12-12 qm-md-3-12 tooltip">Saisonkennzeichen<span class="tooltiptext">Falls Sie ein Saisonkennzeichen wünschen, wählen Sie hier die Monate.</span></label>
          <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
             <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
          </div>
