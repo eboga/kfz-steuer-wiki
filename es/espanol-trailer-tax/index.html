@@ -962,9 +962,15 @@ select option,select option:hover{
    </amp-state>
    <div class="pure-form">
       <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label></div>
+         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Remolque<span class="tooltiptext">NEED TRANSLATION</span></label></div>
          <div class="qm-sm-12-12 qm-md-6-12"><span>NEED TRANSLATION</span></div>
       </div>
+       <div class="pure-g">
+           <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
+           <div class="qm-sm-12-12 qm-md-4-12">
+               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? event.value - calculatorState.drawbarLoad : event.value}})">
+           </div>
+       </div>
        <div class="pure-g">
            <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
            <div class="qm-sm-12-12 qm-md-8-12">
@@ -973,12 +979,6 @@ select option,select option:hover{
                    <option value="1">NEED TRANSLATION</option>
                    <option value="2">NEED TRANSLATION</option>
                </select>
-           </div>
-       </div>
-       <div class="pure-g">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
-           <div class="qm-sm-12-12 qm-md-4-12">
-               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? event.value - calculatorState.drawbarLoad : event.value}})">
            </div>
        </div>
 

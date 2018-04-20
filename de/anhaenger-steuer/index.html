@@ -963,8 +963,14 @@ select option,select option:hover{
    <div class="pure-form">
       <div class="pure-g">
          <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart<span class="tooltiptext">NEED TRANSLATION</span></label></div>
-         <div class="qm-sm-12-12 qm-md-6-12"><span>Lastkraftwagen</span></div>
+         <div class="qm-sm-12-12 qm-md-6-12"><span>Anhänger</span></div>
       </div>
+       <div class="pure-g">
+           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in KG<span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein. Die zulässige Gesamtmasse eines Fahrzeugs finden Sie dem Feld F.2 der Zulassungsbescheinigung Teil I. Diese kann von der technisch zulässigen Gesamtmasse abweichen.</span></label>
+           <div class="qm-sm-12-12 qm-md-4-12">
+               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? event.value - calculatorState.drawbarLoad : event.value}})">
+           </div>
+       </div>
        <div class="pure-g">
            <label class="qm-sm-12-12 qm-md-3-12 tooltip">Sattel- / Starrdeichsel / Zentralachsanhänger<span class="tooltiptext">NEED TRANSLATION</span></label>
            <div class="qm-sm-12-12 qm-md-8-12">
@@ -975,15 +981,9 @@ select option,select option:hover{
                </select>
            </div>
        </div>
-       <div class="pure-g">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in Kg*<span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>
-           <div class="qm-sm-12-12 qm-md-4-12">
-               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? event.value - calculatorState.drawbarLoad : event.value}})">
-           </div>
-       </div>
 
        <div [class]="calculatorState.semiTrailer==1 ? 'show' : 'hide'" class="pure-g hide">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Aufliegelast in kg<span class="tooltiptext">NEED TRANSLATION</span></label>
+           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Aufliegelast in kg<span class="tooltiptext"><strong>Sattel-, Starrdeichsel oder Zentralachsanhänger Stützlast / Aufliegelast</strong><br>Bei Sattel-, Starrdeichsel- oder Zentralachsanhängern sind Stützlast oder Aufliegelast die Lasten, die bei einem angehängten Anhänger vom Gesamtgewicht des Anhängers durch das ziehende Fahrzeug getragen werden.</span></label>
            <div class="qm-sm-12-12 qm-md-4-12">
                <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? calculatorState.totalMass - event.value : calculatorState.totalMass}})">
            </div>
