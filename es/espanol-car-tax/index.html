@@ -790,15 +790,14 @@ ul.footer-about-us li:last-child {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 450px;
-    background-color: lightyellow;
+    background-color: rgba(150,200,250,1);
     color: black;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    border: 1px solid gray;
-    margin-left: 20px;
+    text-align: left;
+    padding: .5rem;
+    /*border-radius: .1rem;*/
+    border: 1px solid grey;
+    margin-left: 1rem;
     font-weight: normal;
-
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
@@ -1265,7 +1264,7 @@ select option,select option:hover{
                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">NEED TRANSLATION</button>
                </div>
                <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">NEED TRANSLATION</button>
+                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">Seasonal registration</button>
                </div>
            </div>
         <div class="pure-g" id="season-div" hidden>

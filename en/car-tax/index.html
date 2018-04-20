@@ -790,15 +790,14 @@ ul.footer-about-us li:last-child {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 450px;
-    background-color: lightyellow;
+    background-color: rgba(150,200,250,1);
     color: black;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    border: 1px solid gray;
-    margin-left: 20px;
+    text-align: left;
+    padding: .5rem;
+    /*border-radius: .1rem;*/
+    border: 1px solid grey;
+    margin-left: 1rem;
     font-weight: normal;
-
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
@@ -1209,7 +1208,7 @@ select option,select option:hover{
        </div>
        <div [class]="calculatorState.year>0 && calculatorState.month>0 ? 'show' : 'hide'" class="hide">
            <div class="pure-g">
-               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Initial registration<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Date of first registration<span class="tooltiptext">NEED TRANSLATION</span></label>
                <div class="qm-sm-12-12 qm-md-8-12">
                    <select class="form-control qm-sm-12-12 qm-md-11-12" name="engine-type" on="change:AMP.setState({calculatorState: {initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
                        <option value="">Please select</option>
@@ -1254,7 +1253,7 @@ select option,select option:hover{
                </div>
            </div>
            <div class="pure-g">
-               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Displacement in ccm*<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Engine capacity in ccm<span class="tooltiptext">NEED TRANSLATION</span></label>
                <div class="qm-sm-12-12 qm-md-4-12">
                    <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
                </div>
@@ -1265,7 +1264,7 @@ select option,select option:hover{
                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
                </div>
                <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">Season</button>
+                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">Seasonal registration</button>
                </div>
            </div>
         <div class="pure-g" id="season-div" hidden>
