@@ -1258,13 +1258,13 @@ select option,select option:hover{
                    <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
                </div>
            </div>
-           <div class="pure-g">
+       <div class="pure-g">
                <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
                <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
                </div>
                <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: (+calculatorState.monthTo) - (+calculatorState.monthFrom) + (+1)}})">Seasonal registration</button>
+                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>
                </div>
            </div>
         <div class="pure-g" id="season-div" hidden>
@@ -1272,9 +1272,8 @@ select option,select option:hover{
                </div>
                <div class="qm-sm-12-12 qm-md-6-12">
                    <div class="qm-sm-12-12 qm-md-6-12">
-                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthDiff: (+calculatorState.monthTo) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12">
-                           <option value="1">from</option>
-                           <option value="1">January</option>
+                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
+                           <option value="1" selected>January</option>
                            <option value="2">February</option>
                            <option value="3">March</option>
                            <option value="4">April</option>
@@ -1285,24 +1284,21 @@ select option,select option:hover{
                            <option value="9">September</option>
                            <option value="10">October</option>
                            <option value="11">November</option>
-                           <option value="12">December</option>
                        </select>
                    </div>
                    <div class="qm-sm-12-12 qm-md-5-12">
                        <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
-                           <option value="12">to</option>
-                           <option value="1">January</option>
-                           <option value="2">February</option>
-                           <option value="3">March</option>
-                           <option value="4">April</option>
-                           <option value="5">Mai</option>
-                           <option value="6">June</option>
-                           <option value="7">July</option>
-                           <option value="8">August</option>
-                           <option value="9">September</option>
-                           <option value="10">October</option>
-                           <option value="11">November</option>
-                           <option value="12">December</option>
+                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">February</option>
+                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">March</option>
+                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
+                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
+                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">June</option>
+                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">July</option>
+                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
+                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
+                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">October</option>
+                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
+                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">December</option>
                        </select>
                    </div>
                </div>

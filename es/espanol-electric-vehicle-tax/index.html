@@ -974,9 +974,8 @@ select option,select option:hover{
                </div>
                <div class="qm-sm-12-12 qm-md-6-12">
                    <div class="qm-sm-12-12 qm-md-6-12">
-                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthDiff: (+calculatorState.monthTo) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12">
-                           <option value="1">von ES</option>
-                           <option value="1">Enero</option>
+                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
+                           <option value="1" selected>Enero</option>
                            <option value="2">Febrero</option>
                            <option value="3">Marzo</option>
                            <option value="4">Abril</option>
@@ -987,24 +986,21 @@ select option,select option:hover{
                            <option value="9">Septiembre</option>
                            <option value="10">Octubre</option>
                            <option value="11">Noviembre</option>
-                           <option value="12">Diciembre</option>
                        </select>
                    </div>
                    <div class="qm-sm-12-12 qm-md-5-12">
                        <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
-                           <option value="12">bis ES</option>
-                           <option value="1">Enero</option>
-                           <option value="2">Febrero</option>
-                           <option value="3">Marzo</option>
-                           <option value="4">Abril</option>
-                           <option value="5">Mayo</option>
-                           <option value="6">Junio</option>
-                           <option value="7">Julio</option>
-                           <option value="8">Agosto</option>
-                           <option value="9">Septiembre</option>
-                           <option value="10">Octubre</option>
-                           <option value="11">Noviembre</option>
-                           <option value="12">Diciembre</option>
+                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>
+                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>
+                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">Abril</option>
+                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mayo</option>
+                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Junio</option>
+                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Julio</option>
+                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">Agosto</option>
+                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">Septiembre</option>
+                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Octubre</option>
+                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">Noviembre</option>
+                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Diciembre</option>
                        </select>
                    </div>
                </div>

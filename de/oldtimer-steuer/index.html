@@ -949,7 +949,11 @@ select option,select option:hover{
          {
             "oldtimerType": "0",
             "message1"   : "Ihre Kfz-Steuer beträgt ",
-            "message2"   : " € im Jahr."
+            "message2"   : " € im Jahr.",            
+            "monthFrom"  : "1",
+            "monthTo"    : "12",
+            "monthDiff"  : "12",
+            "season"     : "0"
          }
       </script>
    </amp-state>
@@ -968,11 +972,56 @@ select option,select option:hover{
                </select>
            </div>
        </div>
-           <div [class]="calculatorState.oldtimerType>0 ? 'calculator-message' : 'hide'">
-               <h4 [text]="calculatorState.message1+(calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0) +calculatorState.message2"></h4>
+       <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Saisonkennzeichen<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>
+               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                   <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+               </div>
+               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saisonkennzeichen</button>
+               </div>
            </div>
+        <div class="pure-g" id="season-div" hidden>
+               <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+               </div>
+               <div class="qm-sm-12-12 qm-md-6-12">
+                   <div class="qm-sm-12-12 qm-md-6-12">
+                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
+                           <option value="1" selected>Januar</option>
+                           <option value="2">Februar</option>
+                           <option value="3">März</option>
+                           <option value="4">April</option>
+                           <option value="5">Mai</option>
+                           <option value="6">Juni</option>
+                           <option value="7">Juli</option>
+                           <option value="8">August</option>
+                           <option value="9">September</option>
+                           <option value="10">Oktober</option>
+                           <option value="11">November</option>
+                       </select>
+                   </div>
+                   <div class="qm-sm-12-12 qm-md-5-12">
+                       <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
+                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
+                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
+                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
+                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
+                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
+                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
+                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
+                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
+                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
+                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
+                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
+                       </select>
+                   </div>
+               </div>
+           </div>
+           <div [class]="calculatorState.oldtimerType>0 ? 'calculator-message' : 'hide'">
+           <h4 [text]="calculatorState.message1+floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ) +calculatorState.message2"></h4>
        </div>
    </div>
+</div>
 
 
 <p>Für die Berechnung der Kfz-Steuer für Ihren Oldtimer benötigen Sie keinen Steuer-Rechner. Die Oldtimer-Steuer für alle Kraftfahrzeuge beträgt 191,73 Euro pro Jahr. Bei Motorrädern werden 46,02 Euro pro Jahr als Steuer berechnet.<br> Seit dem 1. Oktober 2017 werden auch für Oldtimer-Zulassungen Saisonkennzeichen vergeben. <a href='https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl117s0522.pdf#__bgbl__%2F%2F*%5B%40attr_id%3D%27bgbl117s0522.pdf%27%5D__1524209119880' target='_blank' rel='noopener'>Mehr dazu beim Bundesanzeiger</a> </p>

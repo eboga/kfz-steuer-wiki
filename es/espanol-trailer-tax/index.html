@@ -982,21 +982,28 @@ select option,select option:hover{
            </div>
        </div>
 
-       <div [class]="calculatorState.semiTrailer==1 ? 'show' : 'hide'" class="pure-g hide">
+       <div [class]="calculatorState.semiTrailer==1 ? 'pure-g show' : 'pure-g hide'" class="pure-g hide">
            <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
            <div class="qm-sm-12-12 qm-md-4-12">
                <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? calculatorState.totalMass - event.value : calculatorState.totalMass}})">
            </div>
        </div>
-
+       <div class="pure-g">
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                   <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">NEED TRANSLATION</button>
+               </div>
+               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>
+               </div>
+           </div>
        <div class="pure-g" id="season-div" hidden>
                <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
                </div>
                <div class="qm-sm-12-12 qm-md-6-12">
                    <div class="qm-sm-12-12 qm-md-6-12">
-                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthDiff: (+calculatorState.monthTo) - (+event.value) + (+1)}})" class="form-control qm-sm-12-12 qm-md-10-12">
-                           <option value="1">von ES</option>
-                           <option value="1">Enero</option>
+                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
+                           <option value="1" selected>Enero</option>
                            <option value="2">Febrero</option>
                            <option value="3">Marzo</option>
                            <option value="4">Abril</option>
@@ -1007,24 +1014,21 @@ select option,select option:hover{
                            <option value="9">Septiembre</option>
                            <option value="10">Octubre</option>
                            <option value="11">Noviembre</option>
-                           <option value="12">Diciembre</option>
                        </select>
                    </div>
                    <div class="qm-sm-12-12 qm-md-5-12">
-                       <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
-                           <option value="12">bis ES</option>
-                           <option value="1">Enero</option>
-                           <option value="2">Febrero</option>
-                           <option value="3">Marzo</option>
-                           <option value="4">Abril</option>
-                           <option value="5">Mayo</option>
-                           <option value="6">Junio</option>
-                           <option value="7">Julio</option>
-                           <option value="8">Agosto</option>
-                           <option value="9">Septiembre</option>
-                           <option value="10">Octubre</option>
-                           <option value="11">Noviembre</option>
-                           <option value="12">Diciembre</option>
+                         <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
+                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>
+                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>
+                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">Abril</option>
+                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mayo</option>
+                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Junio</option>
+                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Julio</option>
+                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">Agosto</option>
+                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">Septiembre</option>
+                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Octubre</option>
+                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">Noviembre</option>
+                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Diciembre</option>
                        </select>
                    </div>
                </div>
