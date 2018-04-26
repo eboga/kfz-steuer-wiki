@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="en">
 
 
 <head>
@@ -11,7 +11,7 @@
     
 
     
-    <link rel="canonical" href="https://kfz-steuer.wiki/es/kontakt/">
+    <link rel="canonical" href="https://kfz-steuer.wiki/en/contact/">
     
     <meta name="robots" content="noindex, follow" />
 
@@ -19,7 +19,7 @@
 
     
 
-    <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/es/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/en/feed.xml" />
 
     <link rel="dns-prefetch" href="//qcdn.de">
 
@@ -38,16 +38,24 @@
 
     
     
-
-    
+        
+        <link rel="alternate" hreflang="x-default" href="https://kfz-steuer.wiki/de/kontakt/" />
+        
+        <link rel="alternate" hreflang="de" href="https://kfz-steuer.wiki/de/kontakt/" />
     
 
     
         
-        <link rel="alternate" hreflang="es" href="https://kfz-steuer.wiki/es/kontakt/" />
+        <link rel="alternate" hreflang="en" href="https://kfz-steuer.wiki/en/contact/" />
         
+    
+    
+        
+        <link rel="alternate" hreflang="es" href="https://kfz-steuer.wiki/es/contact-es/" />
+    
 
-    <meta property="og:locale" content="es" />
+
+    <meta property="og:locale" content="en" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Meine Beispiel-Webseite" />
     <meta property="og:description" content="Diese Beispiel-Webseite wird Sie begeistern!" />
@@ -781,9 +789,9 @@ select option,select option:hover{
         <div class="show-for-medium">
             <ul class="header-language">
                 <li>
-                    <amp-img src="/assets/img/es.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
+                    <amp-img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                         <noscript>
-                            <img src="/assets/img/es.svg" alt="kfz-steuer.wiki" height="20" width="30" />
+                            <img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" height="20" width="30" />
                         </noscript>
                     </amp-img>
                 </li>
@@ -791,7 +799,7 @@ select option,select option:hover{
                 
                 
                 <li>
-                    <a href="//">
+                    <a href="/de/kontakt/">
                         <amp-img src="/assets/img/de.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                             <noscript>
                                 <img src="/assets/img/de.svg" alt="kfz-steuer.wiki" height="20" width="30" />
@@ -801,20 +809,20 @@ select option,select option:hover{
                 </li>
                 
                 
+                 
                 
                 
                 <li>
-                    <a href="//">
-                        <amp-img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
+                    <a href="/es/contact-es/">
+                        <amp-img src="/assets/img/es.svg" alt="kfz-steuer.wiki" width="30" height="20" class="m1">
                             <noscript>
-                                <img src="/assets/img/gb.svg" alt="kfz-steuer.wiki" height="20" width="30" />
+                                <img src="/assets/img/es.svg" alt="kfz-steuer.wiki" height="20" width="30" />
                             </noscript>
                         </amp-img>
                     </a>
                 </li>
                 
                 
-                 
             </ul>
         </div>
 
@@ -830,43 +838,43 @@ select option,select option:hover{
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/spanish-motorcycle-tax/">Motorcycle ES</a>
+                <a href="https://kfz-steuer.wiki/en/motorcycle-tax/">Motorcycle tax</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/espanol-car-tax/">Car Tax ES</a>
+                <a href="https://kfz-steuer.wiki/en/car-tax/">Car tax</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/espanol-truck-tax/">Truck Tax ES</a>
+                <a href="https://kfz-steuer.wiki/en/truck-tax/">Truck Tax</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/espanol-oldtimer-tax/">Oldtimer-Steuer-ES</a>
+                <a href="https://kfz-steuer.wiki/en/oldtimer-tax/">Oldtimer tax</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/espanol-trailer-tax/">Trailer Tax ES</a>
+                <a href="https://kfz-steuer.wiki/en/trailer-tax/">Trailer tax</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/espanol-electric-vehicle-tax/">Electric Car ES</a>
+                <a href="https://kfz-steuer.wiki/en/electric-vehicle-tax/">Electric car tax</a>
             </li>
             
             
             
             <li>
-                <a href="https://kfz-steuer.wiki/es/espanol-camper-tax/">Camper Tax ES</a>
+                <a href="https://kfz-steuer.wiki/en/camper-tax/">RV tax</a>
             </li>
             
             
@@ -887,16 +895,57 @@ select option,select option:hover{
 
                 
 
-                <h1 id="kontakt">Kontakt</h1>
-<p><strong>qmedia GmbH</strong><br />
+                <h1>Contact EN</h1>
+
+<div id="map"></div>
+<script>
+function initMap() {
+var uluru = {lat: 48.123655, lng: 11.607421};
+var map = new google.maps.Map(document.getElementById('map'), {
+zoom: 16,
+center: uluru
+});
+var marker = new google.maps.Marker({
+position: uluru,
+map: map
+});
+}
+</script>
+
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqWvhXlzMeT7xRocAed2o6Mvq7OA_Ba04&amp;callback=initMap"></script>
+
+<p><strong>Betreiber / Kontakt</strong><br />
+qmedia GmbH<br />
 c/o WERK1<br />
 Grafinger Straße 6<br />
 81671 München<br /><br />
-Tel: +49 89 416 120 10<br />
-Fax: +49 89 416 120 199<br />
-Email: info@qmedia.de<br /></p>
+Tel:+49 89 416 120 10<br />
+Fax:+49 89 416 120 199<br /><br />
+Email: info@qmedia.de<br /><br /></p>
 
 <p>Web: <a href="https://www.qmedia.de" target="_blank">qmedia.de</a></p>
+
+<p><strong>Geschäftsführer</strong><br />
+Erkan Boga <br /><br /></p>
+
+<p><strong>Handelsregister München</strong><br />
+HRB 161988 <br /><br /></p>
+
+<p><strong>USt-IdNr. gem. § 27 UStG</strong><br />
+DE 129 378 507 <br /><br /></p>
+
+<p><strong>Inhaltlich Verantwortlicher gem. § 6 MDStV</strong><br />
+Erkan Boga <br /><br /></p>
+
+<p><strong>Erlaubnis nach § 34 c GewO erteilt durch das Kreisverwaltungsreferat München</strong><br />
+Zuständige Aufsichtsbehörde:<br />
+Landeshauptstadt München<br />
+Ruppertstraße 19<br />
+80466 München<br /><br /></p>
+
+<p><strong>Gerichtsstand</strong><br />
+München<br /><br /></p>
+
 
 
                 <div class="wrapper">
@@ -916,11 +965,11 @@ Email: info@qmedia.de<br /></p>
             <div class="share-box share-box-content">
                 <div class="share-box-heading">Share this:</div>
                 <div class="share-box-button">
-                    <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/es/kontakt/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
-                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=&url=https://kfz-steuer.wiki/es/kontakt/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
+                    <a class="f" rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://kfz-steuer.wiki/en/contact/" ><svg class="icon"><use xlink:href="#facebook" /></svg><span> facebook</span></a>
+                    <a class="t" rel="nofollow" href="https://twitter.com/intent/tweet?text=&url=https://kfz-steuer.wiki/en/contact/"><svg class="icon"><use xlink:href="#twitter" /></svg><span> twitter</span></a>
                     <a class="x show-for-medium" rel="nofollow" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https://kfz-steuer.wiki"><svg class="icon"><use xlink:href="#xing" /></svg><span> xing</span></a>
-                    <a class="l show-for-medium" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/es/kontakt/&title=&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
-                    <a class="e show-for-medium" href="mailto:?subject=&amp;body=Check out this site https://kfz-steuer.wiki/es/kontakt/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
+                    <a class="l show-for-medium" rel="nofollow" href="https://www.linkedin.com/shareArticle?mini=true&url=https://kfz-steuer.wiki/en/contact/&title=&summary=&source=webjeda"><svg class="icon"><use xlink:href="#linkedin" /></svg><span> linkedin</span></a>
+                    <a class="e show-for-medium" href="mailto:?subject=&amp;body=Check out this site https://kfz-steuer.wiki/en/contact/"><svg class="icon"><use xlink:href="#mail" /></svg><span> email</span></a>
                 </div>
             </div>
         </div>
@@ -949,9 +998,9 @@ Email: info@qmedia.de<br /></p>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12">
                 <ul class="footer-about-us">
-                    <li><a href="">Imprint ES</a></li>
-                    <li><a href="/kontakt/">Kontakt</a></li>
-                    <li><a href="/datenschutz/">Datenschutz</a></li>
+                    <li><a href="/en/imprint/">Imprint</a></li>
+                    <li><a href="/en/contact/">Contact EN</a></li>
+                    <li><a href="/en/privacy/">Privacy EN</a></li>
                 </ul>
             </div>
         </div>
