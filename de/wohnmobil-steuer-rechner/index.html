@@ -11,7 +11,9 @@
     
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  
     
 
     
@@ -902,14 +904,18 @@ select option,select option:hover{
    <amp-state id="calculatorState">
       <script type="application/json">
          {
-            "emmisionClass": "0",
-            "totalMass": "0",
-            "monthFrom"  : "1",
-            "monthTo"    : "12",
-            "monthDiff"  : "12",
-            "season"     : "0",
-            "message1"   : "Ihre Kfz-Steuer beträgt ",
-            "message2"   : " € im Jahr."
+              "emmisionClass" : "0",
+              "b1"            : "0",
+              "b2"            : "0",
+              "b3"            : "0",
+              "over"          : "0", 
+              "totalMass"     : "0",
+              "monthFrom"     : "1",
+              "monthTo"       : "12",
+              "monthDiff"     : "12",
+              "season"        : "0",
+              "message1"      : "Ihre Kfz-Steuer beträgt ",
+              "message2"      : " € im Jahr."
          }
       </script>
    </amp-state>
@@ -921,23 +927,29 @@ select option,select option:hover{
            <div class="pure-g">
                <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
                <div class="qm-sm-12-12 qm-md-8-12">
-                   <select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}})">
+                   <select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
                        <option value="">Bitte auswählen</option>
-                       <option value="b1">Euro 3, D3 und besser</option>
-                       <option value="b2">Euro 2</option>
-                       <option value="b3">Euro 1</option>
-                       <option value="b4">nicht schadstoffarm (Fahren bei Ozonalarm erlaubt)</option>
-                       <option value="b5">nicht schadstoffarm (Fahren bei Ozonalarm nicht erlaubt)</option>
-                       <option value="b6">übrige</option>
+                       <option value="a1">Mindestens S4</option>
+                       <option value="a2">S2 or S3</option>
+                       <option value="a3">Alle anderen</option>
                    </select>
                </div>
            </div>
            <div class="pure-g">
                <label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in Kg*<span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>
                <div class="qm-sm-12-12 qm-md-4-12">
-                   <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
+                   <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}}), amp-template-id.refresh">
                </div>
            </div>
+        <div class="pure-g">
+             <label class="qm-sm-12-12 qm-md-3-12 tooltip">Saisonkennzeichen<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>
+             <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+             </div>
+             <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
+                 <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saisonkennzeichen</button>
+             </div>
+         </div>
         <div class="pure-g" id="season-div" hidden>
                <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
                </div>
@@ -974,14 +986,30 @@ select option,select option:hover{
                    </div>
                </div>
            </div>
-           <div [class]="calculatorState.emmisionClass>0 && calculatorState.totalMass>0 ? 'calculator-message' : ''">
-               <h4></h4>
+           <div class="calculator-message" hidden [hidden]="calculatorState.emmisionClass < 1 || calculatorState.totalMass < 1 ">
+              <amp-list 
+                  id="amp-template-id"
+                  src="https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikirvtax?emmisionClass=0&totalMass=0&monthDiff=12"
+                  [src]="'https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikirvtax?emmisionClass=' + calculatorState.emmisionClass + '&totalMass=' + calculatorState.totalMass + '&monthDiff=' + calculatorState.monthDiff + ''"
+                  width=1280
+                  height=130
+                  layout=responsive>
+                <template type="amp-mustache">
+
+                  <h4 [text]="calculatorState.message1 + {{title}} + calculatorState.message2"></h4>
+                  
+                </template>
+              </amp-list>
+
+
            </div>
        </div>
    </div>
 
 
 <p>Auch für Ihr Wohnmobil fallen Steuern an. Wie hoch diese sind ist abhängig vom verkehrsrechtlich zulässigen Gesamtgewicht sowie der Schadstoffklasse. Mit diesen Werten lässt sich die zu erwartende Steuer für Ihr Reisemobil schnell und individuell berechnen. Für die Schadstoffklasse benötigen Sie die „Emissions-Schlüsselnummer“ (Schadstoff-Schlüsselnummer). Diese finden Sie in Ihren Fahrzeugpapieren. Mit der Schadstoff-Schlüsselnummer können Sie dann im Internet die jeweilige Schadstoffklasse (S1-S6, EEV und Sonstige) schnell ermitteln. Die Berechnung der Steuerhöhe für Ihr Wohnmobil benötigt dann nur noch wenige Sekunden.</p>
+
+
 
 
                 <div class="wrapper">
