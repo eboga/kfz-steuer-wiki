@@ -699,6 +699,7 @@ ul.footer-about-us li:last-child {
         padding: 1rem;
         margin: 2em 0;
         border: 1px solid #efefef;
+        /*box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);*/
     }
     .calculator-message {
         background-color: #efefef;
@@ -710,6 +711,7 @@ ul.footer-about-us li:last-child {
         padding: 30px;
         margin: 3em 0;
         border: 1px solid #efefef;
+        box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
     .calculator-message {
         background-color: #efefef;
@@ -722,9 +724,14 @@ ul.footer-about-us li:last-child {
 .calculator-container input {
     background-color: white;
 }
+@media only screen and (max-width: 39.9375em) {
+    .calculator-container .numeric-input {
+        max-width: 90%;
+    }
+}
 
 .calculator-container .numeric-input {
-    height: 100%;
+    padding: .5rem .75rem;
 }
 
 .calculator-container label,span,button {
@@ -742,12 +749,14 @@ ul.footer-about-us li:last-child {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 450px;
-    background-color: rgba(150,200,250,1);
-    color: black;
+    font-size: .95rem;
+    object-fit: contain;
+    background-color: #ffffff;
+    box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
+    color: #333;
     text-align: left;
-    padding: .5rem;
-    /*border-radius: .1rem;*/
-    border: 1px solid grey;
+    padding: .75rem 1.25rem;
+    border: 1px solid #ccc;
     margin-left: 1rem;
     font-weight: normal;
     /* Position the tooltip text - see examples below! */

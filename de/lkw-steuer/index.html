@@ -706,6 +706,7 @@ ul.footer-about-us li:last-child {
         padding: 1rem;
         margin: 2em 0;
         border: 1px solid #efefef;
+        /*box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);*/
     }
     .calculator-message {
         background-color: #efefef;
@@ -717,6 +718,7 @@ ul.footer-about-us li:last-child {
         padding: 30px;
         margin: 3em 0;
         border: 1px solid #efefef;
+        box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
     .calculator-message {
         background-color: #efefef;
@@ -729,9 +731,14 @@ ul.footer-about-us li:last-child {
 .calculator-container input {
     background-color: white;
 }
+@media only screen and (max-width: 39.9375em) {
+    .calculator-container .numeric-input {
+        max-width: 90%;
+    }
+}
 
 .calculator-container .numeric-input {
-    height: 100%;
+    padding: .5rem .75rem;
 }
 
 .calculator-container label,span,button {
@@ -749,12 +756,14 @@ ul.footer-about-us li:last-child {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 450px;
-    background-color: rgba(150,200,250,1);
-    color: black;
+    font-size: .95rem;
+    object-fit: contain;
+    background-color: #ffffff;
+    box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
+    color: #333;
     text-align: left;
-    padding: .5rem;
-    /*border-radius: .1rem;*/
-    border: 1px solid grey;
+    padding: .75rem 1.25rem;
+    border: 1px solid #ccc;
     margin-left: 1rem;
     font-weight: normal;
     /* Position the tooltip text - see examples below! */
@@ -914,7 +923,7 @@ select option,select option:hover{
             "season"     : "0",
             "message1"   : "Ihre Kfz-Steuer beträgt ",
             "message2"   : " € im Jahr.",
-            "message3"   : " NEED TRANSLATION ABOUT PERMITTED TOTAL MASS MUST BE HIGHER THEN 3500 AND LOWER THAN 40000 KG"
+            "message3"   : " Zulässige Gesamtmasse muss über 3.500 Kilogramm betragen. Maximal jedoch nicht mehr als 40.000 Kilogramm."
          }
       </script>
    </amp-state>
@@ -924,7 +933,7 @@ select option,select option:hover{
          <div class="qm-sm-12-12 qm-md-6-12"><span>Lastkraftwagen</span></div>
       </div>
            <div class="pure-g">
-               <label class="qm-sm-12-12 qm-md-3-12 tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
+               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Schadstoffklasse<span class="tooltiptext">NEU FORMULIEREN:<br><strong>Emissionsklasse (sog. Euro-Abgasnorm)</strong><br>Die Emissionsklasse dokumentiert den Schadstoffausstoß des Kraftfahrzeugs je Kilometer Fahrleistung. Oft wird die Bezeichnung &quot;Euro-Abgasnorm&quot; oder &quot;Schadstoffnorm&quot; verwendet.</span></label>
                <div class="qm-sm-12-12 qm-md-8-12">
                    <select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
                        <option value="">Bitte auswählen</option>
