@@ -25,7 +25,7 @@
 
 
     
-    <!--<meta name="description" content=" ">-->
+    <!--<meta name="description" content="                                  EmissionsklasseNEED TRANSLATION - EmissionsklasseDie Emissionsklasse dokumentiert den Schadstoffausstoß des Kraftfahrzeugs ...">-->
     
 
     <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/es/feed.xml" />
@@ -1200,9 +1200,6 @@ nav .share-box svg.icon {
   font-size: 2.25rem;
   font-weight: 500;
   color: #010340;
-  /*font-stretch: normal;*/
-  /*line-height: normal;*/
-  /*letter-spacing: normal;*/
   margin-bottom: 3.125rem;
 }
 .heading h1 {
@@ -1271,10 +1268,6 @@ nav .share-box svg.icon {
   font-size: 14px;
   font-weight: 600;
 }
-/*.content-wrapper.unset-bg {*/
-  /*background-color: unset;*/
-  /*min-width: 600px;*/
-/*}*/
 
 .vehicle-list a.color{ color: rgba(1, 3, 64, 0.5); }
 .vehicle-list a.color.active {
@@ -1289,20 +1282,7 @@ nav .share-box svg.icon {
 .share-box-wrapper, .share-box-wrapper .pure-g {
   margin-bottom: 0;
 }
-/*.unset-bg .calculator-container {*/
-  /*margin-top: 0;*/
-  /*margin-bottom: 0;*/
-  /*background-color: #fff;*/
-  /*padding-bottom: 15px;*/
-/*}*/
 
-.calculator-message h2 {
-  font-weight: normal;
-}
-
-.calculator-message h2 span {
-  color: blue;
-}
 .tax-result {
   color: #256bfb;
 }
@@ -1338,11 +1318,6 @@ article .button {
   border-radius: 0 4px 4px 0;
 }
 
-
-/*article .pure-table,article .pure-table td,article .pure-table th {border:unset}*/
-/*table.pure-table td {*/
-/*border-bottom: 1px solid #cbcbcb;*/
-/*}*/
 
 @media only screen and (max-width: 39.9375em) {
   .pure-g .qm-sm-12-12:not(:first-child) label {
@@ -1613,9 +1588,7 @@ a.button:hover, a.button:focus {
 @media only screen and (min-width: 40em) {
     .calculator-container {
         padding: 30px;
-        /*margin: 2rem 0 2rem 0;*/
         background: #fff;
-        /* border: 1px solid #efefef; */
         box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
     .calculator-message {
@@ -1625,6 +1598,24 @@ a.button:hover, a.button:focus {
         box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
         line-height: 1.8;
     }
+}
+
+.calculator-message {
+
+}
+.calculator-message h2 {
+    /*margin: 0;*/
+    /*font-weight: normal;*/
+    margin: 0;
+    /*padding: 1rem 0;*/
+    justify-content: baseline;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+
+.calculator-message h2 span {
+    color: blue;
 }
 
 
@@ -1834,10 +1825,14 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     height: auto;
 }
 .pure-form label {
-    /*margin: 0 0 14px 0;*/
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+}
+.pure-form label sub {
+    vertical-align: super;
+    font-size: larger;
+    color: #ff3262;
 }
 .pure-form fieldset {
     margin: 0;
@@ -2225,9 +2220,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 
             <article>
 
-                 <!--<h1>Camper Tax User Title Spanish</h1>-->
-
-<div class="calculator-container pure-form pure-form-stacked">
+                <div class="calculator-container pure-form pure-form-stacked">
    <amp-state id="calculatorState">
       <script type="application/json">
          {
@@ -2261,8 +2254,6 @@ since IE8 won't execute CSS that contains a CSS3 selector.
         <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
             <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
         </div>
-    <!--</div>-->
-    <!--<div class="pure-g">-->
         <div class="button-group qm-sm-12-12 qm-md-6-12 seasonbuttons p-r-10" role="group">
             <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">NEED TRANSLATION</button>
             <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>
@@ -2317,7 +2308,6 @@ since IE8 won't execute CSS that contains a CSS3 selector.
         </amp-list>
     </div>
 </div>
-<!--</div>-->
 
 
 <p>Auch für Ihr Wohnmobil fallen Steuern an. Wie hoch diese sind ist abhängig vom verkehrsrechtlich zulässigen Gesamtgewicht sowie der Schadstoffklasse. Mit diesen Werten lässt sich die zu erwartende Steuer für Ihr Reisemobil schnell und individuell berechnen. Für die Schadstoffklasse benötigen Sie die „Emissions-Schlüsselnummer“ (Schadstoff-Schlüsselnummer). Diese finden Sie in Ihren Fahrzeugpapieren. Mit der Schadstoff-Schlüsselnummer können Sie dann im Internet die jeweilige Schadstoffklasse (S1-S6, EEV und Sonstige) schnell ermitteln. Die Berechnung der Steuerhöhe für Ihr Wohnmobil benötigt dann nur noch wenige Sekunden.</p>
