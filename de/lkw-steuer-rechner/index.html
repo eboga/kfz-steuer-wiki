@@ -1828,6 +1828,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+    white-space: nowrap;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -2257,34 +2258,6 @@ since IE8 won't execute CSS that contains a CSS3 selector.
             <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
         </div>
     </div>
-
-    <!--<div class="pure-g">-->
-       <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip">Schadstoffklasse<span class="tooltiptext">NEU FORMULIEREN:<br><strong>Emissionsklasse (sog. Euro-Abgasnorm)</strong><br>Die Emissionsklasse dokumentiert den Schadstoffausstoß des Kraftfahrzeugs je Kilometer Fahrleistung. Oft wird die Bezeichnung &quot;Euro-Abgasnorm&quot; oder &quot;Schadstoffnorm&quot; verwendet.</span></label>-->
-       <!--<div class="qm-sm-12-12 qm-md-8-12">-->
-           <!--<select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">-->
-               <!--<option value="">Bitte auswählen</option>-->
-               <!--<option value="a1">S2 und besser</option>-->
-               <!--<option value="a2">S1</option>-->
-               <!--<option value="a3">G1</option>-->
-               <!--<option value="a4">übrige</option>-->
-           <!--</select>-->
-       <!--</div>-->
-   <!--</div>-->
-   <!--<div class="pure-g">-->
-       <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in KG*<span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>-->
-       <!--<div class="qm-sm-12-12 qm-md-4-12">-->
-           <!--<input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">-->
-       <!--</div>-->
-   <!--</div>-->
-    <!--<div class="pure-g">-->
-         <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>-->
-         <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-             <!--<button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>-->
-         <!--</div>-->
-         <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-             <!--<button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>-->
-         <!--</div>-->
-    <!--</div>-->
 
     <div class="pure-g">
         <div class="qm-md-12-12 qm-sm-12-12 p-r-10">

@@ -1826,6 +1826,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+    white-space: nowrap;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -2522,9 +2523,9 @@ since IE8 won't execute CSS that contains a CSS3 selector.
                </div>
            </div>
          <div class="pure-g">
-             <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+             <label class="qm-sm-12-12 qm-md-3-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
              <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">NEED TRANSLATION</button>
+                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
              </div>
              <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
                  <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>

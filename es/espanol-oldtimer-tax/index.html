@@ -1828,6 +1828,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+    white-space: nowrap;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -2220,9 +2221,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 
             <article>
 
-                <!-- <h1>Oldtimer Tax User Title Spanish</h1> -->
-
-<div class="calculator-container">
+                <div class="calculator-container pure-form pure-form-stacked">
    <amp-state id="calculatorState">
       <script type="application/json">
          {
@@ -2236,70 +2235,125 @@ since IE8 won't execute CSS that contains a CSS3 selector.
          }
       </script>
    </amp-state>
-   <div class="pure-form">
-      <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type </label></div>
-         <div class="qm-sm-12-12 qm-md-6-12"><span>Oldtimer</span></div>
-      </div>
-       <div class="pure-g">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Oldtimer<span class="tooltiptext">NEED TRANSLATION - <strong>Oldtimerart</strong><br>Bei der Besteuerung von Oldtimern wird nur zwischen Motorrädern und allen anderen Fahrzeugarten unterschieden.</span></label>
-           <div class="qm-sm-12-12 qm-md-8-12">
-               <select class="form-control qm-sm-12-12 qm-md-11-12" name="oldtimer-type" on="change:AMP.setState({calculatorState: {oldtimerType: event.value}})">
-                   <option value="0">Please select</option>
-                   <option value="1">other vehicles</option>
-                   <option value="2">Motorbikes</option>
-               </select>
-           </div>
-       </div>
-       <div class="pure-g">
-               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Registration period*<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
-               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">NEED TRANSLATION</button>
-               </div>
-               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>
-               </div>
-           </div>
-        <div class="pure-g" id="season-div" hidden>
-               <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-               </div>
-               <div class="qm-sm-12-12 qm-md-6-12">
-                   <div class="qm-sm-12-12 qm-md-6-12">
-                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
-                           <option value="1" selected>Enero</option>
-                           <option value="2">Febrero</option>
-                           <option value="3">Marzo</option>
-                           <option value="4">Abril</option>
-                           <option value="5">Mayo</option>
-                           <option value="6">Junio</option>
-                           <option value="7">Julio</option>
-                           <option value="8">Agosto</option>
-                           <option value="9">Septiembre</option>
-                           <option value="10">Octubre</option>
-                           <option value="11">Noviembre</option>
-                       </select>
-                   </div>
-                   <div class="qm-sm-12-12 qm-md-5-12">
-                       <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
-                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>
-                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>
-                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">Abril</option>
-                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mayo</option>
-                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Junio</option>
-                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Julio</option>
-                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">Agosto</option>
-                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">Septiembre</option>
-                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Octubre</option>
-                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">Noviembre</option>
-                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Diciembre</option>
-                       </select>
-                   </div>
-               </div>
-           </div>
-           <div [class]="calculatorState.oldtimerType>0 ? 'calculator-message' : 'hide'">
-           <h4 [text]="calculatorState.message1+floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ) +calculatorState.message2"></h4>
-       </div>
-   </div>
+    <!--<div class="pure-g">-->
+        <!--<div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type </label></div>-->
+        <!--<div class="qm-sm-12-12 qm-md-6-12"><span>Oldtimer</span></div>-->
+    <!--</div>-->
+    <div class="pure-g">
+        <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+            <label class="tooltip">Oldtimer <sub>*</sub><span class="tooltiptext">NEED TRANSLATION - <strong>Oldtimerart</strong><br>Bei der Besteuerung von Oldtimern wird nur zwischen Motorrädern und allen anderen Fahrzeugarten unterschieden.</span></label>
+            <select class="form-control qm-sm-12-12 qm-md-11-12" name="oldtimer-type" on="change:AMP.setState({calculatorState: {oldtimerType: event.value}})">
+                <option value="0">Please select</option>
+                <option value="1">other vehicles</option>
+                <option value="2">Motorbikes</option>
+            </select>
+        </div>
+        <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+            <div class="pure-g">
+                <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
+                    <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+                </div>
+                <div class="button-group qm-sm-12-12 seasonbuttons p-r-10" role="group">
+                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+                    <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-g" id="season-div" hidden>
+        <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
+            <label for="month_from">von ES</label>
+            <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
+                <option value="1" selected>Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+            </select>
+        </div>
+
+        <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
+            <label for="month_to">bis ES</label>
+            <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
+                <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>
+                <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>
+                <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">Abril</option>
+                <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mayo</option>
+                <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Junio</option>
+                <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Julio</option>
+                <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">Agosto</option>
+                <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">Septiembre</option>
+                <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Octubre</option>
+                <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">Noviembre</option>
+                <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Diciembre</option>
+            </select>
+        </div>
+    </div>
+    <!--<div class="pure-g">-->
+       <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip">Oldtimer<span class="tooltiptext">NEED TRANSLATION - <strong>Oldtimerart</strong><br>Bei der Besteuerung von Oldtimern wird nur zwischen Motorrädern und allen anderen Fahrzeugarten unterschieden.</span></label>-->
+       <!--<div class="qm-sm-12-12 qm-md-8-12">-->
+           <!--<select class="form-control qm-sm-12-12 qm-md-11-12" name="oldtimer-type" on="change:AMP.setState({calculatorState: {oldtimerType: event.value}})">-->
+               <!--<option value="0">Please select</option>-->
+               <!--<option value="1">other vehicles</option>-->
+               <!--<option value="2">Motorbikes</option>-->
+           <!--</select>-->
+       <!--</div>-->
+    <!--</div>-->
+    <!--<div class="pure-g">-->
+           <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>-->
+           <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
+               <!--<button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})"></button>-->
+           <!--</div>-->
+           <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
+               <!--<button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>-->
+           <!--</div>-->
+       <!--</div>-->
+    <!--<div class="pure-g" id="season-div" hidden>-->
+           <!--<div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
+           <!--</div>-->
+           <!--<div class="qm-sm-12-12 qm-md-6-12">-->
+               <!--<div class="qm-sm-12-12 qm-md-6-12">-->
+                   <!--<select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">-->
+                       <!--<option value="1" selected>Enero</option>-->
+                       <!--<option value="2">Febrero</option>-->
+                       <!--<option value="3">Marzo</option>-->
+                       <!--<option value="4">Abril</option>-->
+                       <!--<option value="5">Mayo</option>-->
+                       <!--<option value="6">Junio</option>-->
+                       <!--<option value="7">Julio</option>-->
+                       <!--<option value="8">Agosto</option>-->
+                       <!--<option value="9">Septiembre</option>-->
+                       <!--<option value="10">Octubre</option>-->
+                       <!--<option value="11">Noviembre</option>-->
+                   <!--</select>-->
+               <!--</div>-->
+               <!--<div class="qm-sm-12-12 qm-md-5-12">-->
+                   <!--<select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">-->
+                       <!--<option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>-->
+                       <!--<option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>-->
+                       <!--<option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">Abril</option>-->
+                       <!--<option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mayo</option>-->
+                       <!--<option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Junio</option>-->
+                       <!--<option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Julio</option>-->
+                       <!--<option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">Agosto</option>-->
+                       <!--<option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">Septiembre</option>-->
+                       <!--<option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Octubre</option>-->
+                       <!--<option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">Noviembre</option>-->
+                       <!--<option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Diciembre</option>-->
+                   <!--</select>-->
+               <!--</div>-->
+           <!--</div>-->
+       <!--</div>-->
+       <div [class]="calculatorState.oldtimerType>0 ? 'calculator-message' : 'hide'">
+       <h2 [text]="calculatorState.message1+floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ) +calculatorState.message2"></h2>
+    </div>
 </div>
 
 

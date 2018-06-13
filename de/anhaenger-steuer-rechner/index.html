@@ -1828,6 +1828,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+    white-space: nowrap;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -2220,9 +2221,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 
             <article>
 
-                <!-- <h1>Berechnen Sie die Steuer für Ihren Anhänger</h1> -->
-
-<div class="calculator-container">
+                <div class="calculator-container pure-form pure-form-stacked">
    <amp-state id="calculatorState">
       <script type="application/json">
          {
@@ -2239,84 +2238,85 @@ since IE8 won't execute CSS that contains a CSS3 selector.
          }
       </script>
    </amp-state>
-   <div class="pure-form">
-      <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart </label></div>
-         <div class="qm-sm-12-12 qm-md-6-12"><span>Anhänger</span></div>
-      </div>
-       <div class="pure-g">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in KG<span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein. Die zulässige Gesamtmasse eines Fahrzeugs finden Sie dem Feld F.2 der Zulassungsbescheinigung Teil I. Diese kann von der technisch zulässigen Gesamtmasse abweichen.</span></label>
-           <div class="qm-sm-12-12 qm-md-4-12">
-               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? event.value - calculatorState.drawbarLoad : event.value}})">
-           </div>
-       </div>
-       <div class="pure-g">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Sattel- / Starrdeichsel / Zentralachsanhänger<span class="tooltiptext">NEED TRANSLATION</span></label>
-           <div class="qm-sm-12-12 qm-md-8-12">
-               <select class="form-control qm-sm-12-12 qm-md-11-12" name="semi-trailer" on="change:AMP.setState({calculatorState: {semiTrailer: event.value, totalMassSum: event.value== 1 ? calculatorState.totalMass - calculatorState.drawbarLoad : calculatorState.totalMass}})">
-                   <option value="0">Bitte auswählen</option>
-                   <option value="1">Ja</option>
-                   <option value="2">Nein</option>
-               </select>
-           </div>
-       </div>
+    <!--<div class="pure-g">-->
+        <!--<div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart </label></div>-->
+        <!--<div class="qm-sm-12-12 qm-md-6-12"><span>Anhänger</span></div>-->
+    <!--</div>-->
+    <div class="pure-g">
+        <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+            <label class="tooltip">Zulässige Gesamtmasse in KG<span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein. Die zulässige Gesamtmasse eines Fahrzeugs finden Sie dem Feld F.2 der Zulassungsbescheinigung Teil I. Diese kann von der technisch zulässigen Gesamtmasse abweichen.</span></label>
+            <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
+        </div>
+        <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+            <label class="tooltip">Sattel- / Starrdeichsel / Zentralachsanhänger<span class="tooltiptext">NEED TRANSLATION</span></label>
+            <select class="form-control qm-sm-12-12" name="semi-trailer" on="change:AMP.setState({calculatorState: {semiTrailer: event.value, totalMassSum: event.value== 1 ? calculatorState.totalMass - calculatorState.drawbarLoad : calculatorState.totalMass}})">
+                <option value="0">Bitte auswählen</option>
+                <option value="1">Ja</option>
+                <option value="2">Nein</option>
+            </select>
+        </div>
+    </div>
 
-       <div [class]="calculatorState.semiTrailer==1 ? 'pure-g show' : 'pure-g hide'" class="pure-g hide">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Aufliegelast in KG<span class="tooltiptext"><strong>Sattel-, Starrdeichsel oder Zentralachsanhänger Stützlast / Aufliegelast</strong><br>Bei Sattel-, Starrdeichsel- oder Zentralachsanhängern sind Stützlast oder Aufliegelast die Lasten, die bei einem angehängten Anhänger vom Gesamtgewicht des Anhängers durch das ziehende Fahrzeug getragen werden.</span></label>
-           <div class="qm-sm-12-12 qm-md-4-12">
-               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? calculatorState.totalMass - event.value : calculatorState.totalMass}})">
-           </div>
-       </div>
-       <div class="pure-g">
-               <label class="qm-sm-12-12 qm-md-3-12 tooltip">Saisonkennzeichen<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>
-               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
-               </div>
-               <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                   <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>
-               </div>
-           </div>
-       <div class="pure-g" id="season-div" hidden>
-               <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-               </div>
-               <div class="qm-sm-12-12 qm-md-6-12">
-                   <div class="qm-sm-12-12 qm-md-6-12">
-                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
-                           <option value="1" selected>Januar</option>
-                           <option value="2">Februar</option>
-                           <option value="3">März</option>
-                           <option value="4">April</option>
-                           <option value="5">Mai</option>
-                           <option value="6">Juni</option>
-                           <option value="7">Juli</option>
-                           <option value="8">August</option>
-                           <option value="9">September</option>
-                           <option value="10">Oktober</option>
-                           <option value="11">November</option>
-                       </select>
-                   </div>
-                   <div class="qm-sm-12-12 qm-md-5-12">
-                         <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
-                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
-                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
-                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
-                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
-                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
-                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
-                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
-                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
-                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
-                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
-                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
-                       </select>
-                   </div>
-               </div>
-           </div>
-           <div [class]="calculatorState.totalMassSum>0 ? 'calculator-message' : 'hide'">
-               <h4 [text]="calculatorState.message1+floor(min((floor(ceil(calculatorState.totalMassSum/200)*7.46/12*calculatorState.monthDiff)), 373.24))+calculatorState.message2"></h4>
-           </div>
-       </div>
-   </div>
+    <div class="pure-g">
+        <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+            <div [class]="calculatorState.semiTrailer==1 ? 'pure-g show' : 'pure-g hide'" class="pure-g hide">
+                <label class="tooltip">Aufliegelast in KG<span class="tooltiptext"><strong>Sattel-, Starrdeichsel oder Zentralachsanhänger Stützlast / Aufliegelast</strong><br>Bei Sattel-, Starrdeichsel- oder Zentralachsanhängern sind Stützlast oder Aufliegelast die Lasten, die bei einem angehängten Anhänger vom Gesamtgewicht des Anhängers durch das ziehende Fahrzeug getragen werden.</span></label>
+                <input type="number" class="qm-sm-12-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? calculatorState.totalMass - event.value : calculatorState.totalMass}})">
+            </div>
+        </div>
+        <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+            <div class="pure-g">
+                <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
+                    <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>
+                </div>
+                <div class="button-group qm-sm-12-12 seasonbuttons p-r-10" role="group">
+                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+                    <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pure-g" id="season-div" hidden>
+        <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
+            <label for="month_from">Von</label>
+            <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
+                <option value="1" selected>Januar</option>
+                <option value="2">Februar</option>
+                <option value="3">März</option>
+                <option value="4">April</option>
+                <option value="5">Mai</option>
+                <option value="6">Juni</option>
+                <option value="7">Juli</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+            </select>
+        </div>
+
+        <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
+            <label for="month_to">Bis</label>
+            <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
+                <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
+                <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
+                <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
+                <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
+                <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
+                <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
+                <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
+                <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
+                <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
+                <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
+                <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
+            </select>
+        </div>
+    </div>
+
+    <div [class]="calculatorState.totalMassSum>0 ? 'calculator-message' : 'hide'">
+        <h2 [text]="calculatorState.message1+floor(min((floor(ceil(calculatorState.totalMassSum/200)*7.46/12*calculatorState.monthDiff)), 373.24))+calculatorState.message2"></h2>
+    </div>
+</div>
 
 
 <p>Die Höhe der Kfz-Steuer für zulassungspflichtige Anhänger ist abhängig von dem verkehrsrechtlich zulässigen Gesamtgewicht. Der Maximalbetrag für Anhänger beträgt jedoch 373,24 Euro. Wie hoch die Kfz-Steuer genau für Ihren Anhänger ist, lässt sich mit dem Anhänger-Steuer Rechner schnell und einfach berechnen. Durch die Live-Berechnung wissen Sie sofort, mit wie viel Steuer Sie zu rechnen haben.</p>

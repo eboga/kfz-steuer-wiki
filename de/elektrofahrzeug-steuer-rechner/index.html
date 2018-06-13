@@ -1828,6 +1828,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+    white-space: nowrap;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -2220,9 +2221,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 
             <article>
 
-                <!-- <h1>Hier die Steuer für Ihr Elektrofahrzeug berechnen</h1> -->
-
-<div class="calculator-container">
+                <div class="calculator-container pure-form pure-form-stacked">
    <amp-state id="calculatorState">
       <script type="application/json">
          {
@@ -2237,81 +2236,131 @@ since IE8 won't execute CSS that contains a CSS3 selector.
          }
       </script>
    </amp-state>
-   <div class="pure-form">
-      <div class="pure-g">
-         <div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart </label></div>
-         <div class="qm-sm-12-12 qm-md-6-12"><span>Elektrofahrzeuge</span></div>
-      </div>
-       <div class="pure-g">
-           <label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in KG*<span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>
-           <div class="qm-sm-12-12 qm-md-4-12">
-               <input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
-           </div>
-       </div>
-       <div class="pure-g">
-             <label class="qm-sm-12-12 qm-md-3-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>
-             <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
-             </div>
-             <div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-                 <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>
-             </div>
-         </div>
-        <div class="pure-g" id="season-div" hidden>
-               <div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">
-               </div>
-               <div class="qm-sm-12-12 qm-md-6-12">
-                   <div class="qm-sm-12-12 qm-md-6-12">
-                       <select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">
-                           <option value="1" selected>Januar</option>
-                           <option value="2">Februar</option>
-                           <option value="3">März</option>
-                           <option value="4">April</option>
-                           <option value="5">Mai</option>
-                           <option value="6">Juni</option>
-                           <option value="7">Juli</option>
-                           <option value="8">August</option>
-                           <option value="9">September</option>
-                           <option value="10">Oktober</option>
-                           <option value="11">November</option>
-                       </select>
-                   </div>
-                   <div class="qm-sm-12-12 qm-md-5-12">
-                       <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">
-                           <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
-                           <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
-                           <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
-                           <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
-                           <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
-                           <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
-                           <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
-                           <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
-                           <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
-                           <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
-                           <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
-                       </select>
-                   </div>
-               </div>
-           </div>
-           <div class="calculator-message" hidden [hidden]="calculatorState.totalMass < 1 ">
-              <amp-list
-                  id="amp-template-id"
-                  src="https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikitrucktax?totalMass=0&monthDiff=12"
-                  [src]="'https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikiecartax?totalMass=' + calculatorState.totalMass + '&monthDiff=' + calculatorState.monthDiff + ''"
-                  width=1280
-                  height=130
-                  layout=responsive>
-                <template type="amp-mustache">
+    <!--<div class="pure-g">-->
+        <!--<div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart </label></div>-->
+        <!--<div class="qm-sm-12-12 qm-md-6-12"><span>Elektrofahrzeuge</span></div>-->
+    <!--</div>-->
+    <div class="pure-g">
+        <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+            <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>
+            <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
+        </div>
+        <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+            <div class="pure-g">
+                <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
+                    <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>
+                </div>
+                <div class="button-group qm-sm-12-12 seasonbuttons p-r-10" role="group">
+                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+                    <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-g" id="season-div" hidden>
+        <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
+            <label for="month_from">Von</label>
+            <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
+                <option value="1" selected>Januar</option>
+                <option value="2">Februar</option>
+                <option value="3">März</option>
+                <option value="4">April</option>
+                <option value="5">Mai</option>
+                <option value="6">Juni</option>
+                <option value="7">Juli</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+            </select>
+        </div>
 
-                  <h4 [text]="calculatorState.message1 + {{title}} + calculatorState.message2"></h4>
+        <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
+            <label for="month_to">Bis</label>
+            <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
+                <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
+                <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
+                <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
+                <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
+                <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
+                <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
+                <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
+                <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
+                <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
+                <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
+                <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
+            </select>
+        </div>
+    </div>
+    <!--<div class="pure-g">-->
+        <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip">Zulässige Gesamtmasse in KG<span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>-->
+        <!--<div class="qm-sm-12-12 qm-md-4-12">-->
+           <!--<input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="pure-g">-->
+        <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Strßenverkehr benutzen dürfen. </span></label>-->
+            <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
+            <!--<button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})"></button>-->
+        <!--</div>-->
+            <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
+            <!--<button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="pure-g" id="season-div" hidden>-->
+       <!--<div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
+       <!--</div>-->
+       <!--<div class="qm-sm-12-12 qm-md-6-12">-->
+           <!--<div class="qm-sm-12-12 qm-md-6-12">-->
+               <!--<select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">-->
+                   <!--<option value="1" selected>Januar</option>-->
+                   <!--<option value="2">Februar</option>-->
+                   <!--<option value="3">März</option>-->
+                   <!--<option value="4">April</option>-->
+                   <!--<option value="5">Mai</option>-->
+                   <!--<option value="6">Juni</option>-->
+                   <!--<option value="7">Juli</option>-->
+                   <!--<option value="8">August</option>-->
+                   <!--<option value="9">September</option>-->
+                   <!--<option value="10">Oktober</option>-->
+                   <!--<option value="11">November</option>-->
+               <!--</select>-->
+           <!--</div>-->
+           <!--<div class="qm-sm-12-12 qm-md-5-12">-->
+               <!--<select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">-->
+                   <!--<option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>-->
+                   <!--<option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>-->
+                   <!--<option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>-->
+                   <!--<option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>-->
+                   <!--<option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>-->
+                   <!--<option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>-->
+                   <!--<option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>-->
+                   <!--<option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>-->
+                   <!--<option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>-->
+                   <!--<option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>-->
+                   <!--<option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>-->
+               <!--</select>-->
+           <!--</div>-->
+       <!--</div>-->
+    <!--</div>-->
+    <div class="calculator-message" hidden [hidden]="calculatorState.totalMass < 1 ">
+      <amp-list
+          id="amp-template-id"
+          src="https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikitrucktax?totalMass=0&monthDiff=12"
+          [src]="'https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikiecartax?totalMass=' + calculatorState.totalMass + '&monthDiff=' + calculatorState.monthDiff + ''"
+          width=1280
+          height=130
+          layout=responsive>
+        <template type="amp-mustache">
 
-                </template>
-              </amp-list>
+          <h4 [text]="calculatorState.message1 + {{title}} + calculatorState.message2"></h4>
+
+        </template>
+      </amp-list>
 
 
-           </div>
-       </div>
-   </div>
+    </div>
+</div>
 
 
 <p>Elektrofahrzeuge haben zahlreiche Vorteile und erfreuen sich immer größerer Beliebtheit. Einer der Vorteile ist der sehr günstige Steuersatz, bzw. die Steuerbefreiung für 10 Jahre für erstmalig zugelassene Elektrofahrzeuge. Wie hoch die Kfz-Steuer für Ihr Elektrofahrauto ist, erfahren Sie schnell und einfach mit dem Kfz-Steuer Rechner für Elektrofahrzeuge. Im Gegensatz zu konventionellen Autos ist hier lediglich das zulässige Gesamtgewicht ausschlaggebend.<br><br>Wissen Sie bereits, ob und wie viel Kfz-Steuer für Ihr Elektroauto anfällt? Mit dem kostenlosen Kfz-Steuer Rechner für Elektrofahrzeuge ermitteln Sie die Höhe der Kfz-Steuer individuell für Ihr Fahrzeug - schnell und einfach. Jetzt live und unverbindlich berechnen.</p>

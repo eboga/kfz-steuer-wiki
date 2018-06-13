@@ -1828,6 +1828,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     line-height: normal;
     font-weight: bold;
     padding-bottom: 14px;
+    white-space: nowrap;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -2258,37 +2259,9 @@ since IE8 won't execute CSS that contains a CSS3 selector.
         </div>
     </div>
 
-    <!--<div class="pure-g">-->
-       <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip">Emission class<span class="tooltiptext">NEED TRANSLATION</span></label>-->
-       <!--<div class="qm-sm-12-12 qm-md-8-12">-->
-           <!--<select class="form-control qm-sm-12-12 qm-md-11-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">-->
-               <!--<option value="">Please select</option>-->
-               <!--<option value="a1">S2 or better</option>-->
-               <!--<option value="a2">S1</option>-->
-               <!--<option value="a3">G1</option>-->
-               <!--<option value="a4">other</option>-->
-           <!--</select>-->
-       <!--</div>-->
-   <!--</div>-->
-   <!--<div class="pure-g">-->
-       <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip">Permitted total mass<span class="tooltiptext">Please enter the permitted total mass of the vehicle.</span></label>-->
-       <!--<div class="qm-sm-12-12 qm-md-4-12">-->
-           <!--<input type="number" class="qm-sm-12-12 qm-md-10-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">-->
-       <!--</div>-->
-   <!--</div>-->
-    <!--<div class="pure-g">-->
-         <!--<label class="qm-sm-12-12 qm-md-3-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>-->
-         <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-             <!--<button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>-->
-         <!--</div>-->
-         <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-             <!--<button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal</button>-->
-         <!--</div>-->
-    <!--</div>-->
-
     <div class="pure-g">
         <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-            <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+            <label class="tooltip">Registration period<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
         </div>
         <div class="button-group qm-sm-12-12 qm-md-6-12 seasonbuttons p-r-10" role="group">
             <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
