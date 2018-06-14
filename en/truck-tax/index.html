@@ -681,8 +681,11 @@ body {
     display: flex;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+}
+.pure-g.row {
     margin-bottom: 1.25rem;
 }
+
 .pure-g > div.pure-g {
     margin-bottom: 0;
 }
@@ -1217,12 +1220,7 @@ select option,select option:hover{
          }
       </script>
    </amp-state>
-   <!--<div class="pure-form">-->
-      <!--<div class="pure-g">-->
-         <!--<div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Vehicle Type </label></div>-->
-         <!--<div class="qm-sm-12-12 qm-md-6-12"><span>Truck</span></div>-->
-      <!--</div>-->
-    <div class="pure-g">
+    <div class="pure-g row">
         <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
             <label class="tooltip">Emission class <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
             <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
@@ -1239,7 +1237,7 @@ select option,select option:hover{
         </div>
     </div>
 
-    <div class="pure-g">
+    <div class="pure-g row">
         <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
             <label class="tooltip">Registration period<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
         </div>

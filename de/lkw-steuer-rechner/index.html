@@ -681,8 +681,11 @@ body {
     display: flex;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+}
+.pure-g.row {
     margin-bottom: 1.25rem;
 }
+
 .pure-g > div.pure-g {
     margin-bottom: 0;
 }
@@ -1217,12 +1220,7 @@ select option,select option:hover{
          }
       </script>
    </amp-state>
-   <!--<div class="pure-form">-->
-      <!--<div class="pure-g">-->
-         <!--<div class="qm-sm-12-12 qm-md-3-12"><label class="tooltip">Fahrzeugart </label></div>-->
-         <!--<div class="qm-sm-12-12 qm-md-6-12"><span>Lastkraftwagen</span></div>-->
-      <!--</div>-->
-    <div class="pure-g">
+    <div class="pure-g row">
         <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
             <label class="tooltip">Schadstoffklasse <sub>*</sub><span class="tooltiptext">NEU FORMULIEREN:<br><strong>Emissionsklasse (sog. Euro-Abgasnorm)</strong><br>Die Emissionsklasse dokumentiert den Schadstoffausstoß des Kraftfahrzeugs je Kilometer Fahrleistung. Oft wird die Bezeichnung &quot;Euro-Abgasnorm&quot; oder &quot;Schadstoffnorm&quot; verwendet.</span></label>
             <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
@@ -1239,7 +1237,7 @@ select option,select option:hover{
         </div>
     </div>
 
-    <div class="pure-g">
+    <div class="pure-g row">
         <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
             <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
         </div>
