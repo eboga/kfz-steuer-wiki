@@ -498,12 +498,6 @@ nav .share-box svg.icon {
   line-height: normal;
   margin-bottom: 1.25rem;
 }
-.r-advert {
-  float: right;
-  height: 600px;
-  width: 300px;
-  background-color: rgba(1, 3, 64, .06)
-}
 
 .text-right {
   text-align: right;
@@ -536,17 +530,35 @@ nav .share-box svg.icon {
 
 .vehicle-list a:hover {
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 1px 10px 0 rgba(1, 3, 64, 0.3);
+  box-shadow: 0 1px 10px 0 rgba(1, 3, 64, 0.3);
 }
+/*.vehicle-list a:not(:last-child):hover:after, .vehicle-list a:not(:first-child):hover:after, .vehicle-list a:not(:first-child).active:after, .vehicle-list a:not(:last-child).active:after {*/
+  /*width: 120px;*/
+  /*margin: auto -10px;*/
+/*}*/
+
 .vehicle-list a:hover:after, .vehicle-list a.active:after {
-  height: 9px;
-  width: 100%;
+  width: 120px;
+  margin: auto -10px;
+  height: 10px;
   background: rgb(255, 255, 255);
   content: '';
+  box-shadow: none;
   position: absolute;
-  bottom: -9px;
+  bottom: -10px;
   left: 0;
 }
+.vehicle-list a:last-child:hover:after, .vehicle-list a:last-child.active:after {
+/*.vehicle-list a:last-child.active:after {*/
+  width: 110px;
+  margin: auto 0 auto -10px;
+}
+.vehicle-list a:first-child:hover:after, .vehicle-list a:first-child.active:after {
+/*.vehicle-list a:first-child.active:after {*/
+  width: 110px;
+  margin: auto -10px auto 0;
+}
+
 .sub-text {
   position: absolute;
   bottom: 18px;
@@ -563,8 +575,22 @@ nav .share-box svg.icon {
   background-color: #fff;
   box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
   cursor: default;
+  height: 64px;
   pointer-events: none;
 }
+
+/*.vehicle-list a.color.active:before {*/
+  /*content: "";*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*z-index: -1;*/
+  /*box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);*/
+/*}*/
+
+
 .vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, 0.8); box-shadow: 0px 1px 10px 0 rgba(1, 3, 64, 0.3); }
 .vehicle-list a.color svg.icon { fill: rgba(1, 3, 64, .4); }
 .vehicle-list a.color svg.icon.active { fill: #256bfb; }
@@ -629,8 +655,8 @@ ul.footer-about-us li:last-child {
 }
 body {
     font: normal 1.0625rem/1.5 'Barlow', sans-serif;
-    color: #010340;
-    background-color: rgba(1, 3, 64, 0.08);
+    color: rgba(1, 3, 64, 0.8);
+    background-color: rgba(1, 3, 64, .08);
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -737,9 +763,24 @@ ul.header-language li:first-child:hover, ul.header-language li a:hover {
     text-align: center;
     cursor: pointer;
 }
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.sidebar-box {
+    /*float: right;*/
+    height: 600px;
+    width: 300px;
+    background-color: rgba(1, 3, 64, .06)
+}
+
 .wcb-headline {
     line-height: 1rem;
-    font-size: .8rem;
+    color: rgba(1, 3, 64, 0.5);
+    font-size: .75rem;
 }
 .pure-g .button {
     color: black;
@@ -812,20 +853,20 @@ ul.header-language li:first-child:hover, ul.header-language li a:hover {
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 450px;
-    font-size: .95rem;
+    max-width: 450px;
     object-fit: contain;
     background-color: #ffffff;
     box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
-    color: #333;
     text-align: left;
+    line-height: 1.5;
     padding: .75rem 1.25rem;
     border: 1px solid #ccc;
     margin-left: 1rem;
     font-weight: normal;
-    /* Position the tooltip text - see examples below! */
     position: absolute;
+    bottom: 40px;
     z-index: 1;
+    left: 0;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -861,6 +902,32 @@ select option,select option:hover{
     vertical-align: middle;
     box-sizing: border-box;
 }
+
+.pure-form input[type="text"]:focus,
+.pure-form input[type="password"]:focus,
+.pure-form input[type="email"]:focus,
+.pure-form input[type="url"]:focus,
+.pure-form input[type="date"]:focus,
+.pure-form input[type="month"]:focus,
+.pure-form input[type="time"]:focus,
+.pure-form input[type="datetime"]:focus,
+.pure-form input[type="datetime-local"]:focus,
+.pure-form input[type="week"]:focus,
+.pure-form input[type="number"]:focus,
+.pure-form input[type="search"]:focus,
+.pure-form input[type="tel"]:focus,
+.pure-form input[type="color"]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+    outline: 0;
+    border-color: #256bfb;
+}
+
+.pure-form button:focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
 .pure-form label {
     line-height: normal;
     font-weight: 600;
@@ -897,12 +964,13 @@ span.tooltiptext {
     background: url("/assets/svg/arrow.svg") white no-repeat 98.5%;
     background: url("/assets/svg/arrow.svg") white no-repeat calc(100% - 10px);
     background-size: 13px 7px;
-}
-.pure-form select, select#month_from, select#month_to {
+/*}*/
+/*.pure-form select, select#month_from, select#month_to {*/
     padding: 0.5em 0.6em;
     display: inline-block;
     border: 1px solid #ccc;
-    box-shadow: inset 0 1px 3px #ddd;
+    /*box-shadow: inset 0 1px 3px #ddd;*/
+    box-shadow: inset 0 0 0 #ddd;
     border-radius: 4px;
     vertical-align: middle;
     box-sizing: border-box;
@@ -1253,10 +1321,18 @@ span.tooltiptext {
         </div>
 
         <div class="qm-lg-4-12 show-for-large">
-            <div class="r-advert">
-            </div>
-            <div class="qm-12-12 wcb-headline text-right">
-                Advertising ES
+            <div class="sidebar">
+                <!--<div class="qm-sm-12-12">-->
+                    <div class="sidebar-box">
+
+                    </div>
+                    <div class="wcb-headline">
+                        Advertising ES
+                    </div>
+                <!--</div>-->
+                <!--<div class="qm-sm-12-12 wcb-headline">-->
+                    <!--Advertising ES-->
+                <!--</div>-->
             </div>
         </div>
     </div>

@@ -522,8 +522,8 @@ ul.footer-about-us li:last-child {
 }
 body {
     font: normal 1.0625rem/1.5 'Barlow', sans-serif;
-    color: #010340;
-    background-color: rgba(1, 3, 64, 0.08);
+    color: rgba(1, 3, 64, 0.8);
+    background-color: rgba(1, 3, 64, .08);
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -630,9 +630,24 @@ ul.header-language li:first-child:hover, ul.header-language li a:hover {
     text-align: center;
     cursor: pointer;
 }
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.sidebar-box {
+    /*float: right;*/
+    height: 600px;
+    width: 300px;
+    background-color: rgba(1, 3, 64, .06)
+}
+
 .wcb-headline {
     line-height: 1rem;
-    font-size: .8rem;
+    color: rgba(1, 3, 64, 0.5);
+    font-size: .75rem;
 }
 .pure-g .button {
     color: black;
@@ -705,20 +720,20 @@ ul.header-language li:first-child:hover, ul.header-language li a:hover {
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 450px;
-    font-size: .95rem;
+    max-width: 450px;
     object-fit: contain;
     background-color: #ffffff;
     box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
-    color: #333;
     text-align: left;
+    line-height: 1.5;
     padding: .75rem 1.25rem;
     border: 1px solid #ccc;
     margin-left: 1rem;
     font-weight: normal;
-    /* Position the tooltip text - see examples below! */
     position: absolute;
+    bottom: 40px;
     z-index: 1;
+    left: 0;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
