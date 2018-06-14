@@ -549,8 +549,8 @@ nav .share-box svg.icon {
 }
 
 .vehicle-list a:hover {
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 1px 10px 0 rgba(1, 3, 64, 0.3);
+  /*background: rgba(255, 255, 255, 1);*/
+  /*box-shadow: 0 1px 10px 0 rgba(1, 3, 64, 0.3);*/
 }
 
 .vehicle-list a:hover:after, .vehicle-list a.active:after {
@@ -593,7 +593,7 @@ nav .share-box svg.icon {
   pointer-events: none;
 }
 
-.vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, 0.8); box-shadow: 0px 1px 10px 0 rgba(1, 3, 64, 0.3); }
+.vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, .8); }
 .vehicle-list a.color svg.icon { fill: rgba(1, 3, 64, .4); }
 .vehicle-list a.color svg.icon.active { fill: #256bfb; }
 .vehicle-list a:not(.active):hover.color svg.icon { fill: rgba(1, 3, 64, .6); }
@@ -671,11 +671,11 @@ body {
 
 .wrapper {
     margin: 0 auto;
-    max-width: 62.5em;
+    max-width: 62.5rem;
 }
 
 .pure-g {
-    /*max-width: 62.5rem;*/
+    max-width: 62.5rem;
     margin-right: auto;
     margin-left: auto;
     display: -ms-flexbox;
@@ -849,20 +849,24 @@ ul.header-language li:first-child:hover a, ul.header-language li a:hover {
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
+    font-size: .875rem;
     max-width: 450px;
-    object-fit: contain;
+    min-width: 300px;
+    /*object-fit: contain;*/
     background-color: #ffffff;
     box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     text-align: left;
-    line-height: 1.5;
+    line-height: 1.4;
     padding: .75rem 1.25rem;
     border: 1px solid #ccc;
-    margin-left: 1rem;
     font-weight: normal;
     position: absolute;
     bottom: 40px;
     z-index: 1;
     left: 0;
+}
+span.tooltiptext {
+    white-space: normal;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -930,9 +934,6 @@ select option,select option:hover{
     padding-bottom: 14px;
     display: block;
     white-space: nowrap;
-}
-span.tooltiptext {
-    white-space: normal;
 }
 .pure-form label sub {
     vertical-align: super;
@@ -1102,16 +1103,15 @@ span.tooltiptext {
 
 
 <div class="wrapper">
-    <div class="heading show-for-medium">
-        <h1>KFZ Steuer Rechner - Berechnen Sie Pkw-Steuer für Ihr Fahrzeug</h1>
-        <h2>KFZ-Steuerrechner</h2>
-    </div>
-</div>
-
-
-<div class="wrapper">
     <div class="pure-g">
-      <div class="qm-sm-12-12 qm-md-8-12 content-wrapper">
+        <div class="qm-sm-12-12 show-for-medium">
+            <div class="heading">
+                <h1>KFZ Steuer Rechner - Berechnen Sie Pkw-Steuer für Ihr Fahrzeug</h1>
+                <h2>KFZ-Steuerrechner</h2>
+            </div>
+        </div>
+
+      <div class="qm-sm-12-12 qm-lg-8-12 content-wrapper">
 
           <div class="share-box-wrapper show-for-medium">
     <div class="pure-g">
