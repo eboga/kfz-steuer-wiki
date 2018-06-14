@@ -83,7 +83,7 @@
 /* grids-qmedia.css */
 @media screen and (min-width:0em){.qm-sm-1-12,.qm-sm-10-12,.qm-sm-11-12,.qm-sm-12-12,.qm-sm-2-12,.qm-sm-3-12,.qm-sm-4-12,.qm-sm-5-12,.qm-sm-6-12,.qm-sm-7-12,.qm-sm-8-12,.qm-sm-9-12{display:inline-block;zoom:1;word-spacing:normal;vertical-align:top;text-rendering:auto}.qm-sm-1-12{width:8.3333%}.qm-sm-2-12{width:16.6667%}.qm-sm-3-12{width:25%}.qm-sm-4-12{width:33.3333%}.qm-sm-5-12{width:41.6667%}.qm-sm-6-12{width:50%}.qm-sm-7-12{width:58.3333%}.qm-sm-8-12{width:66.6667%}.qm-sm-9-12{width:75%}.qm-sm-10-12{width:83.3333%}.qm-sm-11-12{width:91.6667%}.qm-sm-12-12{width:100%}}@media screen and (min-width:40em){.qm-md-1-12,.qm-md-10-12,.qm-md-11-12,.qm-md-12-12,.qm-md-2-12,.qm-md-3-12,.qm-md-4-12,.qm-md-5-12,.qm-md-6-12,.qm-md-7-12,.qm-md-8-12,.qm-md-9-12{display:inline-block;zoom:1;word-spacing:normal;vertical-align:top;text-rendering:auto}.qm-md-1-12{width:8.3333%}.qm-md-2-12{width:16.6667%}.qm-md-3-12{width:25%}.qm-md-4-12{width:33.3333%}.qm-md-5-12{width:41.6667%}.qm-md-6-12{width:50%}.qm-md-7-12{width:58.3333%}.qm-md-8-12{width:66.6667%}.qm-md-9-12{width:75%}.qm-md-10-12{width:83.3333%}.qm-md-11-12{width:91.6667%}.qm-md-12-12{width:100%}}@media screen and (min-width:64em){.qm-lg-1-12,.qm-lg-10-12,.qm-lg-11-12,.qm-lg-12-12,.qm-lg-2-12,.qm-lg-3-12,.qm-lg-4-12,.qm-lg-5-12,.qm-lg-6-12,.qm-lg-7-12,.qm-lg-8-12,.qm-lg-9-12{display:inline-block;zoom:1;word-spacing:normal;vertical-align:top;text-rendering:auto}.qm-lg-1-12{width:8.3333%}.qm-lg-2-12{width:16.6667%}.qm-lg-3-12{width:25%}.qm-lg-4-12{width:33.3333%}.qm-lg-5-12{width:41.6667%}.qm-lg-6-12{width:50%}.qm-lg-7-12{width:58.3333%}.qm-lg-8-12{width:66.6667%}.qm-lg-9-12{width:75%}.qm-lg-10-12{width:83.3333%}.qm-lg-11-12{width:91.6667%}.qm-lg-12-12{width:100%}}
 
-table {margin: 4rem 0; border-collapse: collapse; border-spacing: 0; empty-cells: show; width: 100%;}
+table {margin: 2rem 0 5rem 0; border-collapse: collapse; border-spacing: 0; empty-cells: show; width: 100%;}
 table td, table th { margin: 0; overflow: visible; padding: .25rem 0; vertical-align: initial; }
 table thead { border-bottom: 1px #333 solid; text-align: left; }
 table tr { border-bottom: 1px #888 solid; text-align: left; }
@@ -476,7 +476,7 @@ nav .share-box svg.icon {
 
 .share-box-button a.e { color: #444; }
 .share-box-button a.e:hover {color: #fff; background-color: #444; }
-.share-box-button a.e svg.icon, .header-share-box-button a.e svg.icon { fill: #444; }
+.share-box-button a.e svg.icon, .header-share-box-button a.e svg.icon { fill: #256bfb; }
 .share-box-button a:hover.e svg.icon { fill: #fff; }
 /* ****************************************************************** */
 /* **************************** /SHARE-BOX ************************** */
@@ -505,9 +505,33 @@ nav .share-box svg.icon {
 
 .vehicle svg.icon {
   height: 30px;
-  width: 27px;
+  /*width: 27px;*/
   padding-top: 12px;
 }
+
+.vehicle .oldtimer svg.icon {
+  width: 38px;
+}
+.vehicle .efz svg.icon {
+  width: 32px;
+}
+.vehicle .anhanger svg.icon {
+  width: 28px;
+}
+
+.vehicle .lkw svg.icon {
+  width: 35px;
+}
+.vehicle .wohnmobil svg.icon {
+  width: 34px;
+}
+.vehicle .pkw svg.icon {
+  width: 32px;
+}
+.vehicle .motorrad svg.icon {
+  width: 27px;
+}
+
 
 .vehicle-list {
   display: flex;
@@ -532,10 +556,6 @@ nav .share-box svg.icon {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 1px 10px 0 rgba(1, 3, 64, 0.3);
 }
-/*.vehicle-list a:not(:last-child):hover:after, .vehicle-list a:not(:first-child):hover:after, .vehicle-list a:not(:first-child).active:after, .vehicle-list a:not(:last-child).active:after {*/
-  /*width: 120px;*/
-  /*margin: auto -10px;*/
-/*}*/
 
 .vehicle-list a:hover:after, .vehicle-list a.active:after {
   width: 120px;
@@ -549,19 +569,17 @@ nav .share-box svg.icon {
   left: 0;
 }
 .vehicle-list a:last-child:hover:after, .vehicle-list a:last-child.active:after {
-/*.vehicle-list a:last-child.active:after {*/
   width: 110px;
   margin: auto 0 auto -10px;
 }
 .vehicle-list a:first-child:hover:after, .vehicle-list a:first-child.active:after {
-/*.vehicle-list a:first-child.active:after {*/
   width: 110px;
   margin: auto -10px auto 0;
 }
 
 .sub-text {
   position: absolute;
-  bottom: 18px;
+  bottom: 22px;
   left: 0;
   right: 0;
   text-align: center;
@@ -578,18 +596,6 @@ nav .share-box svg.icon {
   height: 64px;
   pointer-events: none;
 }
-
-/*.vehicle-list a.color.active:before {*/
-  /*content: "";*/
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*bottom: 0;*/
-  /*left: 0;*/
-  /*right: 0;*/
-  /*z-index: -1;*/
-  /*box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);*/
-/*}*/
-
 
 .vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, 0.8); box-shadow: 0px 1px 10px 0 rgba(1, 3, 64, 0.3); }
 .vehicle-list a.color svg.icon { fill: rgba(1, 3, 64, .4); }
@@ -643,7 +649,6 @@ ul.footer-about-us li:last-child {
 .footer-copyright {
     display: inline;
     font-size: .85em;
-    letter-spacing: 1px;
     color: rgba(1, 3, 64, 0.5);
 }
 /* ****************************************************************** */
@@ -742,9 +747,9 @@ ul.header-language li:first-child, ul.header-language li a  {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
-ul.header-language li:first-child:hover, ul.header-language li a:hover {
+ul.header-language li:first-child:hover a, ul.header-language li a:hover {
     background-color: #fff;
-    box-shadow: 0px 1px 10px 0 rgba(1, 3, 64, 0.08);
+    box-shadow: 0 1px 10px 0 rgba(1, 3, 64, 0.08);
 }
 
 .disclaimer {
@@ -1128,32 +1133,25 @@ span.tooltiptext {
 
                     
                         
-                        <a class="color" rel="nofollow" href="https://kfz-steuer.wiki/en/car-tax/" ><svg class="icon"><use xlink:href="#pkw" /></svg><div class="sub-text">Car</div></a>
-
+                        <a class="pkw color" href="https://kfz-steuer.wiki/en/car-tax/" ><svg class="icon"><use xlink:href="#pkw" /></svg><div class="sub-text">Car</div></a>
                     
                         
-                        <a class="color" rel="nofollow" href="https://kfz-steuer.wiki/en/motorcycle-tax/" ><svg class="icon"><use xlink:href="#motorrad" /></svg><div class="sub-text">Motorcycle</div></a>
-
+                        <a class="motorrad color" href="https://kfz-steuer.wiki/en/motorcycle-tax/" ><svg class="icon"><use xlink:href="#motorrad" /></svg><div class="sub-text">Motorcycle</div></a>
                     
                         
-                        <a class="color" rel="nofollow" href="https://kfz-steuer.wiki/en/camper-tax/" ><svg class="icon"><use xlink:href="#wohnmobil" /></svg><div class="sub-text">RV</div></a>
-
+                        <a class="wohnmobil color" href="https://kfz-steuer.wiki/en/camper-tax/" ><svg class="icon"><use xlink:href="#wohnmobil" /></svg><div class="sub-text">RV</div></a>
                     
                         
-                        <a class="color" rel="nofollow" href="https://kfz-steuer.wiki/en/truck-tax/" ><svg class="icon"><use xlink:href="#lkw" /></svg><div class="sub-text">Truck</div></a>
-
+                        <a class="lkw color" href="https://kfz-steuer.wiki/en/truck-tax/" ><svg class="icon"><use xlink:href="#lkw" /></svg><div class="sub-text">Truck</div></a>
                     
                         
-                        <a class="color" rel="nofollow" href="https://kfz-steuer.wiki/en/trailer-tax/" ><svg class="icon"><use xlink:href="#anhanger" /></svg><div class="sub-text">Trailer</div></a>
-
+                        <a class="anhanger color" href="https://kfz-steuer.wiki/en/trailer-tax/" ><svg class="icon"><use xlink:href="#anhanger" /></svg><div class="sub-text">Trailer</div></a>
                     
                         
-                        <a class="color active" rel="nofollow" href="https://kfz-steuer.wiki/en/electric-vehicle-tax/" ><svg class="icon active"><use xlink:href="#efz" /></svg><div class="sub-text">Electric</div></a>
-
+                        <a class="efz color active" href="https://kfz-steuer.wiki/en/electric-vehicle-tax/" ><svg class="icon active"><use xlink:href="#efz" /></svg><div class="sub-text">Electric</div></a>
                     
                         
-                        <a class="color" rel="nofollow" href="https://kfz-steuer.wiki/en/oldtimer-tax/" ><svg class="icon"><use xlink:href="#oldtimer" /></svg><div class="sub-text">Oldtimer</div></a>
-
+                        <a class="oldtimer color" href="https://kfz-steuer.wiki/en/oldtimer-tax/" ><svg class="icon"><use xlink:href="#oldtimer" /></svg><div class="sub-text">Oldtimer</div></a>
                     
                 </div>
             </div>
@@ -1398,11 +1396,6 @@ span.tooltiptext {
     <symbol id="xing" viewBox="0 0 472.23 472.23"><title>xing</title><path d="M158.668,105.918c-4.949-8.569-11.231-12.851-18.842-12.851H71.59c-4.377,0-7.421,1.429-9.136,4.281 c-2.091,2.855-1.997,6.379,0.288,10.566l45.966,79.656c0.188,0.193,0.188,0.288,0,0.288L36.473,315.763 c-1.903,3.628-1.903,7.05,0,10.287c1.908,3.237,4.854,4.853,8.853,4.853h68.235c7.232,0,13.418-4.377,18.555-13.134 c47.014-83.362,71.475-126.761,73.378-130.188L158.668,105.918z"/><path d="M435.613,14.847c2.095-3.996,2.095-7.517,0-10.562c-1.718-2.851-4.661-4.281-8.85-4.285h-68.806 c-7.426,0-13.515,4.281-18.274,12.847c-97.647,173.209-148.18,262.856-151.607,268.948l96.788,177.586 c4.564,8.565,10.848,12.85,18.842,12.85h68.241c4.186,0,7.225-1.43,9.134-4.284c1.903-3.237,1.808-6.755-0.287-10.567 l-95.93-175.584v-0.284L435.613,14.847z"/></symbol>
     <symbol id="mail" viewBox="0 0 96.264 96.264"><title>mail</title><path d="M94.264,17.132H2c-1.104,0-2,0.896-2,2v58c0,1.104,0.896,2,2,2h92.264c1.104,0,2-0.896,2-2v-58 C96.264,18.028,95.367,17.132,94.264,17.132z M90.929,34.825c0,0.548-0.299,1.052-0.778,1.315l-41.29,22.61 c-0.225,0.123-0.473,0.185-0.721,0.185s-0.496-0.062-0.721-0.184L6.115,36.141c-0.481-0.263-0.78-0.768-0.78-1.316v-7.55 c0-0.525,0.274-1.011,0.724-1.283c0.447-0.271,1.008-0.29,1.472-0.046l39.684,20.762c0.552,0.29,1.301,0.289,1.855-0.001 l39.664-20.76c0.463-0.244,1.021-0.226,1.472,0.046c0.448,0.272,0.724,0.758,0.724,1.283L90.929,34.825L90.929,34.825z"/></symbol>
     <symbol id="facebook" viewBox="0 0 470.513 470.513"><title>facebook</title><path d="M271.521,154.17v-40.541c0-6.086,0.28-10.8,0.849-14.13c0.567-3.335,1.857-6.615,3.859-9.853 c1.999-3.236,5.236-5.47,9.706-6.708c4.476-1.24,10.424-1.858,17.85-1.858h40.539V0h-64.809c-37.5,0-64.433,8.897-80.803,26.691 c-16.368,17.798-24.551,44.014-24.551,78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086H271.521z"/></symbol>
-    <symbol id="computer" viewBox="0 0 522.468 522.469"><title>computer</title>
-        <path d="M325.762,70.513l-17.706-4.854c-2.279-0.76-4.524-0.521-6.707,0.715c-2.19,1.237-3.669,3.094-4.429,5.568L190.426,440.53 c-0.76,2.475-0.522,4.809,0.715,6.995c1.237,2.19,3.09,3.665,5.568,4.425l17.701,4.856c2.284,0.766,4.521,0.526,6.71-0.712 c2.19-1.243,3.666-3.094,4.425-5.564L332.042,81.936c0.759-2.474,0.523-4.808-0.716-6.999 C330.088,72.747,328.237,71.272,325.762,70.513z"/>
-        <path d="M166.167,142.465c0-2.474-0.953-4.665-2.856-6.567l-14.277-14.276c-1.903-1.903-4.093-2.857-6.567-2.857 s-4.665,0.955-6.567,2.857L2.856,254.666C0.95,256.569,0,258.759,0,261.233c0,2.474,0.953,4.664,2.856,6.566l133.043,133.044 c1.902,1.906,4.089,2.854,6.567,2.854s4.665-0.951,6.567-2.854l14.277-14.268c1.903-1.902,2.856-4.093,2.856-6.57 c0-2.471-0.953-4.661-2.856-6.563L51.107,261.233l112.204-112.201C165.217,147.13,166.167,144.939,166.167,142.465z"/>
-        <path d="M519.614,254.663L386.567,121.619c-1.902-1.902-4.093-2.857-6.563-2.857c-2.478,0-4.661,0.955-6.57,2.857l-14.271,14.275 c-1.902,1.903-2.851,4.09-2.851,6.567s0.948,4.665,2.851,6.567l112.206,112.204L359.163,373.442 c-1.902,1.902-2.851,4.093-2.851,6.563c0,2.478,0.948,4.668,2.851,6.57l14.271,14.268c1.909,1.906,4.093,2.854,6.57,2.854 c2.471,0,4.661-0.951,6.563-2.854L519.614,267.8c1.903-1.902,2.854-4.096,2.854-6.57 C522.468,258.755,521.517,256.565,519.614,254.663z"/>
-    </symbol>
 </svg>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hide-svg">
