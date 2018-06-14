@@ -554,7 +554,7 @@ nav .share-box svg.icon {
 }
 
 .vehicle-list a:hover:after, .vehicle-list a.active:after {
-  width: 120px;
+  width: calc(100% + 20px);
   margin: auto -10px;
   height: 10px;
   background: rgb(255, 255, 255);
@@ -661,6 +661,11 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+@media only screen and (min-width: 40em) and (max-width: 63.9375em) {
+    body {
+        padding: 0 .5rem;
+    }
 }
 
 *,
