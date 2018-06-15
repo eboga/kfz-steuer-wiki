@@ -559,14 +559,6 @@ nav .share-box svg.icon {
   bottom: -10px;
   left: 0;
 }
-.vehicle-list a:last-child:hover:after, .vehicle-list a:last-child.active:after {
-  width: 110px;
-  margin: auto 0 auto -10px;
-}
-.vehicle-list a:first-child:hover:after, .vehicle-list a:first-child.active:after {
-  width: 110px;
-  margin: auto -10px auto 0;
-}
 
 .sub-text {
   position: absolute;
@@ -589,12 +581,20 @@ nav .share-box svg.icon {
 }
 
 @media (hover: hover) {
+  .vehicle-list a:last-child:hover:after, .vehicle-list a:last-child.active:after {
+    width: 110px;
+    margin: auto 0 auto -10px;
+  }
+  .vehicle-list a:first-child:hover:after, .vehicle-list a:first-child.active:after {
+    width: 110px;
+    margin: auto -10px auto 0;
+  }
   .vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, .8); }
+  .vehicle-list a:not(.active):hover.color svg.icon { fill: rgba(1, 3, 64, .6); }
 }
 
 .vehicle-list a.color svg.icon { fill: rgba(1, 3, 64, .4); }
 .vehicle-list a.color svg.icon.active { fill: #256bfb; }
-.vehicle-list a:not(.active):hover.color svg.icon { fill: rgba(1, 3, 64, .6); }
 .share-box-wrapper, .share-box-wrapper .pure-g {
   margin-bottom: 0;
 }
