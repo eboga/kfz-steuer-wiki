@@ -571,18 +571,6 @@ nav .share-box svg.icon {
 .vehicle-list {
   display: flex;
 }
-.vehicle-list a {
-  flex-grow: 1;
-  position: relative;
-  line-height: 0;
-  background: rgba(255, 255, 255, 0.5);
-  height: 64px;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  text-align: center;
-}
 .vehicle-list a:not(:last-child) {
   margin-right: 1px;
 }
@@ -593,6 +581,9 @@ nav .share-box svg.icon {
     width: 100%;
     margin: auto 0;
   }
+  .vehicle-list a {
+    height: 42px;
+  }
 }
 
 @media screen and (min-width: 40em) {
@@ -600,7 +591,24 @@ nav .share-box svg.icon {
     width: 110px;
     margin: auto 0 auto -10px;
   }
+  .vehicle-list a {
+    height: 64px;
+  }
 }
+
+.vehicle-list a {
+  flex-grow: 1;
+  position: relative;
+  line-height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  /*height: 64px;*/
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  text-align: center;
+}
+
 
 .vehicle-list a:first-child.active:after {
   width: 110px;
@@ -653,12 +661,25 @@ nav .share-box svg.icon {
 }
 
 .vehicle-list a.color{ color: rgba(1, 3, 64, 0.5); }
+
+
+@media only screen and (max-width: 39.9375em) {
+  .vehicle-list a.color.active {
+    height: 42px;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .vehicle-list a.color.active {
+    height: 64px;
+  }
+}
+
+
 .vehicle-list a.color.active {
   color: #256bfb;
   background-color: #fff;
   box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
   cursor: default;
-  height: 64px;
   pointer-events: none;
 }
 
