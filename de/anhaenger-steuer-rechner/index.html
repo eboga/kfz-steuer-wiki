@@ -107,27 +107,29 @@ nav {
     /* background-color: #254441; */
 }
 nav .share-box-wrapper {
-    display: inline-block;
-    position: absolute;
-    top: 48%;
-    right: 0;
-    transform: translateY(-50%);
+    /*display: inline-block;*/
+    /*position: absolute;*/
+    /*top: 48%;*/
+    /*right: 0;*/
+    /*transform: translateY(-50%);*/
 }
 nav .pure-g {
     margin-bottom: unset;
 }
 nav .wrapper {
-    position: relative;
+    /*position: relative;*/
+    padding-top: 30px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #logo {
-    display: inline-block;
-    padding: 30px 0 25px 0;
-    font-size: 1.5em;
-    color: #fff;
+    align-self: center;
+    line-height: normal;
 }
 #logo a {
-    padding-left: 0;
+    padding: 0;
 }
 #logo a:hover {
     background: transparent;
@@ -142,11 +144,14 @@ nav:after {
     display:table;
     clear:both;
 }
-
-.inline-block {
-    display: inline-block;
-    vertical-align: text-bottom;
+.language-selector {
+    flex-grow: 1;
 }
+/*.inline-block {*/
+    /*display: inline-block;*/
+    /*vertical-align: text-bottom;*/
+/*}*/
+
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
 nav ul {
@@ -158,14 +163,16 @@ nav ul {
 }
 
 nav ul.header-language {
-    margin-left: 50px;
+    flex-grow: 2;
+    margin-left: 1.5rem;
+}
+nav .share-box-wrapper {
 }
 /* Positioning the navigation items inline */
 nav ul li {
     margin: 0;
     display:inline-block;
     float: left;
-    /*background-color: #254441;*/
 }
 
 /* Styling the links */
@@ -312,7 +319,7 @@ ul.menu {
     .burger-icon {
         position: absolute;
         /*top: 6px;*/
-        top: -2rem;
+        top: -.9rem;
         height: 3rem;
         right: 0;
     }
@@ -491,11 +498,11 @@ nav .share-box svg.icon {
 
             .heading h2 {
   margin-top: 0;
-  font-size: 2.25rem;
+  /*font-size: 2.25rem;*/
   font-weight: 600;
   color: #010340;
   line-height: 1;
-  margin-bottom: 3.125rem;
+  /*margin-bottom: 3.125rem;*/
 }
 .heading h1 {
   margin-top: 0;
@@ -503,7 +510,7 @@ nav .share-box svg.icon {
   color: rgba(1, 3, 64, 0.5);
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 1.25rem;
+  /*margin-bottom: 1.25rem;*/
 }
 
 .text-right {
@@ -515,9 +522,16 @@ nav .share-box svg.icon {
 }
 
 @media only screen and (max-width: 39.9375em) {
+  .heading h1 {
+    margin-bottom: .75rem;
+  }
+  .heading h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
   .vehicle-list {
     padding: 0 .25em;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   .vehicle .pkw svg.icon {
     width: 20px;
@@ -544,6 +558,13 @@ nav .share-box svg.icon {
 
 
 @media screen and (min-width: 40em) {
+  .heading h1 {
+    margin-bottom: 1.25rem;
+  }
+  .heading h2 {
+    font-size: 2.25rem;
+    margin-bottom: 3.125rem;
+  }
   .vehicle svg.icon {
     padding-top: 12px;
   }
@@ -628,18 +649,18 @@ nav .share-box svg.icon {
   left: 0;
 }
 @media (hover: hover) {
-  .vehicle-list.calc a:last-child:hover:after {
+  .vehicle-list a:last-child:hover:after {
     width: 110px;
     margin: auto 0 auto -10px;
   }
-  .vehicle-list.calc a:first-child:hover:after {
+  .vehicle-list a:first-child:hover:after {
     width: 110px;
     margin: auto -10px auto 0;
   }
   .vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, .8); }
   .vehicle-list a:not(.active):hover.color svg.icon { fill: rgba(1, 3, 64, .6); }
 
-  .vehicle-list.calc a:hover:after {
+  .vehicle-list a:hover:after {
     width: calc(100% + 20px);
     margin: auto -10px;
     height: 10px;
@@ -651,13 +672,6 @@ nav .share-box svg.icon {
     left: 0;
   }
 }
-.vehicle-list.home a {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .sub-text {
   position: absolute;
   bottom: 22px;
@@ -714,6 +728,82 @@ article .button {
   }
 }
 
+/* ***********************************************************/
+/* *********************** HOME PAGE *********************** */
+/* ***********************************************************/
+@media only screen and (max-width: 39.9375em) {
+  .home-vehicle-list {
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .home-vehicle-list {
+    margin: 0 0 3rem 0;
+  }
+}
+.single-vehicle {
+  position: relative;
+  height: 85px;
+  background: #fff;
+  align-self: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+.single-vehicle a {
+  padding: 1.1rem 0;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  line-height: normal;
+}
+.single-vehicle .pkw svg {
+  width: 38px;
+  height: 22px;
+}
+.single-vehicle .motorrad svg {
+  width: 33px;
+  height: 21px;
+}
+.single-vehicle .wohnmobil svg {
+  width: 41px;
+  height: 25px;
+}
+.single-vehicle .lkw svg {
+  width: 43px;
+  height: 25px;
+}
+.single-vehicle .anhanger svg {
+  width: 35px;
+  height: 23px;
+}
+.single-vehicle .efz svg {
+  width: 39px;
+  height: 22px;
+}
+.single-vehicle .oldtimer svg {
+  width: 46px;
+  height: 21px;
+}
+.single-vehicle .text-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 0 1rem 0;
+  bottom: 0;
+}
+
+.single-vehicle:hover {
+  background: blue;
+}
+.single-vehicle:hover svg, .single-vehicle:hover a span.text-link {
+  fill: white;
+  color: white;
+}
+/* ***********************************************************/
+/* *********************** /HOME PAGE ********************** */
+/* ***********************************************************/
 
             /* ****************************************************************** */
 /* ***************************** FOOTER ***************************** */
@@ -810,15 +900,12 @@ input, select {
     border: 1px solid #e8e8e8;
 }
 
-.home-vehicle-list {
-    margin-bottom: 2rem;}
-
 .sidebar-wrapper {
     margin: 1em auto;
 }
 @media only screen and (max-width: 39.9375em) {
-    .content-wrapper article {
-        padding: 0 .25em;
+    .content-wrapper article, .content-wrapper .heading {
+        padding: 0 .25rem;
     }
 }
 
@@ -916,48 +1003,58 @@ ul.header-language li:first-child {
 
 @media only screen and (max-width: 39.9375em) {
     .calculator-container {
-        padding: 1rem;
-        /*margin: 2em 0;*/
-        /*border: 1px solid #efefef;*/
+        margin-bottom: 50px;
         background-color: #fff;
         box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
-    .calculator-message {
-        background-color: #efefef;
+    .inner-calc {
         padding: 1rem;
+    }
+    .calculator-message h2 {
+        font-size: 1.25rem;
+    }
+    .calculator-message {
+        padding: 18px 20px 18px 20px;
     }
 }
 @media only screen and (min-width: 40em) {
     .calculator-container {
-        padding: 30px;
         margin-bottom: 50px;
         background: #fff;
         box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
-    .calculator-message {
-        background-color: rgba(37, 107, 251, .06);
-        margin: 30px -30px -30px -30px;
-        padding-left: 30px;
-        box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
-        line-height: 1.8;
+    .inner-calc {
+        padding: 30px;
     }
     article > p {
         margin-top: 0;
     }
+    .calculator-message h2 {
+        font-size: 1.5rem;
+    }
+    .calculator-message {
+        padding: 28px 30px 25px 30px;
+    }
+}
+.calculator-message {
+    background-color: rgba(37, 107, 251, .06);
+    /*padding: 28px 30px 25px 30px;*/
 }
 .calculator-message h2 {
-    /*margin: 0;*/
-    /*font-weight: normal;*/
     margin: 0;
-    /*padding: 1rem 0;*/
-    justify-content: baseline;
     font-weight: normal;
-    display: flex;
-    align-items: center;
+    /*font-size: 1.5rem;*/
+    line-height: normal;
+    color: #010340;
 }
-.calculator-message h2 span {
-    color: blue;
+
+.calculator-message span.result {
+    font-weight: 600;
+    color: #256bfb;
 }
+
+
+
 /* Tooltip container */
 .tooltip {
     position: relative;
@@ -1162,14 +1259,14 @@ select option,select option:hover{
 
         <div id="logo">
             <a href="/">
-                <amp-img src="/assets/img/logo.svg" alt="logo.svg" width="148.5" height="20" class="">
+                <amp-img src="/assets/img/kfz-steuer.wiki.svg" alt="kfz-steuer.wiki.svg" width="175" height="21" class="">
                     <noscript>
-                        <img src="/assets/img/logo.svg" alt="logo.svg" height="20" width="30" />
+                        <img src="/assets/img/kfz-steuer.wiki.svg" alt="kfz-steuer.wiki.svg" height="21" width="175" />
                     </noscript>
                 </amp-img></a>
         </div>
 
-        <div class="show-for-medium inline-block">
+        <div class="language-selector show-for-medium">
             <ul class="header-language">
                 <li>
                     <amp-img src="/assets/img/de.svg" alt="kfz-steuer.wiki" width="16" height="12" class="m1">
@@ -1231,7 +1328,7 @@ select option,select option:hover{
 
 <div class="wrapper">
     <div class="pure-g">
-        <div class="qm-sm-12-12 show-for-medium">
+        <div class="qm-sm-12-12 content-wrapper">
             <div class="heading">
                 <h1>Anhängersteuer: Berechnen Sie die Steuer für Ihren Anhänger</h1>
                 <h2>Berechnen Sie die Steuer für Ihren Anhänger</h2>
@@ -1245,7 +1342,7 @@ select option,select option:hover{
     <div class="pure-g">
         <div class="qm-sm-12-12">
             <div class="vehicle share-box-content">
-                <div class="vehicle-list calc">
+                <div class="vehicle-list">
 
                     
                         
@@ -1328,7 +1425,7 @@ select option,select option:hover{
             <article>
 
                 <div class="calculator-container pure-form pure-form-stacked">
-   <amp-state id="calculatorState">
+    <amp-state id="calculatorState">
       <script type="application/json">
          {
             "semiTrailer": "0",
@@ -1343,80 +1440,83 @@ select option,select option:hover{
             "message2"   : " € im Jahr."
          }
       </script>
-   </amp-state>
-    <div class="pure-g row">
-        <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-            <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein. Die zulässige Gesamtmasse eines Fahrzeugs finden Sie dem Feld F.2 der Zulassungsbescheinigung Teil I. Diese kann von der technisch zulässigen Gesamtmasse abweichen.</span></label>
-            <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
-        </div>
-        <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-            <label class="tooltip">Sattel- / Starr- / Zentralanhänger <sub>*</sub><span class="tooltiptext">Sattel- / Starrdeichsel / Zentralachsanhänger</span></label>
-            <select class="form-control qm-sm-12-12" name="semi-trailer" on="change:AMP.setState({calculatorState: {semiTrailer: event.value, totalMassSum: event.value== 1 ? calculatorState.totalMass - calculatorState.drawbarLoad : calculatorState.totalMass}})">
-                <option value="0">Bitte auswählen</option>
-                <option value="1">Ja</option>
-                <option value="2">Nein</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="pure-g row">
-        <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-            <div [class]="calculatorState.semiTrailer==1 ? 'pure-g show' : 'pure-g hide'" class="pure-g hide">
-                <label class="tooltip">Aufliegelast in KG<span class="tooltiptext"><strong>Sattel-, Starrdeichsel oder Zentralachsanhänger Stützlast / Aufliegelast</strong><br>Bei Sattel-, Starrdeichsel- oder Zentralachsanhängern sind Stützlast oder Aufliegelast die Lasten, die bei einem angehängten Anhänger vom Gesamtgewicht des Anhängers durch das ziehende Fahrzeug getragen werden.</span></label>
-                <input type="number" class="qm-sm-12-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? calculatorState.totalMass - event.value : calculatorState.totalMass}})">
+    </amp-state>
+    <div class="inner-calc">
+        <div class="pure-g row">
+            <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+                <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein. Die zulässige Gesamtmasse eines Fahrzeugs finden Sie dem Feld F.2 der Zulassungsbescheinigung Teil I. Diese kann von der technisch zulässigen Gesamtmasse abweichen.</span></label>
+                <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
+            </div>
+            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+                <label class="tooltip">Sattel- / Starr- / Zentralanhänger <sub>*</sub><span class="tooltiptext">Sattel- / Starrdeichsel / Zentralachsanhänger</span></label>
+                <select class="form-control qm-sm-12-12" name="semi-trailer" on="change:AMP.setState({calculatorState: {semiTrailer: event.value, totalMassSum: event.value== 1 ? calculatorState.totalMass - calculatorState.drawbarLoad : calculatorState.totalMass}})">
+                    <option value="0">Bitte auswählen</option>
+                    <option value="1">Ja</option>
+                    <option value="2">Nein</option>
+                </select>
             </div>
         </div>
-        <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-            <div class="pure-g">
-                <div class="qm-md-12-12 qm-sm-12-12">
-                    <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+
+        <div class="pure-g row">
+            <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+                <div [class]="calculatorState.semiTrailer==1 ? 'pure-g show' : 'pure-g hide'" class="pure-g hide">
+                    <label class="tooltip">Aufliegelast in KG<span class="tooltiptext"><strong>Sattel-, Starrdeichsel oder Zentralachsanhänger Stützlast / Aufliegelast</strong><br>Bei Sattel-, Starrdeichsel- oder Zentralachsanhängern sind Stützlast oder Aufliegelast die Lasten, die bei einem angehängten Anhänger vom Gesamtgewicht des Anhängers durch das ziehende Fahrzeug getragen werden.</span></label>
+                    <input type="number" class="qm-sm-12-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value, totalMassSum: calculatorState.semiTrailer== 1 ? calculatorState.totalMass - event.value : calculatorState.totalMass}})">
                 </div>
-                <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
-                    <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
-                    <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>
+            </div>
+            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+                <div class="pure-g">
+                    <div class="qm-md-12-12 qm-sm-12-12">
+                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+                    </div>
+                    <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
+                        <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
+                        <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Saison</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="pure-g row" id="season-div" hidden>
+            <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
+                <label for="month_from">Von</label>
+                <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
+                    <option value="1" selected>Januar</option>
+                    <option value="2">Februar</option>
+                    <option value="3">März</option>
+                    <option value="4">April</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Juni</option>
+                    <option value="7">Juli</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                </select>
+            </div>
+
+            <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
+                <label for="month_to">Bis</label>
+                <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
+                    <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
+                    <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
+                    <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
+                    <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
+                    <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
+                    <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
+                    <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
+                    <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
+                    <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
+                    <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
+                    <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
+                </select>
             </div>
         </div>
     </div>
 
-    <div class="pure-g row" id="season-div" hidden>
-        <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
-            <label for="month_from">Von</label>
-            <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
-                <option value="1" selected>Januar</option>
-                <option value="2">Februar</option>
-                <option value="3">März</option>
-                <option value="4">April</option>
-                <option value="5">Mai</option>
-                <option value="6">Juni</option>
-                <option value="7">Juli</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">Oktober</option>
-                <option value="11">November</option>
-            </select>
-        </div>
-
-        <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
-            <label for="month_to">Bis</label>
-            <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
-                <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Februar</option>
-                <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">März</option>
-                <option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">April</option>
-                <option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mai</option>
-                <option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Juni</option>
-                <option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Juli</option>
-                <option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">August</option>
-                <option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">September</option>
-                <option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Oktober</option>
-                <option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">November</option>
-                <option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Dezember</option>
-            </select>
-        </div>
-    </div>
-
-    <div [class]="calculatorState.totalMassSum>0 ? 'calculator-message' : 'hide'">
-        <h2 [text]="calculatorState.message1+floor(min((floor(ceil(calculatorState.totalMassSum/200)*7.46/12*calculatorState.monthDiff)), 373.24))+calculatorState.message2"></h2>
+    <div class="calculator-message">
+    <!--<div [class]="calculatorState.totalMassSum>0 ? 'calculator-message' : 'hide'">-->
+        <h2 [text]="calculatorState.message1+floor(min((floor(ceil(calculatorState.totalMassSum/200)*7.46/12*calculatorState.monthDiff)), 373.24))+calculatorState.message2">Ihre Kfz-Steuer beträgt <span class="result">0 €</span></h2>
     </div>
 </div>
 

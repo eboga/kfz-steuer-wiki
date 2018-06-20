@@ -105,27 +105,29 @@ nav {
     /* background-color: #254441; */
 }
 nav .share-box-wrapper {
-    display: inline-block;
-    position: absolute;
-    top: 48%;
-    right: 0;
-    transform: translateY(-50%);
+    /*display: inline-block;*/
+    /*position: absolute;*/
+    /*top: 48%;*/
+    /*right: 0;*/
+    /*transform: translateY(-50%);*/
 }
 nav .pure-g {
     margin-bottom: unset;
 }
 nav .wrapper {
-    position: relative;
+    /*position: relative;*/
+    padding-top: 30px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #logo {
-    display: inline-block;
-    padding: 30px 0 25px 0;
-    font-size: 1.5em;
-    color: #fff;
+    align-self: center;
+    line-height: normal;
 }
 #logo a {
-    padding-left: 0;
+    padding: 0;
 }
 #logo a:hover {
     background: transparent;
@@ -140,11 +142,14 @@ nav:after {
     display:table;
     clear:both;
 }
-
-.inline-block {
-    display: inline-block;
-    vertical-align: text-bottom;
+.language-selector {
+    flex-grow: 1;
 }
+/*.inline-block {*/
+    /*display: inline-block;*/
+    /*vertical-align: text-bottom;*/
+/*}*/
+
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
 nav ul {
@@ -156,14 +161,16 @@ nav ul {
 }
 
 nav ul.header-language {
-    margin-left: 50px;
+    flex-grow: 2;
+    margin-left: 1.5rem;
+}
+nav .share-box-wrapper {
 }
 /* Positioning the navigation items inline */
 nav ul li {
     margin: 0;
     display:inline-block;
     float: left;
-    /*background-color: #254441;*/
 }
 
 /* Styling the links */
@@ -310,7 +317,7 @@ ul.menu {
     .burger-icon {
         position: absolute;
         /*top: 6px;*/
-        top: -2rem;
+        top: -.9rem;
         height: 3rem;
         right: 0;
     }
@@ -489,11 +496,11 @@ nav .share-box svg.icon {
 
             .heading h2 {
   margin-top: 0;
-  font-size: 2.25rem;
+  /*font-size: 2.25rem;*/
   font-weight: 600;
   color: #010340;
   line-height: 1;
-  margin-bottom: 3.125rem;
+  /*margin-bottom: 3.125rem;*/
 }
 .heading h1 {
   margin-top: 0;
@@ -501,7 +508,7 @@ nav .share-box svg.icon {
   color: rgba(1, 3, 64, 0.5);
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 1.25rem;
+  /*margin-bottom: 1.25rem;*/
 }
 
 .text-right {
@@ -513,9 +520,16 @@ nav .share-box svg.icon {
 }
 
 @media only screen and (max-width: 39.9375em) {
+  .heading h1 {
+    margin-bottom: .75rem;
+  }
+  .heading h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
   .vehicle-list {
     padding: 0 .25em;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
   .vehicle .pkw svg.icon {
     width: 20px;
@@ -542,6 +556,13 @@ nav .share-box svg.icon {
 
 
 @media screen and (min-width: 40em) {
+  .heading h1 {
+    margin-bottom: 1.25rem;
+  }
+  .heading h2 {
+    font-size: 2.25rem;
+    margin-bottom: 3.125rem;
+  }
   .vehicle svg.icon {
     padding-top: 12px;
   }
@@ -626,18 +647,18 @@ nav .share-box svg.icon {
   left: 0;
 }
 @media (hover: hover) {
-  .vehicle-list.calc a:last-child:hover:after {
+  .vehicle-list a:last-child:hover:after {
     width: 110px;
     margin: auto 0 auto -10px;
   }
-  .vehicle-list.calc a:first-child:hover:after {
+  .vehicle-list a:first-child:hover:after {
     width: 110px;
     margin: auto -10px auto 0;
   }
   .vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, .8); }
   .vehicle-list a:not(.active):hover.color svg.icon { fill: rgba(1, 3, 64, .6); }
 
-  .vehicle-list.calc a:hover:after {
+  .vehicle-list a:hover:after {
     width: calc(100% + 20px);
     margin: auto -10px;
     height: 10px;
@@ -649,13 +670,6 @@ nav .share-box svg.icon {
     left: 0;
   }
 }
-.vehicle-list.home a {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .sub-text {
   position: absolute;
   bottom: 22px;
@@ -712,6 +726,82 @@ article .button {
   }
 }
 
+/* ***********************************************************/
+/* *********************** HOME PAGE *********************** */
+/* ***********************************************************/
+@media only screen and (max-width: 39.9375em) {
+  .home-vehicle-list {
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .home-vehicle-list {
+    margin: 0 0 3rem 0;
+  }
+}
+.single-vehicle {
+  position: relative;
+  height: 85px;
+  background: #fff;
+  align-self: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+.single-vehicle a {
+  padding: 1.1rem 0;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  line-height: normal;
+}
+.single-vehicle .pkw svg {
+  width: 38px;
+  height: 22px;
+}
+.single-vehicle .motorrad svg {
+  width: 33px;
+  height: 21px;
+}
+.single-vehicle .wohnmobil svg {
+  width: 41px;
+  height: 25px;
+}
+.single-vehicle .lkw svg {
+  width: 43px;
+  height: 25px;
+}
+.single-vehicle .anhanger svg {
+  width: 35px;
+  height: 23px;
+}
+.single-vehicle .efz svg {
+  width: 39px;
+  height: 22px;
+}
+.single-vehicle .oldtimer svg {
+  width: 46px;
+  height: 21px;
+}
+.single-vehicle .text-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 0 1rem 0;
+  bottom: 0;
+}
+
+.single-vehicle:hover {
+  background: blue;
+}
+.single-vehicle:hover svg, .single-vehicle:hover a span.text-link {
+  fill: white;
+  color: white;
+}
+/* ***********************************************************/
+/* *********************** /HOME PAGE ********************** */
+/* ***********************************************************/
 
             /* ****************************************************************** */
 /* ***************************** FOOTER ***************************** */
@@ -808,15 +898,12 @@ input, select {
     border: 1px solid #e8e8e8;
 }
 
-.home-vehicle-list {
-    margin-bottom: 2rem;}
-
 .sidebar-wrapper {
     margin: 1em auto;
 }
 @media only screen and (max-width: 39.9375em) {
-    .content-wrapper article {
-        padding: 0 .25em;
+    .content-wrapper article, .content-wrapper .heading {
+        padding: 0 .25rem;
     }
 }
 
@@ -914,48 +1001,58 @@ ul.header-language li:first-child {
 
 @media only screen and (max-width: 39.9375em) {
     .calculator-container {
-        padding: 1rem;
-        /*margin: 2em 0;*/
-        /*border: 1px solid #efefef;*/
+        margin-bottom: 50px;
         background-color: #fff;
         box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
-    .calculator-message {
-        background-color: #efefef;
+    .inner-calc {
         padding: 1rem;
+    }
+    .calculator-message h2 {
+        font-size: 1.25rem;
+    }
+    .calculator-message {
+        padding: 18px 20px 18px 20px;
     }
 }
 @media only screen and (min-width: 40em) {
     .calculator-container {
-        padding: 30px;
         margin-bottom: 50px;
         background: #fff;
         box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
     }
-    .calculator-message {
-        background-color: rgba(37, 107, 251, .06);
-        margin: 30px -30px -30px -30px;
-        padding-left: 30px;
-        box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
-        line-height: 1.8;
+    .inner-calc {
+        padding: 30px;
     }
     article > p {
         margin-top: 0;
     }
+    .calculator-message h2 {
+        font-size: 1.5rem;
+    }
+    .calculator-message {
+        padding: 28px 30px 25px 30px;
+    }
+}
+.calculator-message {
+    background-color: rgba(37, 107, 251, .06);
+    /*padding: 28px 30px 25px 30px;*/
 }
 .calculator-message h2 {
-    /*margin: 0;*/
-    /*font-weight: normal;*/
     margin: 0;
-    /*padding: 1rem 0;*/
-    justify-content: baseline;
     font-weight: normal;
-    display: flex;
-    align-items: center;
+    /*font-size: 1.5rem;*/
+    line-height: normal;
+    color: #010340;
 }
-.calculator-message h2 span {
-    color: blue;
+
+.calculator-message span.result {
+    font-weight: 600;
+    color: #256bfb;
 }
+
+
+
 /* Tooltip container */
 .tooltip {
     position: relative;
@@ -1160,14 +1257,14 @@ select option,select option:hover{
 
         <div id="logo">
             <a href="/">
-                <amp-img src="/assets/img/logo.svg" alt="logo.svg" width="148.5" height="20" class="">
+                <amp-img src="/assets/img/kfz-steuer.wiki.svg" alt="kfz-steuer.wiki.svg" width="175" height="21" class="">
                     <noscript>
-                        <img src="/assets/img/logo.svg" alt="logo.svg" height="20" width="30" />
+                        <img src="/assets/img/kfz-steuer.wiki.svg" alt="kfz-steuer.wiki.svg" height="21" width="175" />
                     </noscript>
                 </amp-img></a>
         </div>
 
-        <div class="show-for-medium inline-block">
+        <div class="language-selector show-for-medium">
             <ul class="header-language">
                 <li>
                     <amp-img src="/assets/img/de.svg" alt="kfz-steuer.wiki" width="16" height="12" class="m1">
@@ -1229,45 +1326,14 @@ select option,select option:hover{
 
 <div class="wrapper">
     <div class="pure-g">
-        <div class="qm-sm-12-12 home-vehicle-list">
+        <div class="qm-sm-12-12 content-wrapper">
             <div class="heading">
                 <h1>KFZ Steuer: alles was sie dazu wissen müssen</h1>
                 <h2>Wählen Sie das Fahrzeug</h2>
             </div>
+        </div>
 
-            <div class="share-box-wrapper show-for-medium">
-    <div class="pure-g">
-        <div class="qm-sm-12-12">
-            <div class="vehicle share-box-content">
-                <div class="vehicle-list home">
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/kfz-steuer-rechner/" ><svg class="icon"><use xlink:href="#pkw" /></svg><div class="sub-text">Pkw</div></a>
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/motorrad-steuer-rechner/" ><svg class="icon"><use xlink:href="#motorrad" /></svg><div class="sub-text">Motorrad</div></a>
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/wohnmobil-steuer-rechner/" ><svg class="icon"><use xlink:href="#wohnmobil" /></svg><div class="sub-text">Wohnmobil</div></a>
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/lkw-steuer-rechner/" ><svg class="icon"><use xlink:href="#lkw" /></svg><div class="sub-text">Lkw</div></a>
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/anhaenger-steuer-rechner/" ><svg class="icon"><use xlink:href="#anhanger" /></svg><div class="sub-text">Anhänger</div></a>
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/elektrofahrzeug-steuer-rechner/" ><svg class="icon"><use xlink:href="#efz" /></svg><div class="sub-text">Elektro</div></a>
-                    
-                        
-                        <a class="color" href="https://kfz-steuer.wiki/de/oldtimer-steuer-rechner/" ><svg class="icon"><use xlink:href="#oldtimer" /></svg><div class="sub-text">Oldtimer</div></a>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        </div>
+        <div class="qm-sm-12-12 qm-lg-8-12 content-wrapper">
 
             
 
@@ -1319,10 +1385,60 @@ select option,select option:hover{
     
     
 </ul>
-        <div class="qm-sm-12-12 qm-md-8-12 home-content-wrapper">
-
 
             <article>
+                <div class="pure-g home-vehicle-list">
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="pkw color" href="https://kfz-steuer.wiki/de/kfz-steuer-rechner/" ><svg class="icon"><use xlink:href="#pkw" /></svg><br><span class="text-link">Pkw</span></a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="motorrad color" href="https://kfz-steuer.wiki/de/motorrad-steuer-rechner/" ><svg class="icon"><use xlink:href="#motorrad" /></svg><br><span class="text-link">Motorrad</span></a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="wohnmobil color" href="https://kfz-steuer.wiki/de/wohnmobil-steuer-rechner/" ><svg class="icon"><use xlink:href="#wohnmobil" /></svg><br><span class="text-link">Wohnmobil</span></a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="lkw color" href="https://kfz-steuer.wiki/de/lkw-steuer-rechner/" ><svg class="icon"><use xlink:href="#lkw" /></svg><br><span class="text-link">Lkw</span></a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="anhanger color" href="https://kfz-steuer.wiki/de/anhaenger-steuer-rechner/" ><svg class="icon"><use xlink:href="#anhanger" /></svg><br><span class="text-link">Anhänger</span></a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="efz color" href="https://kfz-steuer.wiki/de/elektrofahrzeug-steuer-rechner/" ><svg class="icon"><use xlink:href="#efz" /></svg><br><span class="text-link">Elektro</span></a>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="qm-sm-6-12 qm-md-3-12">
+                        <div class="single-vehicle">
+                            <a class="oldtimer color" href="https://kfz-steuer.wiki/de/oldtimer-steuer-rechner/" ><svg class="icon"><use xlink:href="#oldtimer" /></svg><br><span class="text-link">Oldtimer</span></a>
+                        </div>
+                    </div>
+                    
+                </div>
 
                 <h1>Datenschutzerklärung</h1>
 
