@@ -733,19 +733,28 @@ article .button {
   .home-vehicle-list {
     margin: 2rem 0;
   }
+  .home-vehicle-list div:nth-child(odd) .single-vehicle {
+    margin-right: 3px;
+  }
+  .home-vehicle-list div:nth-child(even) .single-vehicle {
+    margin-left: 3px;
+  }
 }
 @media only screen and (min-width: 40em) {
   .home-vehicle-list {
     margin: 0 0 3rem 0;
   }
+  .single-vehicle {
+    margin-right: 5px;
+  }
 }
+
 .single-vehicle {
   position: relative;
   height: 85px;
   background: #fff;
   align-self: center;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   justify-content: center;
 }
 .single-vehicle a {
