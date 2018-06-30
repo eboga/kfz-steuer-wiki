@@ -15,6 +15,8 @@
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     
 
     
@@ -31,7 +33,7 @@
     
 
     <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/es/feed.xml" />
-    <link rel="dns-prefetch" href="//qcdn.de">
+    <link rel="dns-prefetch" href="//form.partner-versicherung.de">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
@@ -495,6 +497,106 @@ nav .share-box svg.icon {
 /* ****************************************************************** */
 /* **************************** /SHARE-BOX ************************** */
 /* ****************************************************************** */
+
+            /* ************************************************************************* */
+/* ****************************** INPAGE BOX ******************************* */
+/* ************************************************************************* */
+.kfz-teaser-box-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+}
+.kfz-teaser-box-usp {
+    font-size: 14px;
+    line-height: 1.61;
+}
+.kfz-teaser-box-usp ul {
+    margin: 0 0 0 20px;
+    list-style: none;
+    padding: 14px 0;
+}
+.kfz-teaser-box-usp ul li svg {
+    height: 12px;
+    width: 18px;
+    margin-left: -19px;
+    fill: #76b960;
+    padding-right: 5px;
+}
+.kfz-teaser-box-text {
+    font-size: 14px;
+    padding: 1rem 0;
+}
+
+.tcpp-iframe-kfz iframe {
+    width: 100%;
+}
+/* ************************************************************************* */
+/* ***************************** /INPAGE BOX ******************************* */
+/* ************************************************************************* */
+
+
+/* ************************************************************************* */
+/* ****************************** SIDEBAR BOX ****************************** */
+/* ************************************************************************* */
+.kfz-teaser-sidebar-box {
+    background: rgba(231, 217, 180, .5);
+    padding: 30px;
+}
+.kfz-teaser-box-sidebar-subtitle {
+    color: #e25d30;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.kfz-teaser-box-sidebar-usp {
+    font-size: 15px;
+    line-height: 1.73;
+    border-bottom: 1px solid rgba(56,59,51,.12);
+}
+.kfz-teaser-box-sidebar-usp ul {
+    margin: 0 0 0 20px;
+    list-style: none;
+    padding: 10px 0;
+}
+.kfz-teaser-box-sidebar-text {
+    font-size: 13px;
+    padding: 10px 0 12px;
+}
+.kfz-teaser-sidebar-box input.kfz-teaser-button {
+    background: #e25d30;
+    color: #fff;
+    font-size: 17px;
+    width: 240px;
+    padding: .7rem 0;
+    margin-top: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 0;
+}
+.kfz-teaser-sidebar-box input.tc24topField {
+    position: relative;
+    width: 52px;
+    left: 28px;
+    height: 28px;
+    top: 5px;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    outline: 0;
+}
+.kfz-teaser-sidebar-box div.tc24topInput {
+    background: url(/assets/img/plate.jpg) 0 0 no-repeat;
+    width: 240px;
+    border: 0;
+    height: 40px;
+    position: relative;
+    background-size: 240px 40px;
+}
+/* ************************************************************************* */
+/* ***************************** /SIDEBAR BOX ****************************** */
+/* ************************************************************************* */
 
             .heading h2 {
   margin-top: 0;
@@ -981,9 +1083,9 @@ ul.header-language li:first-child {
     align-items: flex-end;
 }
 .sidebar-box {
-    height: 600px;
+    /*height: 600px;*/
     width: 300px;
-    background-color: rgba(1, 3, 64, .06)
+    /*background-color: rgba(1, 3, 64, .06)*/
 }
 
 .wcb-headline {
@@ -1001,9 +1103,11 @@ ul.header-language li:first-child {
 }
 
 .wcb {
+    padding: 15px;
     min-height: 250px;
     background-color: #dddde6;
 }
+
 
 /* ****************************************************************** */
 /* ************************* kfz.wiki CUSTOM ************************ */
@@ -1541,11 +1645,39 @@ select option,select option:hover{
         <div class="qm-lg-4-12 show-for-large">
             <div class="sidebar">
                 <div class="sidebar-box">
+                    
+
+<div class="sidebar-box">
+    <div class="kfz-teaser-sidebar-box">
+        <div class="kfz-teaser-box-left">
+            <div class="kfz-teaser-box-title heading-small">Kfz-Versicherung</div>
+            <div class="kfz-teaser-box-sidebar-subtitle">Sparen Sie jetzt bis zu 800,00 €</div>
+            <div class="kfz-teaser-box-sidebar-usp kfz-teaser-box-usp">
+                <ul>
+                    <li><svg class="check"><use xlink:href="#check" /></svg>Über 200 KFZ Versicherungstarife</li>
+                    <li><svg class="check"><use xlink:href="#check" /></svg>Kostenfreier KFZ Tarifrechner</li>
+                    <li><svg class="check"><use xlink:href="#check" /></svg>Online-Sonderkonditionen: Sparen Sie zusätzlich</li>
+                </ul>
+            </div>
+        </div>
+        <div class="kfz-teaser-box-right">
+            <form action="/es/car-insurance-comparison-es/" method="get">
+            <!--<form action="/motorradversicherung/vergleich/#grid24Wrapper" method="get">-->
+                <div class="kfz-teaser-box-text">Ortskennzeichen eingeben und vergleichen</div>
+                <div class="tc24topInput">
+                    <input class="tc24topField" type="text" name="tcpp_okz" maxlength="3" value="" />
+                </div>
+                <input class="kfz-teaser-button" name="tc24_submit" type="submit" value="Tarife vergleichen"  />
+            </form>
+
+        </div>
+    </div>
+</div>
 
                 </div>
-                <div class="wcb-headline">
-                    Advertising ES
-                </div>
+                <!--<div class="wcb-headline">-->
+                    <!--Advertising ES-->
+                <!--</div>-->
             </div>
         </div>
     </div>
@@ -1554,7 +1686,12 @@ select option,select option:hover{
 <div class="wrapper">
     <div class="pure-g">
         <div class="qm-sm-12-12 wcb">
-            &nbsp;
+            <amp-ad width=970 height=250
+                    type="doubleclick"
+                    data-slot="/89800079/kfz-steuer-wiki-wide">
+                <div placeholder></div>
+                <div fallback></div>
+            </amp-ad>
         </div>
         <div class="qm-sm-12-12 wcb-headline text-right">
             Advertising ES
@@ -1574,6 +1711,7 @@ select option,select option:hover{
   <symbol id="xing" viewBox="0 0 472.23 472.23"><title>xing</title><path d="M158.668,105.918c-4.949-8.569-11.231-12.851-18.842-12.851H71.59c-4.377,0-7.421,1.429-9.136,4.281 c-2.091,2.855-1.997,6.379,0.288,10.566l45.966,79.656c0.188,0.193,0.188,0.288,0,0.288L36.473,315.763 c-1.903,3.628-1.903,7.05,0,10.287c1.908,3.237,4.854,4.853,8.853,4.853h68.235c7.232,0,13.418-4.377,18.555-13.134 c47.014-83.362,71.475-126.761,73.378-130.188L158.668,105.918z"/><path d="M435.613,14.847c2.095-3.996,2.095-7.517,0-10.562c-1.718-2.851-4.661-4.281-8.85-4.285h-68.806 c-7.426,0-13.515,4.281-18.274,12.847c-97.647,173.209-148.18,262.856-151.607,268.948l96.788,177.586 c4.564,8.565,10.848,12.85,18.842,12.85h68.241c4.186,0,7.225-1.43,9.134-4.284c1.903-3.237,1.808-6.755-0.287-10.567 l-95.93-175.584v-0.284L435.613,14.847z"/></symbol>
   <symbol id="mail" viewBox="0 0 96.264 96.264"><title>mail</title><path d="M94.264,17.132H2c-1.104,0-2,0.896-2,2v58c0,1.104,0.896,2,2,2h92.264c1.104,0,2-0.896,2-2v-58 C96.264,18.028,95.367,17.132,94.264,17.132z M90.929,34.825c0,0.548-0.299,1.052-0.778,1.315l-41.29,22.61 c-0.225,0.123-0.473,0.185-0.721,0.185s-0.496-0.062-0.721-0.184L6.115,36.141c-0.481-0.263-0.78-0.768-0.78-1.316v-7.55 c0-0.525,0.274-1.011,0.724-1.283c0.447-0.271,1.008-0.29,1.472-0.046l39.684,20.762c0.552,0.29,1.301,0.289,1.855-0.001 l39.664-20.76c0.463-0.244,1.021-0.226,1.472,0.046c0.448,0.272,0.724,0.758,0.724,1.283L90.929,34.825L90.929,34.825z"/></symbol>
   <symbol id="facebook" viewBox="0 0 470.513 470.513"><title>facebook</title><path d="M271.521,154.17v-40.541c0-6.086,0.28-10.8,0.849-14.13c0.567-3.335,1.857-6.615,3.859-9.853 c1.999-3.236,5.236-5.47,9.706-6.708c4.476-1.24,10.424-1.858,17.85-1.858h40.539V0h-64.809c-37.5,0-64.433,8.897-80.803,26.691 c-16.368,17.798-24.551,44.014-24.551,78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086H271.521z"/></symbol>
+  <symbol id="check" viewBox="0 0 25 18"><title>check</title><desc>check</desc><path d="M8.984 17.902l15.68-15.609L22.766.342 8.984 14.088 2.533 7.654.617 9.588l8.367 8.314z"/></symbol>
 </svg>
 
 <footer>
@@ -1590,6 +1728,23 @@ select option,select option:hover{
         </div>
     </div>
 </footer>
+
+
+<!--<amp-analytics type="googleanalytics">-->
+    <!--<script type="application/json">-->
+        <!--{-->
+            <!--"vars": {-->
+                <!--"account": "UA-119875313-1"-->
+            <!--},-->
+            <!--"triggers": {-->
+                <!--"trackPageview": {-->
+                    <!--"on": "visible",-->
+                    <!--"request": "pageview"-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+<!--</amp-analytics>-->
 
 
 </body>
