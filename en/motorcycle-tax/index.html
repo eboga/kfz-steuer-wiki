@@ -585,6 +585,44 @@ nav .share-box svg.icon {
 /* ******************************* /KFZ BOX ******************************** */
 /* ************************************************************************* */
 
+
+.motorbike-teaser-box-sidebar-subtitle {
+    color: #e25d30;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+input.motorbike-teaser-button {
+    background: #e25d30;
+    color: #fff;
+    font-size: 17px;
+    width: 240px;
+    padding: .7rem 0;
+    margin-top: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 0;
+}
+input.tc24topInputMotorbike {
+     position: relative;
+     width: 52px;
+     left: 28px;
+     height: 32px;
+     top: 5px;
+     text-transform: uppercase;
+     font-weight: bold;
+     text-align: center;
+     font-size: 24px;
+     outline: 0;
+     border: 1px solid #a8a8a8;
+ }
+div.tc24topInputMotorbike {
+    background: url(/assets/img/mot-widget-okz.png) no-repeat 0 0;
+    height: 86px;
+    position: relative;
+    left: 50%;
+    margin-left: -25%;}
+
             .heading h2 {
   margin-top: 0;
   /*font-size: 2.25rem;*/
@@ -1619,22 +1657,14 @@ select option,select option:hover{
 <div class="sidebar-box">
     <div class="kfz-teaser-sidebar-box">
         <div class="kfz-teaser-box-left">
-            <div class="kfz-teaser-box-title heading-small">Motorrad-Versicherung</div>
-            <div class="kfz-teaser-box-sidebar-subtitle">Sparen Sie mit uns bis zu 70% bei Ihrer Motorrad-Versicherung</div>
-            <div class="kfz-teaser-box-sidebar-subtitle">Sparen Sie jetzt bis zu 800,00 €</div>
-            <div class="kfz-teaser-box-sidebar-usp kfz-teaser-box-usp">
-                <ul>
-                    <li><svg class="check"><use xlink:href="#check" /></svg>Über 200 KFZ Versicherungstarife</li>
-                    <li><svg class="check"><use xlink:href="#check" /></svg>Kostenfreier KFZ Tarifrechner</li>
-                    <li><svg class="check"><use xlink:href="#check" /></svg>Online-Sonderkonditionen: Sparen Sie zusätzlich</li>
-                </ul>
-            </div>
+            <div class="kfz-teaser-box-title heading-small">Motorradversicherung</div>
+            <div class="motorbike-teaser-box-sidebar-subtitle">Sparen Sie mit uns bis zu 75%</div>
         </div>
-        <div class="kfz-teaser-box-right">
+        <div class="motorbike-teaser-box-right">
             <form action="/en/motorbike-insurance-comparison/" method="get">
                 <div class="kfz-teaser-box-text">Ortskennzeichen eingeben und vergleichen</div>
-                <div class="tc24topInput">
-                    <input class="tc24topField" type="text" name="tcpp_okz" maxlength="3" value="" />
+                <div class="tc24topInputMotorbike">
+                    <input class="tc24topInputMotorbike" type="text" name="tcpp_okz" maxlength="3" value="" />
                 </div>
                 <input class="kfz-teaser-button" name="tc24_submit" type="submit" value="Tarife vergleichen"  />
             </form>
