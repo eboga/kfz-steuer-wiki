@@ -1634,10 +1634,6 @@ select option,select option:hover{
         </div>
     </div>
 
-    <!--<div class="calculator-message" [class]="calculatorState.displacement>0 ? 'calculator-message' : 'hide'">-->
-        <!--<h2 [text]="calculatorState.displacement<125?calculatorState.message1:calculatorState.displacement>0?calculatorState.message2+floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff)+calculatorState.message3:''"></h2>-->
-    <!--</div>-->
-
     <div class="calculator-message">
         <h2 [text]="calculatorState.displacement<125?calculatorState.message1:calculatorState.displacement>0?calculatorState.message2+floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff)+calculatorState.message3:''">Tax on your motorcycle will be <span class="result">0 €</span></h2>
     </div>
