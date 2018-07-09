@@ -1586,8 +1586,8 @@ select option,select option:hover{
             "season"     : "0",
             "co2Diff":    "0",
             "multiplier": "0",
-            "message1"   : "NEED TRANSLATION ",
-            "message2"   : " NEED TRANSLATION",
+            "message1"   : "Die Kfz-Steuer für dieses Fahrzeug beträgt: ",
+            "message2"   : " ",
             "currency"   : " â‚¬ "
          }
       </script>
@@ -1806,7 +1806,7 @@ select option,select option:hover{
         <div class="pure-g row">
 
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Erstzulassung <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                <label class="tooltip">Erstzulassung <sub>*</sub><span class="tooltiptext"><strong>Datum Erstzulassung (EZ)</strong><br>Das EZ-Datum finden Sie im Feld B der Zulassungsbescheinigung Teil I.</span></label>
 
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {emmisionClass: event.value=='a2'||event.value=='a3'||event.value=='a4'?'b1':'', co2Diff: event.value=='a2'||event.value=='a3'||event.value=='a4'?'0':'0', initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
                     <option value="">Bitte auswählen</option>
@@ -1817,7 +1817,7 @@ select option,select option:hover{
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">Hubraum in ccm <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                <label class="tooltip">Hubraum in ccm <sub>*</sub><span class="tooltiptext"><strong>Hubraum</strong><br>Den Hubraum eines Fahrzeugs entnehmen Sie dem Feld P.1 der Zulassungsbescheinigung Teil I.</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
             </div>
         </div>
@@ -1912,7 +1912,7 @@ select option,select option:hover{
 
     </div>
     <div class="calculator-message" >
-        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
+        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><h2 class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 
