@@ -1654,9 +1654,12 @@ select option,select option:hover{
                 height=130
                 layout=responsive>
             <template type="amp-mustache">
-                <h2 [text]="calculatorState.message1 + {{title}} + calculatorState.message2">Tax on your vehicle will be 0 €</h2>
+                 <h2 [text]="calculatorState.message1 ">Tax on your vehicle will be</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2">per year.</h2>
             </template>
         </amp-list>
+    </div>
+   <div class="calculator-message" [hidden]="calculatorState.emmisionClass != 0 && calculatorState.totalMass > 0">
+        <h2 [text]="calculatorState.message1 ">Tax on your vehicle will be</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2">per year.</h2>
     </div>
 </div>
 

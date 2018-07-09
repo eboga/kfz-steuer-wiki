@@ -1639,7 +1639,7 @@ select option,select option:hover{
     </div>
 
 
-    <div class="calculator-message" hidden [hidden]="calculatorState.totalMass < 1 ">
+    <div class="calculator-message" hidden [hidden]="calculatorState.totalMass==0">
       <amp-list
           id="amp-template-id"
           src="https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikitrucktax?totalMass=0&monthDiff=12"
@@ -1648,18 +1648,23 @@ select option,select option:hover{
           height=130
           layout=responsive>
         <template type="amp-mustache">
-
-          <h2 [text]="calculatorState.message1 + {{title}} + calculatorState.message2">NEED TRANSLATION 0 €</h2>
-
+          <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
         </template>
       </amp-list>
+    </div>
 
-
+    <div class="calculator-message" [hidden]="calculatorState.totalMass>0">
+        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
     </div>
 </div>
 
+<amp-bind-macro id="format" arguments="input, suffix" expression="(input.slice(-9, -6))?(input.slice(-9, -6)+'.'+input.slice(-6, -3)+','+input.slice(-2)+' '+suffix):(input.slice(-6, -3)+','+input.slice(-2)+' '+suffix)" />
+
 
 <p>NEED TRANSLATION - Elektrofahrzeuge haben zahlreiche Vorteile und erfreuen sich immer größerer Beliebtheit. Einer der Vorteile ist der sehr günstige Steuersatz, bzw. die Steuerbefreiung für 10 Jahre für erstmalig zugelassene Elektrofahrzeuge. Wie hoch die Kfz-Steuer für Ihr Elektrofahrauto ist, erfahren Sie schnell und einfach mit dem Kfz-Steuer Rechner für Elektrofahrzeuge. Im Gegensatz zu konventionellen Autos ist hier lediglich das zulässige Gesamtgewicht ausschlaggebend.<br><br>Wissen Sie bereits, ob und wie viel Kfz-Steuer für Ihr Elektroauto anfällt? Mit dem kostenlosen Kfz-Steuer Rechner für Elektrofahrzeuge ermitteln Sie die Höhe der Kfz-Steuer individuell für Ihr Fahrzeug - schnell und einfach. Jetzt live und unverbindlich berechnen.</p>
+
+
+
 
 
 

@@ -1649,7 +1649,7 @@ select option,select option:hover{
     </div>
 
 
-   <div class="calculator-message" hidden [hidden]="calculatorState.emmisionClass < 1 || calculatorState.totalMass < 1 ">
+   <div class="calculator-message" hidden [hidden]="calculatorState.emmisionClass =='' || calculatorState.totalMass < 1">
       <amp-list
           id="amp-template-id"
           src="https://gqi6i6ap90.execute-api.us-east-2.amazonaws.com/Calc/kfzsteuerwikitrucktax?emmisionClass=0&totalMass=0&monthDiff=12"
@@ -1658,12 +1658,17 @@ select option,select option:hover{
           height=130
           layout=responsive>
         <template type="amp-mustache">
-          <h2 [text]="calculatorState.totalMass < 3500 || calculatorState.totalMass > 40000  ? calculatorState.message3 :  calculatorState.message1 + {{title}} + calculatorState.message2"></h2>
+          <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
         </template>
       </amp-list>
    </div>
+   <div class="calculator-message" [hidden]="calculatorState.emmisionClass != 0 && calculatorState.totalMass > 0">
+        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
+    </div>
 </div>
 
+
+<amp-bind-macro id="format" arguments="input, suffix" expression="(input.slice(-9, -6))?(input.slice(-9, -6)+'.'+input.slice(-6, -3)+','+input.slice(-2)+' '+suffix):(input.slice(-6, -3)+','+input.slice(-2)+' '+suffix)" />
 
 <p>NEED TRANSLATION - Die Steuer für Ihren Lastwagen lässt sich mit dem Lkw-Steuer Rechner schnell und einfach ermitteln. Für die Berechnung der Steuerklasse für Nutzfahrzeuge werden lediglich das verkehrsrechtlich zulässige Gesamtgewicht sowie die Schadstoffklasse benötigt. Die Besteuerung basiert dabei auf dem Kraftfahrzeugsteuergesetzt (KraftStG).</p>
 

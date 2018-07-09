@@ -1644,7 +1644,7 @@ select option,select option:hover{
     </div>
 
     <div class="calculator-message">
-       <h2 [text]="calculatorState.message1+floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ) +calculatorState.message2">Tax on your vehicle will be <span class="result">0 €</span></h2>
+       <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="format(floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
     </div>
 </div>
 
@@ -1654,6 +1654,14 @@ select option,select option:hover{
 
 
 
+<amp-bind-macro id="format" arguments="input, suffix" expression="(input.slice(-9, -6))?(input.slice(-9, -6)+'.'+input.slice(-6, -3)+','+input.slice(-2)+' '+suffix):(input.slice(-6, -3)+','+input.slice(-2)+' '+suffix)" />
+
+
+
+
+    <div class="calculator-message" >
+        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
+    </div>
 
             </article>
         </div>

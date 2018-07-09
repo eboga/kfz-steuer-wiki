@@ -1579,7 +1579,7 @@ select option,select option:hover{
             "season"      : "0",
             "message1"   : "Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit.",
             "message2"   : "Tax on your motorcycle will be ",
-            "message3"   : "per year."
+            "message3"   : " per year."
          }
       </script>
    </amp-state>
@@ -1638,14 +1638,20 @@ select option,select option:hover{
         </div>
     </div>
 
-    <div class="calculator-message">
-        <h2 [text]="calculatorState.displacement<125?calculatorState.message1:calculatorState.displacement>0?calculatorState.message2+floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff)+calculatorState.message3:''">Tax on your motorcycle will be <span class="result">0 €</span></h2>
+    <div class="calculator-message" [hidden]="calculatorState.displacement>=125">
+        <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit. <span class="result"></span></h2>
+    </div>
+    <div class="calculator-message" hidden [hidden]="calculatorState.displacement<125">
+        <h2 [text]="calculatorState.message2 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </h2><h2 [text]="calculatorState.message3"></h2>
     </div>
 </div>
 
 <p>NEED TRANSLATION - Die Besteuerung von zulassungspflichtigen Motorrädern ist lediglich abhängig vom jeweiligen Hubraum. Die Berechnung übernimmt dann der Motorrad-Steuer Rechner für Sie. Mit der Live-Berechnung erhalten Sie die Höhe der zu erwartenden Steuer für Ihr Motorrad sofort und ohne Aufwand.</p>
 
 
+
+
+<amp-bind-macro id="format" arguments="input, suffix" expression="(input.slice(-9, -6))?(input.slice(-9, -6)+'.'+input.slice(-6, -3)+','+input.slice(-2)+' '+suffix):(input.slice(-6, -3)+','+input.slice(-2)+' '+suffix)" />
 
 
 

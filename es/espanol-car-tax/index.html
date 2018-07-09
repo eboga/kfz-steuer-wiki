@@ -1568,16 +1568,14 @@ select option,select option:hover{
 
             <article>
 
-                <!-- <h1>Car Tax User Title spanish</h1> -->
-
-<div class="calculator-container pure-form pure-form-stacked">
+                <div class="calculator-container pure-form pure-form-stacked">
     <amp-state id="calculatorState">
       <script type="application/json">
          {
             "month"  : "0",
             "year"    : "0",
             "initialRegistration": "",
-            "emmisionClass": "b1",
+            "emmisionClass": "",
             "engineType": "",
             "co2Emissions": "0",
             "displacement": "0",
@@ -1590,7 +1588,7 @@ select option,select option:hover{
             "multiplier": "0",
             "message1"   : "NEED TRANSLATION ",
             "message2"   : " NEED TRANSLATION",
-            "currency"   : " € "
+            "currency"   : " â‚¬ "
          }
       </script>
     </amp-state>
@@ -1810,7 +1808,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
 
-                <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
+                <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {emmisionClass: event.value=='a2'||event.value=='a3'||event.value=='a4'?'b1':'', co2Diff: event.value=='a2'||event.value=='a3'||event.value=='a4'?'0':'0', initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
                     <option value="">NEED TRANSLATION</option>
                     <option value="a1">NEED TRANSLATION</option>
                     <option value="a2">NEED TRANSLATION</option>
@@ -1818,17 +1816,13 @@ select option,select option:hover{
                     <option value="a4">NEED TRANSLATION</option>
                 </select>
             </div>
-
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
             </div>
-
-
         </div>
 
         <div class="pure-g row">
-
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {engineType: event.value, multiplier: calculatorState.initialRegistration!=0 && calculatorState.emmisionClass!=0 && event.value!=0?combinations[calculatorState.initialRegistration][calculatorState.emmisionClass][event.value].multiplier:'0'}})">
@@ -1838,14 +1832,7 @@ select option,select option:hover{
                 </select>
             </div>
 
-            <!--<div class="qm-md-6-12 qm-sm-12-12 p-r-10">-->
-                <!--<label class="tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>-->
-                <!--<input type="number" class="qm-sm-12-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">-->
-            <!--</div>-->
-
-
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
                     <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
@@ -1859,15 +1846,12 @@ select option,select option:hover{
                     </select>
                 </div>
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a1'">
-                    <label class="tooltip">NEED TRANSLATION<span class="tooltiptext">NEED TRANSLATION</span></label>
+                    <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
                         <input type="number" class="qm-sm-12-12 numeric-input" name="co2-emissions" on="input-debounced:AMP.setState({calculatorState: {co2Diff: calculatorState.initialRegistration!=0 && event.value>0?
-                            (event.value>(+combinations[calculatorState.initialRegistration].co2)?event.value-combinations[calculatorState.initialRegistration].co2:event.value)
-                            :'0'}})">
+                        (event.value>(+combinations[calculatorState.initialRegistration].co2)?event.value-combinations[calculatorState.initialRegistration].co2:event.value)
+                        :'0'}})">
                 </div>
             </div>
-
-
-
         </div>
 
 
@@ -1926,61 +1910,16 @@ select option,select option:hover{
         </div>
 
 
-
-
-
-        <!--<div class="pure-g">-->
-            <!--<label class="qm-sm-12-12 qm-md-4-12 tooltip"><span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>-->
-            <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-                <!--<button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-12-12 qm-md-10-12' : 'button button-active qm-sm-12-12 qm-md-10-12'" class="button button-active qm-sm-12-12 qm-md-10-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>-->
-            <!--</div>-->
-            <!--<div class="button-group qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-                <!--<button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-12-12 qm-md-10-12' : 'button qm-sm-12-12 qm-md-10-12'" class="button qm-sm-12-12 qm-md-10-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">Seasonal registration</button>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="pure-g" id="season-div" hidden>-->
-            <!--<div class="qm-sm-12-12 qm-md-3-12" role="group" aria-label="...">-->
-            <!--</div>-->
-            <!--<div class="qm-sm-12-12 qm-md-6-12">-->
-                <!--<div class="qm-sm-12-12 qm-md-6-12">-->
-                    <!--<select name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})" class="form-control qm-sm-12-12 qm-md-10-12">-->
-                        <!--<option value="1" selected>Enero</option>-->
-                        <!--<option value="2">Febrero</option>-->
-                        <!--<option value="3">Marzo</option>-->
-                        <!--<option value="4">Abril</option>-->
-                        <!--<option value="5">Mayo</option>-->
-                        <!--<option value="6">Junio</option>-->
-                        <!--<option value="7">Julio</option>-->
-                        <!--<option value="8">Agosto</option>-->
-                        <!--<option value="9">Septiembre</option>-->
-                        <!--<option value="10">Octubre</option>-->
-                        <!--<option value="11">Noviembre</option>-->
-                    <!--</select>-->
-                <!--</div>-->
-                <!--<div class="qm-sm-12-12 qm-md-5-12">-->
-                    <!--<select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12 qm-md-12-12">-->
-                        <!--<option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>-->
-                        <!--<option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>-->
-                        <!--<option value="4" hidden [hidden]="calculatorState.monthFrom > 3" [selected]="calculatorState.monthFrom == 3">Abril</option>-->
-                        <!--<option value="5" hidden [hidden]="calculatorState.monthFrom > 4" [selected]="calculatorState.monthFrom == 4">Mayo</option>-->
-                        <!--<option value="6" hidden [hidden]="calculatorState.monthFrom > 5" [selected]="calculatorState.monthFrom == 5">Junio</option>-->
-                        <!--<option value="7" hidden [hidden]="calculatorState.monthFrom > 6" [selected]="calculatorState.monthFrom == 6">Julio</option>-->
-                        <!--<option value="8" hidden [hidden]="calculatorState.monthFrom > 7" [selected]="calculatorState.monthFrom == 7">Agosto</option>-->
-                        <!--<option value="9" hidden [hidden]="calculatorState.monthFrom > 8" [selected]="calculatorState.monthFrom == 8">Septiembre</option>-->
-                        <!--<option value="10" hidden [hidden]="calculatorState.monthFrom > 9" [selected]="calculatorState.monthFrom == 9">Octubre</option>-->
-                        <!--<option value="11" hidden [hidden]="calculatorState.monthFrom > 10" [selected]="calculatorState.monthFrom == 10">Noviembre</option>-->
-                        <!--<option value="12" hidden [hidden]="calculatorState.monthFrom > 11" [selected]="calculatorState.monthFrom == 11">Diciembre</option>-->
-                    <!--</select>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
     </div>
-    <div class="calculator-message">
-        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="format(floor(floor((calculatorState.displacement100*calculatorState.multiplier)+(calculatorState.co2Diff*2))/12*calculatorState.monthDiff).toFixed(2), '€')"></h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
+    <div class="calculator-message" >
+        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><h2 class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
     </div>
 </div>
 
 <amp-bind-macro id="format" arguments="input, suffix" expression="(input.slice(-9, -6))?(input.slice(-9, -6)+'.'+input.slice(-6, -3)+','+input.slice(-2)+' '+suffix):(input.slice(-6, -3)+','+input.slice(-2)+' '+suffix)" />
+
+<amp-bind-macro id="prepareResult" arguments="" expression="(calculatorState.displacement100!=0 && calculatorState.multiplier!=0)?((calculatorState.displacement100*calculatorState.multiplier)+((calculatorState.co2Diff)*2)):0" />
+
 
 <p>NEEDS TRANSLATION - Um die Kosten für Ihr Fahrzeug besser planen zu können ist es sinnvoll, beispielsweise die Pkw-Steuer im Voraus zu berechnen. Der Pkw-Steuer Rechner unterstützt Sie dabei und berechnet Ihnen sofort, wie viele Steuern für Ihr Auto anfallen. Bitte beachten Sie, dass die Berechnung nur für Fahrzeuge möglich ist, die nicht für ein Jahr von der Kfz-Steuer befreit waren.</p>
 
