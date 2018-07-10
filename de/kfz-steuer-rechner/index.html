@@ -1806,7 +1806,7 @@ select option,select option:hover{
         <div class="pure-g row">
 
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Erstzulassung <sub>*</sub><span class="tooltiptext"><strong>Datum Erstzulassung (EZ)</strong><br>Das EZ-Datum finden Sie im Feld B der Zulassungsbescheinigung Teil I.</span></label>
+                <label class="tooltip">Erstzulassung <sub>*</sub><span class="tooltiptext"><strong>Erstzulassung (EZ)</strong><br>Das Datum der Erstzulassung (EZ-Datum) steht in der Zulassungsbescheinigung Teil I, Feld B Ihres Pkw.</span></label>
 
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {emmisionClass: event.value=='a2'||event.value=='a3'||event.value=='a4'?'b1':'', co2Diff: event.value=='a2'||event.value=='a3'||event.value=='a4'?'0':'0', initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
                     <option value="">Bitte auswählen</option>
@@ -1817,14 +1817,14 @@ select option,select option:hover{
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">Hubraum in ccm <sub>*</sub><span class="tooltiptext"><strong>Hubraum</strong><br>Den Hubraum eines Fahrzeugs entnehmen Sie dem Feld P.1 der Zulassungsbescheinigung Teil I.</span></label>
+                <label class="tooltip">Hubraum in ccm <sub>*</sub><span class="tooltiptext"><strong>Hubraum</strong><br>Der Hubraum gibt das Hubvolumen des Motors an. Ein großer Hubraum bedeutet oft auch einen hohen Kraftstoffverbrauch. Angaben zum Hubraum Ihres PKW finden Sie in der Zulassungsbescheinigung Teil I, Feld P.1.</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
             </div>
         </div>
 
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Motorart <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                <label class="tooltip">Motorart <sub>*</sub><span class="tooltiptext">Wählen Sie &quot;Dieselmotor&quot; aus, wenn Ihr Pkw einen Selbstzündungsmotor hat. Für Fahrzeuge mit Fremdzündungsmotoren wählen Sie &quot;Otto / Wankel&quot;.</span></label>
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {engineType: event.value, multiplier: calculatorState.initialRegistration!=0 && calculatorState.emmisionClass!=0 && event.value!=0?combinations[calculatorState.initialRegistration][calculatorState.emmisionClass][event.value].multiplier:'0'}})">
                     <option value="">Bitte auswählen</option>
                     <option value="c1">Benziner / Wankel</option>
@@ -1834,7 +1834,7 @@ select option,select option:hover{
 
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
-                    <label class="tooltip">Schadstoffklasse <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                    <label class="tooltip">Schadstoffklasse <sub>*</sub><span class="tooltiptext"><strong>Schadstoffklasse</strong><br>Die Schadstoffklasse wird im Rahmen von Abgasnormen festgelegt. Sie zeigt den Schadstoffausstoß des Fahrzeugs an. Dieser ist ein wichtiger Faktor für die Höhe der Kfz-Steuer: Je niedriger die Klasse, umso höher die Abgaben. Die Schadstoffklasse steht in der Zulassungsbescheinigung Teil I, Punkt 14. In Zulassungsbescheinigungen, die vor 2005 ausgestellt wurden, finden Sie die Information in Feld 1.</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
                         <option value="">Bitte auswählen</option>
                         <option value="b1">Euro 3, D3 und besser</option>
@@ -1846,7 +1846,7 @@ select option,select option:hover{
                     </select>
                 </div>
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a1'">
-                    <label class="tooltip">CO2-Emissionen in g/km <sub>*</sub><span class="tooltiptext">Bitte tragen Sie hier den CO2 Wert des Fahrzeuges ein. Den CO2 Wert finden Sie in dem Feld V.7 der Zulassungsbescheinigung Teil I. <br>Folgende Freigrenzen werden automatisch berücksichtigt:<br>Bei Fahrzeugen mit Erstzulassung vom 01.07.2009 bis 31.12.2011: 120 g/km<br>Bei Fahrzeugen mit Erstzulassung vom 01.01.2012 bis 31.12.2013: 110 g/km<br>Bei Fahrzeugen mit Erstzulassen ab 01.01.2014: 95 g/km</span></label>
+                    <label class="tooltip">CO2-Emissionen in g/km <sub>*</sub><span class="tooltiptext">Den CO2-Wert Ihres Pkw finden Sie in der Zulassungsbescheinigung Teil I, Feld V.7. Folgende Freigrenzen werden automatisch berücksichtigt:<br> Bei Fahrzeugen mit Erstzulassung vom 01.07.2009 – 31.12.2011: 120 g/km<br><br>Bei Fahrzeugen mit Erstzulassung vom 01.01.3012 – 31.12.2013: 110 g/km<br><br>Bei Fahrzeugen mit Erstzulassung ab 01.01.2014: 95 g/km</span></label>
                         <input type="number" class="qm-sm-12-12 numeric-input" name="co2-emissions" on="input-debounced:AMP.setState({calculatorState: {co2Diff: calculatorState.initialRegistration!=0 && event.value>0?
                         (event.value>(+combinations[calculatorState.initialRegistration].co2)?event.value-combinations[calculatorState.initialRegistration].co2:event.value)
                         :'0'}})">
@@ -1861,7 +1861,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
-                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Fahrzeuge können auch nur für einige Monate angemeldet werden. Der Zeitraum ist frei wählbar zwischen 2 und 11 Monaten. Eine solche Saisonzulassung wird durch zwei Ziffern angegeben, die rechts im Nummernschild eingeprägt sind. In diesem Zeitraum ist das Fahrzeug im Straßenverkehr zugelassen.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>

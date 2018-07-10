@@ -1588,11 +1588,11 @@ select option,select option:hover{
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein. Die zulässige Gesamtmasse eines Fahrzeugs finden Sie dem Feld F.2 der Zulassungsbescheinigung Teil I. Diese kann von der technisch zulässigen Gesamtmasse abweichen.</span></label>
+                <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext"><strong>Verkehrsrechtlich zulässige Gesamtmasse</strong><br>Das verkehrsrechtlich zulässige Gesamtgewicht steht in der Zulassungsbescheinigung Teil I, Feld F.2. Beachten Sie, dass es von der technisch zulässigen Gesamtmasse abweichen kann.</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">Sattel- / Starr- / Zentralanhänger <sub>*</sub><span class="tooltiptext">Sattel- / Starrdeichsel / Zentralachsanhänger</span></label>
+                <label class="tooltip">Sattel- / Starr- / Zentralanhänger <sub>*</sub><span class="tooltiptext">Geben Sie an, ob es sich um einen Sattel-, Starr- oder Zentralanhänger handelt.</span></label>
                 <select class="form-control qm-sm-12-12" name="semi-trailer" on="change:AMP.setState({calculatorState: {semiTrailer: event.value}})">
                     <option value="0">Nein</option>
                     <option value="1">Ja</option>
@@ -1603,14 +1603,14 @@ select option,select option:hover{
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div [class]="calculatorState.semiTrailer==1 ? 'pure-g show' : 'pure-g hide'" class="pure-g hide">
-                    <label class="tooltip">Aufliegelast in KG<span class="tooltiptext"><strong>Sattel-, Starrdeichsel oder Zentralachsanhänger Stützlast / Aufliegelast</strong><br>Bei Sattel-, Starrdeichsel- oder Zentralachsanhängern sind Stützlast oder Aufliegelast die Lasten, die bei einem angehängten Anhänger vom Gesamtgewicht des Anhängers durch das ziehende Fahrzeug getragen werden.</span></label>
+                    <label class="tooltip">Aufliegelast in KG<span class="tooltiptext">Die Aufliegelast bei Sattel-, Starr- oder Zentralanhängern ist die Last des Gesamtgewichts des Anhängers, die durch das Zugfahrzeug getragen wird.</span></label>
                     <input type="number" class="qm-sm-12-12 numeric-input" name="drawbar-load" on="input-debounced:AMP.setState({calculatorState: {drawbarLoad: event.value}})">
                 </div>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
-                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Fahrzeuge können auch nur für einige Monate angemeldet werden. Der Zeitraum ist frei wählbar zwischen 2 und 11 Monaten. Eine solche Saisonzulassung wird durch zwei Ziffern angegeben, die rechts im Nummernschild eingeprägt sind. In diesem Zeitraum ist das Fahrzeug im Straßenverkehr zugelassen.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>

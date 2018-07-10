@@ -1587,7 +1587,7 @@ select option,select option:hover{
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Schadstoffklasse <sub>*</sub><span class="tooltiptext">NEU FORMULIEREN:<br><strong>Emissionsklasse (sog. Euro-Abgasnorm)</strong><br>Die Emissionsklasse dokumentiert den Schadstoffausstoß des Kraftfahrzeugs je Kilometer Fahrleistung. Oft wird die Bezeichnung &quot;Euro-Abgasnorm&quot; oder &quot;Schadstoffnorm&quot; verwendet.</span></label>
+                <label class="tooltip">Schadstoffklasse <sub>*</sub><span class="tooltiptext"><strong>Schadstoffklasse</strong><br>Die Schadstoffklasse wird im Rahmen von Abgasnormen festgelegt. Sie zeigt den Schadstoffausstoß des Fahrzeugs an. Dieser ist ein wichtiger Faktor für die Höhe der Kfz-Steuer, je niedriger die Klasse umso höher die Abgaben. Die Schadstoffklasse steht in der Zulassungsbescheinigung Teil I, Punkt 14. In Zulassungsbescheinigungen, die vor 2005 ausgestellt wurden, finden Sie die Information in Feld 1.</span></label>
                 <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
                     <option value="">Bitte auswählen</option>
                     <option value="a1">S2 und besser</option>
@@ -1597,14 +1597,14 @@ select option,select option:hover{
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext">Bitte tragen Sie hier das verkehrsrechtlich zulässigen Gesamtgewicht ein.</span></label>
+                <label class="tooltip">Zulässige Gesamtmasse in KG <sub>*</sub><span class="tooltiptext">Das verkehrsrechtlich zulässige Gesamtgewicht steht in der Zulassungsbescheinigung Teil I, Feld F.2. Beachten Sie, dass es von der technisch zulässigen Gesamtmasse abweichen kann.</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
             </div>
         </div>
 
         <div class="pure-g row">
             <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+                <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Fahrzeuge können auch nur für einige Monate angemeldet werden. Der Zeitraum ist frei wählbar zwischen 2 und 11 Monaten. Eine solche Saisonzulassung wird durch zwei Ziffern angegeben, die rechts im Nummernschild eingeprägt sind. In diesem Zeitraum ist das Fahrzeug im Straßenverkehr zugelassen.</span></label>
             </div>
             <div class="button-group qm-sm-12-12 qm-md-6-12 seasonbuttons p-r-10" role="group">
                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>

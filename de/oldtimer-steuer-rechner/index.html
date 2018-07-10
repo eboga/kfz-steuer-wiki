@@ -1586,7 +1586,7 @@ select option,select option:hover{
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Oldtimerart <sub>*</sub><span class="tooltiptext"><strong>Oldtimerart</strong><br>Bei der Besteuerung von Oldtimern wird nur zwischen Motorrädern und allen anderen Fahrzeugarten unterschieden.</span></label>
+                <label class="tooltip">Oldtimerart <sub>*</sub><span class="tooltiptext">Oldtimer werden pauschal besteuert, dafür gibt es per Gesetz lediglich zwei unterschiedliche Beträge: Einen für Motorräder und einen für alle anderen Fahrzeugarten.</span></label>
                 <select class="form-control qm-sm-12-12" name="oldtimer-type" on="change:AMP.setState({calculatorState: {oldtimerType: event.value}})">
                     <option value="0">Bitte auswählen</option>
                     <option value="1">Sonstige Fahrzeuge</option>
@@ -1596,7 +1596,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Fahrzeuge können auch nur für einige Monate angemeldet werden. Der Zeitraum ist frei wählbar zwischen 2 und 11 Monaten. Eine solche Saisonzulassung wird durch zwei Ziffern angegeben, die rechts im Nummernschild eingeprägt sind. In diesem Zeitraum ist das Fahrzeug im Straßenverkehr zugelassen.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
@@ -1659,9 +1659,6 @@ select option,select option:hover{
 
 
 
-    <div class="calculator-message" >
-        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><h2 class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2"></h2>
-    </div>
 
             </article>
         </div>

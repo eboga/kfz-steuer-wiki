@@ -1586,13 +1586,13 @@ select option,select option:hover{
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Hubraum in ccm <sub>*</sub><span class="tooltiptext">Den Hubraum Ihres Fahrzeuges finden Sie in dem Feld P.1 der Zulassungsbescheinigung Teil I.</span></label>
+                <label class="tooltip">Hubraum in ccm <sub>*</sub><span class="tooltiptext"><strong>Hubraum</strong><br>Der Hubraum gibt das Hubvolumen des Motors an. Ein großer Hubraum bedeutet oft auch einen hohen Kraftstoffverbrauch. Angaben zum Hubraum Ihres Motorrads finden Sie in der Zulassungsbescheinigung Teil I, Feld P.1.</span></label>
                 <input type="number" class="qm-sm-12-12 qm-md-12-12 numeric-input" name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value}})">
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Der Anmeldezeitram ist zwischen <strong>2 bis 11 Monaten</strong> wählbar. Die im Kennzeichen eingeprägten Ziffern sind die Monate an, in denen Sie ihr Fahrzeug im Straßenverkehr benutzen dürfen. </span></label>
+                        <label class="tooltip">Anmeldezeitraum<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Fahrzeuge können auch nur für einige Monate angemeldet werden. Der Zeitraum ist frei wählbar zwischen 2 und 11 Monaten. Eine solche Saisonzulassung wird durch zwei Ziffern angegeben, die rechts im Nummernschild eingeprägt sind. In diesem Zeitraum ist das Fahrzeug im Straßenverkehr zugelassen.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
