@@ -1134,7 +1134,9 @@ ul.header-language li:first-child {
     text-align: center;
 }
 
-
+.blue {
+    color: #256bfb;
+}
 /* ****************************************************************** */
 /* ************************* kfz.wiki CUSTOM ************************ */
 /* ****************************************************************** */
@@ -1577,9 +1579,9 @@ select option,select option:hover{
             "monthTo"    : "12",
             "monthDiff"  : "12",
             "season"      : "0",
-            "message1"   : "Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit.",
-            "message2"   : "Tax on your motorcycle will be ",
-            "message3"   : " per year."
+            "message1"   : "Motorbikes with less 125 cc engines are exempt from tax.",
+            "message2"   : "Tax per year for this vehicle will be:  ",
+            "message3"   : "  "
          }
       </script>
    </amp-state>
@@ -1592,7 +1594,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
@@ -1639,14 +1641,14 @@ select option,select option:hover{
     </div>
 
     <div class="calculator-message" [hidden]="calculatorState.displacement>=125">
-        <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit. <span class="result"></span></h2>
+        <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Motorbikes with less 125 cc engines are exempt from tax. <span class="result"></span></h2>
     </div>
     <div class="calculator-message" hidden [hidden]="calculatorState.displacement<125">
-        <h2 [text]="calculatorState.message2 ">per year.</h2><h2 class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </h2><h2 [text]="calculatorState.message3"></h2>
+        <h2 [text]="calculatorState.message2 "> </h2><h2 class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </h2><h2 [text]="calculatorState.message3"></h2>
     </div>
 </div>
 
-<p>NEED TRANSLATION - Die Besteuerung von zulassungspflichtigen Motorrädern ist lediglich abhängig vom jeweiligen Hubraum. Die Berechnung übernimmt dann der Motorrad-Steuer Rechner für Sie. Mit der Live-Berechnung erhalten Sie die Höhe der zu erwartenden Steuer für Ihr Motorrad sofort und ohne Aufwand.</p>
+<p>&nbsp;</p>
 
 
 
@@ -1738,8 +1740,8 @@ select option,select option:hover{
                 <div class="footer-copyright">&copy;2018 qmedia GmbH</div>
                 <ul class="footer-about-us">
                     <li><a href="/en/imprint/">Imprint</a></li>
-                    <li><a href="/en/contact/">Contact EN</a></li>
-                    <li><a href="/en/privacy/">Privacy EN</a></li>
+                    <li><a href="/en/contact/">Contact</a></li>
+                    <li><a href="/en/privacy/">Privacy</a></li>
                 </ul>
             </div>
         </div>

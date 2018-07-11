@@ -1134,7 +1134,9 @@ ul.header-language li:first-child {
     text-align: center;
 }
 
-
+.blue {
+    color: #256bfb;
+}
 /* ****************************************************************** */
 /* ************************* kfz.wiki CUSTOM ************************ */
 /* ****************************************************************** */
@@ -1578,8 +1580,8 @@ select option,select option:hover{
             "monthTo"    : "12",
             "monthDiff"  : "12",
             "season"     : "0",
-            "message1"   : "Tax on your vehicle will be ",
-            "message2"   : " per year."
+            "message1"   : "Tax per year for this vehicle will be:  ",
+            "message2"   : "  "
          }
       </script>
     </amp-state>
@@ -1592,7 +1594,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
-                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
@@ -1648,20 +1650,20 @@ select option,select option:hover{
           height=130
           layout=responsive>
         <template type="amp-mustache">
-          <h2 [text]="calculatorState.message1 ">Tax on your vehicle will be</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2">per year.</h2>
+          <h2 [text]="calculatorState.message1 ">Tax per year for this vehicle will be: </h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2"> </h2>
         </template>
       </amp-list>
     </div>
 
     <div class="calculator-message" [hidden]="calculatorState.totalMass>0">
-        <h2 [text]="calculatorState.message1 ">Tax on your vehicle will be</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2">per year.</h2>
+        <h2 [text]="calculatorState.message1 ">Tax per year for this vehicle will be: </h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2"> </h2>
     </div>
 </div>
 
 <amp-bind-macro id="format" arguments="input, suffix" expression="(input.slice(-9, -6))?(input.slice(-9, -6)+'.'+input.slice(-6, -3)+','+input.slice(-2)+' '+suffix):(input.slice(-6, -3)+','+input.slice(-2)+' '+suffix)" />
 
 
-<p>NEED TRANSLATION - Elektrofahrzeuge haben zahlreiche Vorteile und erfreuen sich immer größerer Beliebtheit. Einer der Vorteile ist der sehr günstige Steuersatz, bzw. die Steuerbefreiung für 10 Jahre für erstmalig zugelassene Elektrofahrzeuge. Wie hoch die Kfz-Steuer für Ihr Elektrofahrauto ist, erfahren Sie schnell und einfach mit dem Kfz-Steuer Rechner für Elektrofahrzeuge. Im Gegensatz zu konventionellen Autos ist hier lediglich das zulässige Gesamtgewicht ausschlaggebend.<br><br>Wissen Sie bereits, ob und wie viel Kfz-Steuer für Ihr Elektroauto anfällt? Mit dem kostenlosen Kfz-Steuer Rechner für Elektrofahrzeuge ermitteln Sie die Höhe der Kfz-Steuer individuell für Ihr Fahrzeug - schnell und einfach. Jetzt live und unverbindlich berechnen.</p>
+<p> </p>
 
 
 
@@ -1760,8 +1762,8 @@ select option,select option:hover{
                 <div class="footer-copyright">&copy;2018 qmedia GmbH</div>
                 <ul class="footer-about-us">
                     <li><a href="/en/imprint/">Imprint</a></li>
-                    <li><a href="/en/contact/">Contact EN</a></li>
-                    <li><a href="/en/privacy/">Privacy EN</a></li>
+                    <li><a href="/en/contact/">Contact</a></li>
+                    <li><a href="/en/privacy/">Privacy</a></li>
                 </ul>
             </div>
         </div>

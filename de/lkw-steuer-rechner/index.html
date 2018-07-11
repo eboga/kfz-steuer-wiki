@@ -68,8 +68,8 @@
 
     <meta property="og:locale" content="de" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Meine Beispiel-Webseite" />
-    <meta property="og:description" content="Diese Beispiel-Webseite wird Sie begeistern!" />
+    <meta property="og:title" content="KFZ Steuer berechnung - einfach die Steuer für Ihr Fahrzeug berechnen" />
+    <meta property="og:description" content="KFZ Steuer berechnung - einfach die Steuer für Ihr Fahrzeug berechnen" />
     <meta property="og:url" content="" />
     <!--<meta property="og:site_name" content="KFZ Steuerrechner" />-->
     <meta name="twitter:card" content="summary" />
@@ -1134,7 +1134,9 @@ ul.header-language li:first-child {
     text-align: center;
 }
 
-
+.blue {
+    color: #256bfb;
+}
 /* ****************************************************************** */
 /* ************************* kfz.wiki CUSTOM ************************ */
 /* ****************************************************************** */
@@ -1578,8 +1580,8 @@ select option,select option:hover{
             "monthTo"    : "12",
             "monthDiff"  : "12",
             "season"     : "0",
-            "message1"   : "Ihre Kfz-Steuer beträgt ",
-            "message2"   : " im Jahr.",
+            "message1"   : "Die Kfz-Steuer für dieses Fahrzeug beträgt: ",
+            "message2"   : " ",
             "message3"   : " Zulässige Gesamtmasse muss über 3.500 Kilogramm betragen. Maximal jedoch nicht mehr als 40.000 Kilogramm."
          }
       </script>
@@ -1658,12 +1660,12 @@ select option,select option:hover{
           height=130
           layout=responsive>
         <template type="amp-mustache">
-          <h2 [text]="calculatorState.message1 ">Ihre Kfz-Steuer beträgt</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2">im Jahr.</h2>
+          <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2"></h2>
         </template>
       </amp-list>
    </div>
    <div class="calculator-message" [hidden]="calculatorState.emmisionClass != 0 && calculatorState.totalMass > 0">
-        <h2 [text]="calculatorState.message1 ">Ihre Kfz-Steuer beträgt</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2">im Jahr.</h2>
+        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 

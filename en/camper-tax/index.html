@@ -24,12 +24,12 @@
     
     
 
-    <title>Camper tax calculator for Germany 2018 » kfz-steuer.wiki</title>
+    <title>RV and camper tax calculator for Germany 2018 » kfz-steuer.wiki</title>
     <meta name="description" content="">
 
 
     
-    <!--<meta name="description" content="                                                      Emissionsklasse *NEED TRANSLATION - EmissionsklasseDie Emissionsklasse dokumentiert den Schadstoffausst...">-->
+    <!--<meta name="description" content="                                                      Emission class *Emission classPlease select the emission class of your vehicle. You can find this in yo...">-->
     
 
     <link rel="alternate" type="application/rss+xml" title="kfz-steuer.wiki" href="https://kfz-steuer.wiki/en/feed.xml" />
@@ -1134,7 +1134,9 @@ ul.header-language li:first-child {
     text-align: center;
 }
 
-
+.blue {
+    color: #256bfb;
+}
 /* ****************************************************************** */
 /* ************************* kfz.wiki CUSTOM ************************ */
 /* ****************************************************************** */
@@ -1474,8 +1476,8 @@ select option,select option:hover{
     <div class="pure-g">
         <div class="qm-sm-12-12 content-wrapper">
             <div class="heading">
-                <h1>Camper tax calculator for Germany</h1>
-                <h2>Camper tax calculator for Germany</h2>
+                <h1>RV and camper tax calculator for Germany</h1>
+                <h2>Recreational vehicle and camper tax calculator for Germany</h2>
             </div>
         </div>
 
@@ -1578,15 +1580,15 @@ select option,select option:hover{
               "monthTo"       : "12",
               "monthDiff"     : "12",
               "season"        : "0",
-              "message1"      : "Tax on your vehicle will be ",
-              "message2"      : " per year."
+              "message1"      : "Tax per year for this vehicle will be:  ",
+              "message2"      : "  "
          }
       </script>
     </amp-state>
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Emissionsklasse <sub>*</sub><span class="tooltiptext">NEED TRANSLATION - <strong>Emissionsklasse</strong>Die Emissionsklasse dokumentiert den Schadstoffausstoß des Kraftfahrzeugs je Kilometer Fahrleistung. Oft wird die Bezeichnung &quot;Euro-Abgasnorm&quot; oder &quot;Schadstoffnorm&quot; verwendet.</span></label>
+                <label class="tooltip">Emission class <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br>Please select the emission class of your vehicle. You can find this in your permit certificate (&quot;Zulassungsbescheinigung&quot;) part I, under 14. In permit certificate issued before 2005 you find this inforamtion in field 1.</span></label>
                 <select class="form-control qm-sm-12-12 qm-md-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
                     <option value="">Please select</option>
                     <option value="a1">At least S4</option>
@@ -1601,7 +1603,7 @@ select option,select option:hover{
         </div>
         <div class="pure-g row">
             <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Registration period<span class="tooltiptext"><strong>Saisonkennzeichen</strong><br>Die beiden rechts im Saisonkennzeichen eingeprägten Ziffern geben die Monate an, in denen das Fahrzeug auf öffentlichen Straßen betrieben werden darf. Der Zeitraum ist von 2 bis 11 Kalendermonaten frei wählbar.</span></label>
+                <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
             </div>
             <div class="button-group qm-sm-12-12 qm-md-6-12 seasonbuttons p-r-10" role="group">
                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
@@ -1654,19 +1656,45 @@ select option,select option:hover{
                 height=130
                 layout=responsive>
             <template type="amp-mustache">
-                 <h2 [text]="calculatorState.message1 ">Tax on your vehicle will be</h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2">per year.</h2>
+                 <h2 [text]="calculatorState.message1 ">Tax per year for this vehicle will be: </h2><h2 class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </h2><h2 [text]="calculatorState.message2"> </h2>
             </template>
         </amp-list>
     </div>
    <div class="calculator-message" [hidden]="calculatorState.emmisionClass != 0 && calculatorState.totalMass > 0">
-        <h2 [text]="calculatorState.message1 ">Tax on your vehicle will be</h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2">per year.</h2>
+        <h2 [text]="calculatorState.message1 ">Tax per year for this vehicle will be: </h2><h2 class="result_number"> 0,00 € </h2><h2 [text]="calculatorState.message2"> </h2>
     </div>
 </div>
 
 
-<p>Auch für Ihr Wohnmobil fallen Steuern an. Wie hoch diese sind ist abhängig vom verkehrsrechtlich zulässigen Gesamtgewicht sowie der Schadstoffklasse. Mit diesen Werten lässt sich die zu erwartende Steuer für Ihr Reisemobil schnell und individuell berechnen. Für die Schadstoffklasse benötigen Sie die „Emissions-Schlüsselnummer“ (Schadstoff-Schlüsselnummer). Diese finden Sie in Ihren Fahrzeugpapieren. Mit der Schadstoff-Schlüsselnummer können Sie dann im Internet die jeweilige Schadstoffklasse (S1-S6, EEV und Sonstige) schnell ermitteln. Die Berechnung der Steuerhöhe für Ihr Wohnmobil benötigt dann nur noch wenige Sekunden.</p>
+<p>&nbsp;</p>
 
+<p>For RV there are following maximum rates:</p>
 
+<table class="pure-table">
+<thead>
+<tr>
+<th width="30%">Emission class</th>
+<th width="70%">Maximium rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S4</strong></td>
+<td class="blue"><strong>800,00 €</strong></td>
+</tr>
+<tr>
+<td><strong>S2 or S3</strong></td>
+<td class="blue"><strong>1000,00 €</strong></td>
+</tr>
+
+<tr>
+<td><strong>all other</strong></td>
+<td>unlimited</td>
+</tr>
+</tbody>
+</table>
+
+<p>Weitere Informationen zur Berechnungsgrundlage finden sie beim <a href="http://www.zoll.de/DE/Fachthemen/Steuern/Verkehrsteuern/Kraftfahrzeugsteuer/Grundsaetze_Besteuerung/Steuerhoehe/steuerhoehe_node.html#doc34460bodyText4" target="_blank" rel="noopener nofollow">Zoll.</a></p>
 
 
 
@@ -1747,8 +1775,8 @@ select option,select option:hover{
                 <div class="footer-copyright">&copy;2018 qmedia GmbH</div>
                 <ul class="footer-about-us">
                     <li><a href="/en/imprint/">Imprint</a></li>
-                    <li><a href="/en/contact/">Contact EN</a></li>
-                    <li><a href="/en/privacy/">Privacy EN</a></li>
+                    <li><a href="/en/contact/">Contact</a></li>
+                    <li><a href="/en/privacy/">Privacy</a></li>
                 </ul>
             </div>
         </div>

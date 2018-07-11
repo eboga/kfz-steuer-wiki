@@ -68,8 +68,8 @@
 
     <meta property="og:locale" content="de" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Meine Beispiel-Webseite" />
-    <meta property="og:description" content="Diese Beispiel-Webseite wird Sie begeistern!" />
+    <meta property="og:title" content="KFZ Steuer berechnung - einfach die Steuer für Ihr Fahrzeug berechnen" />
+    <meta property="og:description" content="KFZ Steuer berechnung - einfach die Steuer für Ihr Fahrzeug berechnen" />
     <meta property="og:url" content="" />
     <!--<meta property="og:site_name" content="KFZ Steuerrechner" />-->
     <meta name="twitter:card" content="summary" />
@@ -1134,7 +1134,9 @@ ul.header-language li:first-child {
     text-align: center;
 }
 
-
+.blue {
+    color: #256bfb;
+}
 /* ****************************************************************** */
 /* ************************* kfz.wiki CUSTOM ************************ */
 /* ****************************************************************** */
@@ -1846,7 +1848,7 @@ select option,select option:hover{
                     </select>
                 </div>
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a1'">
-                    <label class="tooltip">CO2-Emissionen in g/km <sub>*</sub><span class="tooltiptext">Den CO2-Wert Ihres Pkw finden Sie in der Zulassungsbescheinigung Teil I, Feld V.7. Folgende Freigrenzen werden automatisch berücksichtigt:<br> Bei Fahrzeugen mit Erstzulassung vom 01.07.2009 – 31.12.2011: 120 g/km<br><br>Bei Fahrzeugen mit Erstzulassung vom 01.01.3012 – 31.12.2013: 110 g/km<br><br>Bei Fahrzeugen mit Erstzulassung ab 01.01.2014: 95 g/km</span></label>
+                    <label class="tooltip">CO2-Emissionen in g/km <sub>*</sub><span class="tooltiptext">Den CO2-Wert Ihres Pkw finden Sie in der Zulassungsbescheinigung Teil I, Feld V.7. Folgende Freigrenzen werden automatisch berücksichtigt:<br> Bei Fahrzeugen mit Erstzulassung vom 01.07.2009 – 31.12.2011: 120 g/km<br><br>Bei Fahrzeugen mit Erstzulassung vom 01.01.2012 – 31.12.2013: 110 g/km<br><br>Bei Fahrzeugen mit Erstzulassung ab 01.01.2014: 95 g/km</span></label>
                         <input type="number" class="qm-sm-12-12 numeric-input" name="co2-emissions" on="input-debounced:AMP.setState({calculatorState: {co2Diff: calculatorState.initialRegistration!=0 && event.value>0?
                         (event.value>(+combinations[calculatorState.initialRegistration].co2)?event.value-combinations[calculatorState.initialRegistration].co2:event.value)
                         :'0'}})">
@@ -1937,28 +1939,28 @@ select option,select option:hover{
 <tbody>
 <tr>
 <td>Euro-3 und besser (Grenzwerte bis 2,5 t)</td>
-<td>6,75 €</td>
-<td>15,44 €</td>
+<td class="blue"><strong>6,75 €</strong></td>
+<td class="blue"><strong>15,44 €</strong></td>
 </tr>
 <tr>
 <td>Euro 2</td>
-<td>7,36 €</td>
-<td>16,05 €</td>
+<td class="blue"><strong>7,36 €</strong></td>
+<td class="blue"><strong>16,05 €</strong></td>
 </tr>
 <tr>
 <td>Euro 1</td>
-<td>15,13 €</td>
-<td>27,35 €</td>
+<td class="blue"><strong>15,13 €</strong></td>
+<td class="blue"><strong>27,35 €</strong></td>
 </tr>
 <tr>
 <td>Euro-0 (ehemals ohne Ozonfahrverbot)</td>
-<td>21,07 €</td>
-<td>33,29 €</td>
+<td class="blue"><strong>21,07 €</strong></td>
+<td class="blue"><strong>33,29 €</strong></td>
 </tr>
 <tr>
 <td>Euro-0 (übrige)</td>
-<td>25,36 €</td>
-<td>37,58 €</td>
+<td class="blue"><strong>25,36 €</strong></td>
+<td class="blue"><strong>37,58 €</strong></td>
 </tr>
 </tbody>
 </table>
