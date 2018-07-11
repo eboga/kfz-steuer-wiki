@@ -1183,11 +1183,17 @@ ul.header-language li:first-child {
 .calculator-message h2 {
     margin: 0;
     font-weight: normal;
-    /*font-size: 1.5rem;*/
     line-height: normal;
     color: #010340;
     display: inline;
 }
+
+span.result_number {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #256bfb;
+}
+
 
 .calculator-message span.result {
     font-weight: 600;
@@ -1241,12 +1247,6 @@ span.tooltiptext {
 select option,select option:hover{
     padding:5px;
 }
-
-.result_number {
-    font-weight: bold!important;
-    color: #256bfb!important;
-}
-
 
             .pure-form input[type="text"],
 .pure-form input[type="password"],
@@ -1914,7 +1914,7 @@ select option,select option:hover{
 
     </div>
     <div class="calculator-message" >
-        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><h2 class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </h2><h2 [text]="calculatorState.message2"></h2>
+        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 
