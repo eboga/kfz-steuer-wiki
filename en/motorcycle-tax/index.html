@@ -17,6 +17,9 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        
+        <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        
     
 
     
@@ -1579,7 +1582,7 @@ select option,select option:hover{
             "monthTo"    : "12",
             "monthDiff"  : "12",
             "season"      : "0",
-            "message1"   : "Motorbikes with less 125 cc engines are exempt from tax.",
+            "message1"   : "Motorbikes with engines sizes less than 125 cc are tax exempt.",
             "message2"   : "Tax per year for this vehicle will be:  ",
             "message3"   : "  "
          }
@@ -1588,13 +1591,13 @@ select option,select option:hover{
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Engine size in cc <sub>*</sub><span class="tooltiptext">Please enter your engine size in cc. You find this on your certificate of registration part 1 (Zulassungsbescheinigung) in field P.1.</span></label>
+                <label class="tooltip">Engine size in cc <sub>*</sub><span class="tooltiptext">Please enter your engine displacement size in cubic centimeters (cc). You can find this information on your certificate of registration under Part 1 (&quot;Zulassungsbescheinigung&quot;), Section P.1.</span></label>
                 <input type="number" class="qm-sm-12-12 qm-md-12-12 numeric-input" name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value}})">
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
+                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You may register your vehicle for less than 12 months. You can choose to register between 2 and 11 months. You are allowed to use your car on public roads during this period.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
@@ -1641,7 +1644,7 @@ select option,select option:hover{
     </div>
 
     <div class="calculator-message" [hidden]="calculatorState.displacement>=125">
-        <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Motorbikes with less 125 cc engines are exempt from tax. <span class="result"></span></h2>
+        <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Motorbikes with engines sizes less than 125 cc are tax exempt. <span class="result"></span></h2>
     </div>
     <div class="calculator-message" hidden [hidden]="calculatorState.displacement<125">
         <h2 [text]="calculatorState.message2 "> </h2><span class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </span><h2 [text]="calculatorState.message3"></h2>
@@ -1672,7 +1675,7 @@ select option,select option:hover{
             <div class="motorbike-teaser-box-sidebar-subtitle">Sparen Sie mit uns bis zu 75%</div>
         </div>
         <div class="motorbike-teaser-box-right">
-            <form action="/en/motorbike-insurance-comparison/" method="get">
+            <form action="/en/motorbike-insurance-comparison/" method="get" target="_top">
                 <div class="kfz-teaser-box-text">Ortskennzeichen eingeben und vergleichen</div>
                 <div class="tc24topInputMotorbike">
                     <input class="tc24topInputMotorbike" type="text" name="tcpp_okz" maxlength="3" value="" />

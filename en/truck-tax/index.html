@@ -17,6 +17,7 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        
     
 
     
@@ -1582,14 +1583,14 @@ select option,select option:hover{
             "season"     : "0",
             "message1"   : "Tax per year for this vehicle will be:  ",
             "message2"   : "  ",
-            "message3"   : " Permitted total mass must be higher than 3500 KG and lower than 40000 KG"
+            "message3"   : " Please enter the permitted curb weight of your vehicle. Permitted curb weight must be between 3500 KG and 40000 KG."
          }
       </script>
     </amp-state>
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Emission class <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br>Please select the emission class of your vehicle. You can find this in your permit certificate (&quot;Zulassungsbescheinigung&quot;) part I, under 14. In permit certificate issued before 2005 you find this inforamtion in field 1.</span></label>
+                <label class="tooltip">Emission class <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br>Please select the emission class of your vehicle. You can find this information on your permit certificate under Part I, Section 14. For permits issued before 2005, this information can be found in section 1.</span></label>
                 <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value}}), amp-template-id.refresh">
                     <option value="">Please select</option>
                     <option value="a1">S2 or better</option>
@@ -1606,7 +1607,7 @@ select option,select option:hover{
 
         <div class="pure-g row">
             <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
+                <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You may register your vehicle for less than 12 months. You can choose to register between 2 and 11 months. You are allowed to use your car on public roads during this period.</span></label>
             </div>
             <div class="button-group qm-sm-12-12 qm-md-6-12 seasonbuttons p-r-10" role="group">
                 <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>

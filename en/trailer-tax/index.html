@@ -17,6 +17,7 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        
     
 
     
@@ -1594,7 +1595,7 @@ select option,select option:hover{
                 <input type="number" class="qm-sm-12-12 numeric-input" name="total-mass" on="input-debounced:AMP.setState({calculatorState: {totalMass: event.value}})">
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">Semitrailer <sub>*</sub><span class="tooltiptext">If your trailer has no front axle please select yes.</span></label>
+                <label class="tooltip">Semitrailer <sub>*</sub><span class="tooltiptext">If your trailer has no front axle please select &quot;yes&quot;.</span></label>
                 <select class="form-control qm-sm-12-12" name="semi-trailer" on="change:AMP.setState({calculatorState: {semiTrailer: event.value}})">
                     <option value="0">No</option>
                     <option value="1">Yes</option>
@@ -1612,7 +1613,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
-                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
+                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You may register your vehicle for less than 12 months. You can choose to register between 2 and 11 months. You are allowed to use your car on public roads during this period.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>

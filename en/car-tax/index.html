@@ -17,6 +17,9 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        
+        <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        
     
 
     
@@ -1808,7 +1811,7 @@ select option,select option:hover{
         <div class="pure-g row">
 
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Date of first registration <sub>*</sub><span class="tooltiptext"><strong>Date of first registration (Erstzulassung - EZ)</strong><br>The date of the first registration you can find in your permit certificate (&qut;Zulassungsbescheinigung&qut;) part I, field B.</span></label>
+                <label class="tooltip">Date of first registration <sub>*</sub><span class="tooltiptext"><strong>Date of first registration (Erstzulassung - EZ)</strong><br>The date your vehicle was first registered. This information can be found on your permit certificate.</span></label>
 
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {emmisionClass: event.value=='a2'||event.value=='a3'||event.value=='a4'?'b1':'', co2Diff: event.value=='a2'||event.value=='a3'||event.value=='a4'?'0':'0', initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
                     <option value="">Please select</option>
@@ -1819,7 +1822,7 @@ select option,select option:hover{
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">Engine capacity in ccm <sub>*</sub><span class="tooltiptext"> Please enter your engine size. You can find this in your permit certificate (&quot;Zulassungsbescheinigung&quot;) part I, under P.1.</span></label>
+                <label class="tooltip">Engine capacity in ccm <sub>*</sub><span class="tooltiptext">Please enter your engine size. You can find this on your permit certificate (&quot;Zulassungsbescheinigung&quot;) under Part I, Section P.1.</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
             </div>
         </div>
@@ -1836,7 +1839,7 @@ select option,select option:hover{
 
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
-                    <label class="tooltip">Emission class <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br>Please select the emission class of your vehicle. You can find this in your permit certificate (&quot;Zulassungsbescheinigung&quot;) part I, under 14. In permit certificate issued before 2005 you find this inforamtion in field 1.</span></label>
+                    <label class="tooltip">Emission class <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br>Please select the emission class of your vehicle. You can find this information on your permit certificate under Part I, Section 14. For permits issued before 2005, this information can be found in section 1.</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
                         <option value="">Please select</option>
                         <option value="b1">Euro 3, D3 or better</option>
@@ -1848,7 +1851,7 @@ select option,select option:hover{
                     </select>
                 </div>
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a1'">
-                    <label class="tooltip">CO2 emissions in g/km <sub>*</sub><span class="tooltiptext">Please enter the CO2 emissions of your vehicle. You find this information on your permit certificate (&qut;Zulassungsbescheinigung&qut;) part I field V.7.<br>Following tax allowance are getting deducted:<br>Vehicles with initial registration 01st July 2009 - 31st December 2011: 120 g/km<br><br>Vehicles with initial registration 01st Janaruy 2012 - 31st December 2013: 110 g/km<br><br>Vehicles with initial registration later than 01st Janaruy 2014: 95 g/km<br></span></label>
+                    <label class="tooltip">CO2 emissions in g/km <sub>*</sub><span class="tooltiptext">Please enter the CO2 emissions of your vehicle. This information can be found on your permit certificate (&quot;Zulassungsbescheinigung&quot;) under Part I, Section V.7.<br><br>Tax allowance deduction are as follows:<br>Vehicles registered 01 July 2009 - 31st December 2011: 120 g/km<br>Vehicles registered 01 January 2012 - 31st December 2013: 110 g/km<br>Vehicles registered after 01st January 2014: 95 g/km</span></label>
                         <input type="number" class="qm-sm-12-12 numeric-input" name="co2-emissions" on="input-debounced:AMP.setState({calculatorState: {co2Diff: calculatorState.initialRegistration!=0 && event.value>0?
                         (event.value>(+combinations[calculatorState.initialRegistration].co2)?event.value-combinations[calculatorState.initialRegistration].co2:event.value)
                         :'0'}})">
@@ -1863,7 +1866,7 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
-                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
+                        <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You may register your vehicle for less than 12 months. You can choose to register between 2 and 11 months. You are allowed to use your car on public roads during this period.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
                         <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
@@ -1950,7 +1953,7 @@ select option,select option:hover{
             </div>
         </div>
         <div class="kfz-teaser-box-right">
-            <form action="/en/car-insurance-comparison/" method="get">
+            <form action="/en/car-insurance-comparison/" method="get" target="_top">
             <!--<form action="/motorradversicherung/vergleich/#grid24Wrapper" method="get">-->
                 <div class="kfz-teaser-box-text">Ortskennzeichen eingeben und vergleichen</div>
                 <div class="tc24topInput">
