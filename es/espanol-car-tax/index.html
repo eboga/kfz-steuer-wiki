@@ -27,7 +27,7 @@
     
     
 
-    <title>Car Tax SEO spanish 2018 » kfz-steuer.wiki</title>
+    <title>Calculadora del impuesto sobre el carro en Alemania 2018 » kfz-steuer.wiki</title>
     <meta name="description" content="">
 
 
@@ -71,8 +71,8 @@
 
     <meta property="og:locale" content="es" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="> Meine Beispiel-Webseite" />
-    <meta property="og:description" content="> Diese Beispiel-Webseite wird Sie begeistern!" />
+    <meta property="og:title" content="Calculadora de impuestos sobre el carro en Alemania" />
+    <meta property="og:description" content="Calculadora de impuestos sobre el carro en Alemania" />
     <meta property="og:url" content="" />
     <!--<meta property="og:site_name" content="KFZ Steuerrechner" />-->
     <meta name="twitter:card" content="summary" />
@@ -1479,8 +1479,8 @@ select option,select option:hover{
     <div class="pure-g">
         <div class="qm-sm-12-12 content-wrapper">
             <div class="heading">
-                <h1>Car Tax SEO spanish</h1>
-                <h2>Car Tax User Title spanish</h2>
+                <h1>Calculadora del impuesto sobre el carro en Alemania</h1>
+                <h2>Calculadora del impuesto sobre el carro en Alemania</h2>
             </div>
         </div>
 
@@ -1591,8 +1591,8 @@ select option,select option:hover{
             "season"     : "0",
             "co2Diff":    "0",
             "multiplier": "0",
-            "message1"   : "NEED TRANSLATION ",
-            "message2"   : " NEED TRANSLATION",
+            "message1"   : "El monto del impuesto sobre el vehículo por año sería el siguiente:  ",
+            "message2"   : "  ",
             "currency"   : " â‚¬ "
          }
       </script>
@@ -1811,47 +1811,47 @@ select option,select option:hover{
         <div class="pure-g row">
 
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                <label class="tooltip">Fecha del primer registro del vehículo <sub>*</sub><span class="tooltiptext"><strong>&quot;Fecha del primer registro del vehículo&quot; (Erstzulassung - EZ)</strong><br> La primera fecha en la que su vehículo fue registrado. Esta información se encuentra en el certificado de su permiso.</span></label>
 
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {emmisionClass: event.value=='a2'||event.value=='a3'||event.value=='a4'?'b1':'', co2Diff: event.value=='a2'||event.value=='a3'||event.value=='a4'?'0':'0', initialRegistration: event.value, multiplier: event.value!=0 && calculatorState.emmisionClass!=0 && calculatorState.engineType!=0?combinations[event.value][calculatorState.emmisionClass][calculatorState.engineType].multiplier:'0'}})">
-                    <option value="">NEED TRANSLATION</option>
-                    <option value="a1">NEED TRANSLATION</option>
-                    <option value="a2">NEED TRANSLATION</option>
-                    <option value="a3">NEED TRANSLATION</option>
-                    <option value="a4">NEED TRANSLATION</option>
+                    <option value="">Por favor seleccione</option>
+                    <option value="a1">EZ antes del 30.06.2009</option>
+                    <option value="a2">EZ 01.07.2009 hasta el 31.12.2011</option>
+                    <option value="a3">EZ 01.01.2012 hasta el 31.12.2013</option>
+                    <option value="a4">01.01.2014 y después</option>
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                <label class="tooltip">Capacidad del motor en ccm <sub>*</sub><span class="tooltiptext">Por favor introduzca el tamaño de su moto. Esta información se encuentra en el certificado de su permiso(&quot;Zulassungsbescheinigung&quot;) en la Parte I, Sección P.1.</span></label>
                 <input type="number" class="qm-sm-12-12 numeric-input"  name="displacement" on="input-debounced:AMP.setState({calculatorState: {displacement: event.value, displacement100: ceil(event.value/100)}})">
             </div>
         </div>
 
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                <label class="tooltip">Tipo de combustible <sub>*</sub><span class="tooltiptext">Por favor seleccione el tipo de combustible de su vehículo.</span></label>
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {engineType: event.value, multiplier: calculatorState.initialRegistration!=0 && calculatorState.emmisionClass!=0 && event.value!=0?combinations[calculatorState.initialRegistration][calculatorState.emmisionClass][event.value].multiplier:'0'}})">
-                    <option value="">NEED TRANSLATION</option>
-                    <option value="c1">NEED TRANSLATION</option>
-                    <option value="c2">NEED TRANSLATION</option>
+                    <option value="">Por favor seleccione</option>
+                    <option value="c1">Gasolina / Wankel</option>
+                    <option value="c2">Motor diésel</option>
                 </select>
             </div>
 
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
-                    <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                    <label class="tooltip">Clase de emisión <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br> Por favor seleccione la clase de emisión de su vehículo. Esta información se encuentra en el certificado de su permiso en la Parte I, Sección 14. Para permisos emitidos antes del 2005, esta información se encuentra en la sección 1.</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
-                        <option value="">NEED TRANSLATION</option>
-                        <option value="b1">NEED TRANSLATION</option>
-                        <option value="b2">NEED TRANSLATION</option>
-                        <option value="b3">NEED TRANSLATION</option>
-                        <option value="b4">NEED TRANSLATION</option>
-                        <option value="b5">NEED TRANSLATION</option>
-                        <option value="b6">NEED TRANSLATION</option>
+                        <option value="">Por favor seleccione</option>
+                        <option value="b1">Euro 3, D3 o mejor</option>
+                        <option value="b2">Euro 2</option>
+                        <option value="b3">Euro 1</option>
+                        <option value="b4">con permiso de conducir sin baja emisión durante alertas de ozono</option>
+                        <option value="b5">sin permiso de conducir sin baja emisión durante alertas de ozono</option>
+                        <option value="b6">todas las demás</option>
                     </select>
                 </div>
                 <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a1'">
-                    <label class="tooltip">NEED TRANSLATION <sub>*</sub><span class="tooltiptext">NEED TRANSLATION</span></label>
+                    <label class="tooltip">Emisiones de CO2 en g/km <sub>*</sub><span class="tooltiptext">Por favor introduzca las emisiones de CO2 de su vehículo. Esta información puede ser encontrada en el certificado de su permiso bajo la Parte I, Sección V.br><br>Las deducciones fiscales funcionan de la siguiente forma:br>Vehículos registrados 01 de julio del 2009 – 31 de diciembre del 2011: 120 g/km<br> Vehículos registrados 01 de enero del 2012 – 31 de diciembre del 2013: 110 g/km<br> Vehículos registrados después del 01 de enero del 2014: 95 g/km</span></label>
                         <input type="number" class="qm-sm-12-12 numeric-input" name="co2-emissions" on="input-debounced:AMP.setState({calculatorState: {co2Diff: calculatorState.initialRegistration!=0 && event.value>0?
                         (event.value>(+combinations[calculatorState.initialRegistration].co2)?event.value-combinations[calculatorState.initialRegistration].co2:event.value)
                         :'0'}})">
@@ -1866,11 +1866,11 @@ select option,select option:hover{
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
-                        <label class="tooltip">> Registration period<span class="tooltiptext">> <strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
+                        <label class="tooltip">Período de registro<span class="tooltiptext"><strong>Registro estacional </strong><br>Usted puede registrar su vehículo por menos de 12 meses. Usted puede escoger registrar su vehículo entre 2 y 11 meses. Usted tiene permitido usar su vehículo en calles públicas durante este período.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
-                        <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
-                        <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">> Seasonal registration</button>
+                        <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">estándar</button>
+                        <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">estacional</button>
                     </div>
                 </div>
             </div>
@@ -1880,7 +1880,7 @@ select option,select option:hover{
 
         <div class="pure-g row" id="season-div" hidden>
             <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
-                <label for="month_from">von ES</label>
+                <label for="month_from">desde</label>
                 <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
                     <option value="1" selected>Enero</option>
                     <option value="2">Febrero</option>
@@ -1897,7 +1897,7 @@ select option,select option:hover{
             </div>
 
             <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
-                <label for="month_to">bis ES</label>
+                <label for="month_to">hasta</label>
                 <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
                     <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>
                     <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>
@@ -1917,7 +1917,7 @@ select option,select option:hover{
 
     </div>
     <div class="calculator-message" >
-        <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><span class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
+        <h2 [text]="calculatorState.message1 ">El monto del impuesto sobre el vehículo por año sería el siguiente: </h2><span class="result_number" [text]="format(floor((prepareResult())/12*calculatorState.monthDiff).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2"> </h2>
     </div>
 </div>
 
@@ -1971,7 +1971,7 @@ select option,select option:hover{
 
                 </div>
                 <!--<div class="wcb-headline">-->
-                    <!--> Advertising ES-->
+                    <!--Anuncio-->
                 <!--</div>-->
             </div>
         </div>
@@ -1995,7 +1995,7 @@ select option,select option:hover{
             </amp-ad>
         </div>
         <!--<div class="qm-sm-12-12 wcb-headline text-right">-->
-            <!--> Advertising ES-->
+            <!--Anuncio-->
         <!--</div>-->
     </div>
 </div>
@@ -2021,9 +2021,9 @@ select option,select option:hover{
             <div class="qm-sm-12-12">
                 <div class="footer-copyright">&copy;2018 qmedia GmbH</div>
                 <ul class="footer-about-us">
-                    <li><a href="/es/imprint-es/">> Imprint ES</a></li>
-                    <li><a href="/es/contact-es/">> Contact ES</a></li>
-                    <li><a href="/es/privacy-es/">> Privacy ES</a></li>
+                    <li><a href="/es/imprint-es/">Información legal</a></li>
+                    <li><a href="/es/contact-es/">Contacto</a></li>
+                    <li><a href="/es/privacy-es/">Privacidad</a></li>
                 </ul>
             </div>
         </div>

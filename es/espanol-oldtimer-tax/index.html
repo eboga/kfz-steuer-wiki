@@ -27,7 +27,7 @@
     
     
 
-    <title>Oldtimer Tax SEO Spanish 2018 » kfz-steuer.wiki</title>
+    <title>Cálculo del impuesto sobre un vehículo antiguo en Alemania 2018 » kfz-steuer.wiki</title>
     <meta name="description" content="">
 
 
@@ -71,8 +71,8 @@
 
     <meta property="og:locale" content="es" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="> Meine Beispiel-Webseite" />
-    <meta property="og:description" content="> Diese Beispiel-Webseite wird Sie begeistern!" />
+    <meta property="og:title" content="Calculadora de impuestos sobre el carro en Alemania" />
+    <meta property="og:description" content="Calculadora de impuestos sobre el carro en Alemania" />
     <meta property="og:url" content="" />
     <!--<meta property="og:site_name" content="KFZ Steuerrechner" />-->
     <meta name="twitter:card" content="summary" />
@@ -1479,8 +1479,8 @@ select option,select option:hover{
     <div class="pure-g">
         <div class="qm-sm-12-12 content-wrapper">
             <div class="heading">
-                <h1>Oldtimer Tax SEO Spanish</h1>
-                <h2>Oldtimer Tax User Title Spanish</h2>
+                <h1>Cálculo del impuesto sobre un vehículo antiguo en Alemania</h1>
+                <h2>Cálculo del impuesto sobre un vehículo antiguo en Alemania</h2>
             </div>
         </div>
 
@@ -1578,8 +1578,8 @@ select option,select option:hover{
       <script type="application/json">
          {
             "oldtimerType": "0",
-            "message1"   : "Tax on your vehicle will be ",
-            "message2"   : " per year.",
+            "message1"   : "El monto del impuesto por año para este vehículo sería el siguiente:  ",
+            "message2"   : "  ",
             "monthFrom"  : "1",
             "monthTo"    : "12",
             "monthDiff"  : "12",
@@ -1591,21 +1591,21 @@ select option,select option:hover{
     <div class="inner-calc">
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Oldtimer <sub>*</sub><span class="tooltiptext">NEED TRANSLATION - <strong>Oldtimerart</strong><br>Bei der Besteuerung von Oldtimern wird nur zwischen Motorrädern und allen anderen Fahrzeugarten unterschieden.</span></label>
+                <label class="tooltip">Antiguo <sub>*</sub><span class="tooltiptext"><strong>Tipo de vehículo antiguo</strong><br>Los únicos vehículos de época permitidos son motocicletas, y todos los otros tipos de vehículos</span></label>
                 <select class="form-control qm-sm-12-12" name="oldtimer-type" on="change:AMP.setState({calculatorState: {oldtimerType: event.value}})">
-                    <option value="0">Please select</option>
-                    <option value="1">other vehicles</option>
-                    <option value="2">Motorbikes</option>
+                    <option value="0">Por favor seleccione</option>
+                    <option value="1">otros vehículos</option>
+                    <option value="2">Motocicletas</option>
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12 p-r-10">
-                        <label class="tooltip">> Registration period<span class="tooltiptext">> <strong>Seasonal registration</strong><br>You can register your car for less than 12 months. You can choose the registration between 2 and 11 months. During this period you are allowed to use your car on public roads.</span></label>
+                        <label class="tooltip">Período de registro<span class="tooltiptext"><strong>Registro estacional </strong><br>Usted puede registrar su vehículo por menos de 12 meses. Usted puede escoger registrar su vehículo entre 2 y 11 meses. Usted tiene permitido usar su vehículo en calles públicas durante este período.</span></label>
                     </div>
                     <div class="button-group qm-sm-12-12 seasonbuttons" role="group">
-                        <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">Standard</button>
-                        <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">> Seasonal registration</button>
+                        <button type="submit" name="button_1" [class]="calculatorState.season == 1 ? 'button qm-sm-6-12' : 'button button-active qm-sm-6-12'" class="button button-active qm-sm-6-12" on="tap:season-div.hide,AMP.setState({calculatorState: {season: 0, monthDiff: 12}})">estándar</button>
+                        <button type="submit" name="button_2" [class]="calculatorState.season == 1 ? 'button button-active qm-sm-6-12' : 'button qm-sm-6-12'" class="button qm-sm-6-12" on="tap:season-div.show,AMP.setState({calculatorState: {season: 1, monthDiff: 2}})">estacional</button>
                     </div>
                 </div>
             </div>
@@ -1613,7 +1613,7 @@ select option,select option:hover{
 
         <div class="pure-g row" id="season-div" hidden>
             <div class="button-group qm-sm-6-12 qm-md-6-12 p-r-10" role="group">
-                <label for="month_from">von ES</label>
+                <label for="month_from">desde</label>
                 <select class="form-control qm-sm-12-12" name="month_from" id="month_from" on="change:AMP.setState({calculatorState: {monthFrom: event.value, monthTo: event.value + 2, monthDiff: 2}})">
                     <option value="1" selected>Enero</option>
                     <option value="2">Febrero</option>
@@ -1630,7 +1630,7 @@ select option,select option:hover{
             </div>
 
             <div class="button-group qm-sm-6-12 qm-md-6-12 p-l-10" role="group">
-                <label for="month_to">bis ES</label>
+                <label for="month_to">hasta</label>
                 <select name="month_to" id="month_to" on="change:AMP.setState({calculatorState: {monthTo: event.value, monthDiff: (+event.value) - (+calculatorState.monthFrom) + (+1)}})" class="form-control qm-sm-12-12">
                     <option value="2" hidden [hidden]="calculatorState.monthFrom > 1" [selected]="calculatorState.monthFrom == 1">Febrero</option>
                     <option value="3" hidden [hidden]="calculatorState.monthFrom > 2" [selected]="calculatorState.monthFrom == 2">Marzo</option>
@@ -1649,12 +1649,12 @@ select option,select option:hover{
     </div>
 
     <div class="calculator-message">
-       <h2 [text]="calculatorState.message1 ">NEED TRANSLATION</h2><span class="result_number" [text]="format(floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2">NEED TRANSLATION</h2>
+       <h2 [text]="calculatorState.message1 ">El monto del impuesto sobre el vehículo por año sería el siguiente: </h2><span class="result_number" [text]="format(floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2"> </h2>
     </div>
 </div>
 
 
-<p>NEED TRANSLATION - Für die Berechnung der Kfz-Steuer für Ihren Oldtimer benötigen Sie keinen Steuer-Rechner. Die Oldtimer-Steuer für alle Kraftfahrzeuge beträgt 191,73 Euro pro Jahr. Bei Motorrädern werden 46,02 Euro pro Jahr als Steuer berechnet.<br> Seit dem 1. Oktober 2017 werden auch für Oldtimer-Zulassungen Saisonkennzeichen vergeben. <a href='https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl117s0522.pdf#__bgbl__%2F%2F*%5B%40attr_id%3D%27bgbl117s0522.pdf%27%5D__1524209119880' target='_blank' rel='noopener'>Mehr dazu beim Bundesanzeiger</a> </p>
+<p> </p>
 
 
 
@@ -1704,7 +1704,7 @@ select option,select option:hover{
 
                 </div>
                 <!--<div class="wcb-headline">-->
-                    <!--> Advertising ES-->
+                    <!--Anuncio-->
                 <!--</div>-->
             </div>
         </div>
@@ -1728,7 +1728,7 @@ select option,select option:hover{
             </amp-ad>
         </div>
         <!--<div class="qm-sm-12-12 wcb-headline text-right">-->
-            <!--> Advertising ES-->
+            <!--Anuncio-->
         <!--</div>-->
     </div>
 </div>
@@ -1754,9 +1754,9 @@ select option,select option:hover{
             <div class="qm-sm-12-12">
                 <div class="footer-copyright">&copy;2018 qmedia GmbH</div>
                 <ul class="footer-about-us">
-                    <li><a href="/es/imprint-es/">> Imprint ES</a></li>
-                    <li><a href="/es/contact-es/">> Contact ES</a></li>
-                    <li><a href="/es/privacy-es/">> Privacy ES</a></li>
+                    <li><a href="/es/imprint-es/">Información legal</a></li>
+                    <li><a href="/es/contact-es/">Contacto</a></li>
+                    <li><a href="/es/privacy-es/">Privacidad</a></li>
                 </ul>
             </div>
         </div>
