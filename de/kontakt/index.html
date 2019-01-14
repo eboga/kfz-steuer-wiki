@@ -1623,6 +1623,21 @@ München<br /><br /></p>
                 "trackPageview": {
                     "on": "visible",
                     "request": "pageview"
+                },
+                "scrollPings": {
+                    "on": "scroll",
+                    "scrollSpec": {
+                        "verticalBoundaries": [25, 50, 90],
+                        "horizontalBoundaries": [90]
+                    }
+                },
+                "button": {
+                    "selector": ".button",
+                    "on": "click",
+                    "vars": {
+                        "event_name": "Season Button",
+                        "method": "Google"
+                    }
                 }
             }
         }
