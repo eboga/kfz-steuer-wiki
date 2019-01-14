@@ -1860,10 +1860,15 @@ select option,select option:hover{
                 },
                 "scrollPings": {
                     "on": "scroll",
+                    "request": "event",
                     "scrollSpec": {
-                        "verticalBoundaries": [25, 50, 90],
-                        "horizontalBoundaries": [90]
-                    }
+                        "verticalBoundaries": [0, 25, 50, 75, 100]
+                    },
+                    "vars": {
+                        "eventCategory": "AMP Scroll Depth",
+                        "eventAction": "Scrolled",
+                        "eventLabel": "${verticalScrollBoundary}%"
+                    },
                 },
                 "button": {
                     "selector": ".button",
