@@ -1,1 +1,1 @@
-Sitemap: https://kfz-steuer.wiki/ru/sitemap.xml
+Sitemap: https://kfz-steuer.wiki/de/sitemap.xml
