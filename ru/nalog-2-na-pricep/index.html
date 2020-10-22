@@ -303,7 +303,7 @@
             "monthDiff"  : "12",
             "season"     : "0",
             "message1"   : "Транспортный налог составит: ",
-            "message2"   : " &nbsp;"
+            "message2"   : " "
          }
       </script>
     </amp-state>
@@ -380,7 +380,7 @@
     </div>
 
     <div class="calculator-message">
-        <h2 [text]="calculatorState.message1 ">Транспортный налог составит:</h2><span class="result_number" [text]="format(floor(min((floor(ceil((calculatorState.totalMass - (+calculatorState.semiTrailer*calculatorState.drawbarLoad))/200)*7.46/12*calculatorState.monthDiff)), 373.24)).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2">&nbsp;</h2>
+        <h2 [text]="calculatorState.message1 ">Транспортный налог составит:</h2><span class="result_number" [text]="format(floor(min((floor(ceil((calculatorState.totalMass - (+calculatorState.semiTrailer*calculatorState.drawbarLoad))/200)*7.46/12*calculatorState.monthDiff)), 373.24)).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 

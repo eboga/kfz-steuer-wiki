@@ -312,7 +312,7 @@
             "monthDiff"  : "12",
             "season"     : "0",
             "message1"   : "Die Kfz-Steuer für dieses Fahrzeug beträgt: ",
-            "message2"   : " &nbsp;"
+            "message2"   : " "
          }
       </script>
     </amp-state>
@@ -389,7 +389,7 @@
     </div>
 
     <div class="calculator-message">
-        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number" [text]="format(floor(min((floor(ceil((calculatorState.totalMass - (+calculatorState.semiTrailer*calculatorState.drawbarLoad))/200)*7.46/12*calculatorState.monthDiff)), 373.24)).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2">&nbsp;</h2>
+        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number" [text]="format(floor(min((floor(ceil((calculatorState.totalMass - (+calculatorState.semiTrailer*calculatorState.drawbarLoad))/200)*7.46/12*calculatorState.monthDiff)), 373.24)).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 
@@ -497,9 +497,9 @@
 
 <div class="c-FAQ-item" id="kfz-steuer-anhaenger">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput6243251" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput5195491" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput6243251">
+            <label class="c-FAQ-label" for="faqInput5195491">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -515,9 +515,9 @@
         </div>
 <div class="c-FAQ-item" id="kfz-steuer-hoehe-anhaenger">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput4313282" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput475512" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput4313282">
+            <label class="c-FAQ-label" for="faqInput475512">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -533,9 +533,9 @@
         </div>
 <div class="c-FAQ-item" id="gewicht-anhaenger">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput4503323" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput7795523" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput4503323">
+            <label class="c-FAQ-label" for="faqInput7795523">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -551,9 +551,9 @@
         </div>
 <div class="c-FAQ-item" id="steuerbefreiung-aehaenger?">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2513344" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput9735534" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput2513344">
+            <label class="c-FAQ-label" for="faqInput9735534">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -569,9 +569,9 @@
         </div>
 <div class="c-FAQ-item" id="missbrauch-steuerfreiheit">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput9063355" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2075555" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput9063355">
+            <label class="c-FAQ-label" for="faqInput2075555">
 
                 <div class="c-FAQ-icon"></div>
 

@@ -310,7 +310,7 @@
             "monthDiff"  : "12",
             "season"     : "0",
             "message1"   : "Die Kfz-Steuer für dieses Fahrzeug beträgt: ",
-            "message2"   : " &nbsp;",
+            "message2"   : " ",
             "message3"   : " Zulässige Gesamtmasse muss über 3.500 Kilogramm betragen. Maximal jedoch nicht mehr als 40.000 Kilogramm."
          }
       </script>
@@ -389,12 +389,12 @@
           height=130
           layout=responsive>
         <template type="amp-mustache">
-          <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </span><h2 [text]="calculatorState.message2">&nbsp;</h2>
+          <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number" [text]="{{title}}+',00 €'"> 0,00 € </span><h2 [text]="calculatorState.message2"></h2>
         </template>
       </amp-list>
    </div>
    <div class="calculator-message" [hidden]="calculatorState.emmisionClass != 0 && calculatorState.totalMass > 0">
-        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number"> 0,00 € </span><h2 [text]="calculatorState.message2">&nbsp;</h2>
+        <h2 [text]="calculatorState.message1 ">Die Kfz-Steuer für dieses Fahrzeug beträgt:</h2><span class="result_number"> 0,00 € </span><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 

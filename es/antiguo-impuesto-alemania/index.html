@@ -368,7 +368,7 @@
     </div>
 
     <div class="calculator-message">
-       <h2 [text]="calculatorState.message1 ">El monto del impuesto sobre el vehículo por año sería el siguiente: </h2><span class="result_number" [text]="format(floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2">&nbsp;</h2>
+       <h2 [text]="calculatorState.message1 ">El monto del impuesto sobre el vehículo por año sería el siguiente: </h2><span class="result_number" [text]="format(floor((calculatorState.oldtimerType==1 ? floor(191.73) : calculatorState.oldtimerType==2 ? floor(46.02) : 0)/12*calculatorState.monthDiff ).toFixed(2), '€')"> 0,00 € </span><h2 [text]="calculatorState.message2"></h2>
     </div>
 </div>
 

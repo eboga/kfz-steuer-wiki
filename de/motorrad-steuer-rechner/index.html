@@ -312,7 +312,7 @@
             "season"      : "0",
             "message1"   : "Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit.",
             "message2"   : "Die Kfz-Steuer für dieses Fahrzeug beträgt: ",
-            "message3"   : " &nbsp;"
+            "message3"   : " "
          }
       </script>
    </amp-state>
@@ -375,11 +375,13 @@
         <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Sie haben weniger als 125 ccm eingegeben und sind somit von der Kraftfahrzeugsteuer befreit. <span class="result"></span></h2>
     </div>
     <div class="calculator-message" hidden [hidden]="calculatorState.displacement<125">
-        <h2 [text]="calculatorState.message2 ">&nbsp;</h2><span class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </span><h2 [text]="calculatorState.message3">&nbsp;</h2>
+        <h2 [text]="calculatorState.message2 "></h2><span class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </span><h2 [text]="calculatorState.message3"></h2>
     </div>
 </div>
 
 <p>Die KFZ Steuer für Motorräder ist lediglich abhängig vom jeweiligen Hubraum (cm³ / ccm). Die Berechnung übernimmt unser KFZ Steuer Rechner für Motorräder für Sie. Mit der Live-Berechnung erhalten Sie die Höhe der zu erwartenden Steuer für Ihr Motorrad sofort und ohne Aufwand.</p>
+
+<p><strong>Linktipp:</strong> Informationen und Vergleiche zu Motorradversicherungen finden sie auf unserer Seite <strong><a href="https://www.motorradversicherung-vergleich.de/" target="_blank" rel="noopener noreferrer">https://www.motorradversicherung-vergleich.de/</a></strong></p>
 
 <p>Motorradfahren wird in Deutschland vergleichsweise gering besteuert. Die Besteuerungsgrundlagen unterscheiden sich ein wenig von denen bei Autos. Für einige Zweiräder entfallen die Steuern ganz. Zudem können Motorradfahrer mit einem Saisonkennzeichen Steuern und Versicherung sparen.</p>
 
@@ -471,9 +473,9 @@ Motorradfahren wird in Deutschland vergleichsweise gering besteuert. Die Besteue
 
 <div class="c-FAQ-item" id="kfz-steuer-motorrad">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2842811" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2905141" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput2842811">
+            <label class="c-FAQ-label" for="faqInput2905141">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -489,9 +491,9 @@ Motorradfahren wird in Deutschland vergleichsweise gering besteuert. Die Besteue
         </div>
 <div class="c-FAQ-item" id="wie-hoch-ist-die-motorrad-steuer">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput8972822" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput3965152" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput8972822">
+            <label class="c-FAQ-label" for="faqInput3965152">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -507,9 +509,9 @@ Motorradfahren wird in Deutschland vergleichsweise gering besteuert. Die Besteue
         </div>
 <div class="c-FAQ-item" id="motorrad-kfz-steuer-sparen">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput8862853" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2105173" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput8862853">
+            <label class="c-FAQ-label" for="faqInput2105173">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -525,9 +527,9 @@ Motorradfahren wird in Deutschland vergleichsweise gering besteuert. Die Besteue
         </div>
 <div class="c-FAQ-item" id="wie-werden-oldtimer-motorraeder-besteuert">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput6832874" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput4695184" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput6832874">
+            <label class="c-FAQ-label" for="faqInput4695184">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -543,9 +545,9 @@ Motorradfahren wird in Deutschland vergleichsweise gering besteuert. Die Besteue
         </div>
 <div class="c-FAQ-item" id="amt-motorrad-steuer-verantwortlich">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2482905" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput4225205" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput2482905">
+            <label class="c-FAQ-label" for="faqInput4225205">
 
                 <div class="c-FAQ-icon"></div>
 

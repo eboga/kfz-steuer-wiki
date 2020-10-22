@@ -303,7 +303,7 @@
             "season"      : "0",
             "message1"   : "Мотоциклы с объёмом двигателя меньше 125 см³ освобождаются от налога",
             "message2"   : "Транспортный налог составит: ",
-            "message3"   : " &nbsp;"
+            "message3"   : " "
          }
       </script>
    </amp-state>
@@ -366,7 +366,7 @@
         <h2 [text]="calculatorState.displacement<125?calculatorState.message1:''">Мотоциклы с объёмом двигателя меньше 125 см³ освобождаются от налога <span class="result"></span></h2>
     </div>
     <div class="calculator-message" hidden [hidden]="calculatorState.displacement<125">
-        <h2 [text]="calculatorState.message2 ">&nbsp;</h2><span class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </span><h2 [text]="calculatorState.message3">&nbsp;</h2>
+        <h2 [text]="calculatorState.message2 "></h2><span class="result_number" [text]="format(floor((floor(ceil(calculatorState.displacement/25)*1.84))/12*calculatorState.monthDiff).toFixed(2), '€') "> 0,00 € </span><h2 [text]="calculatorState.message3"></h2>
     </div>
 </div>
 
