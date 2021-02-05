@@ -546,7 +546,8 @@
                     <option value="a1">EZ before 30.06.2009</option>
                     <option value="a2">EZ 01.07.2009 till 31.12.2011</option>
                     <option value="a3">EZ 01.01.2012 till 31.12.2013</option>
-                    <option value="a4">01.01.2014 and later</option>
+                    <option value="a4">01.01.2014 till 31.12.2020</option>
+                    <option value="a5">01.01.2021 and later</option>
                 </select>
             </div>
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
@@ -557,7 +558,7 @@
 
         <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
-                <label class="tooltip">Fuel type <sub>*</sub><span class="tooltiptext">Plase select the fuel type of your vehicle.</span></label>
+                <label class="tooltip">Fuel type <sub>*</sub><span class="tooltiptext">Please select the fuel type of your vehicle.</span></label>
                 <select class="form-control qm-sm-12-12" name="engine-type" on="change:AMP.setState({calculatorState: {engineType: event.value, multiplier: calculatorState.initialRegistration!=0 && calculatorState.emmisionClass!=0 && event.value!=0?combinations[calculatorState.initialRegistration][calculatorState.emmisionClass][event.value].multiplier:'0'}})">
                     <option value="">Please select</option>
                     <option value="c1">Gasoline / Petrol / Wankel</option>
