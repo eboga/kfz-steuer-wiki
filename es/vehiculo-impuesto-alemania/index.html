@@ -558,7 +558,7 @@
             </div>
 
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
+                <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4' || calculatorState.initialRegistration == 'a5'">
                     <label class="tooltip">Clase de emisión <sub>*</sub><span class="tooltiptext"><strong>Emission class</strong><br> Por favor seleccione la clase de emisión de su vehículo. Esta información se encuentra en el certificado de su permiso en la Parte I, Sección 14. Para permisos emitidos antes del 2005, esta información se encuentra en la sección 1.</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
                         <option value="">Por favor seleccione</option>

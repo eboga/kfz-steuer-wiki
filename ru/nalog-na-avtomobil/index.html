@@ -558,7 +558,7 @@
             </div>
 
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
+                <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4' || calculatorState.initialRegistration == 'a5'">
                     <label class="tooltip">Класс эмиссии CO₂ <sub>*</sub><span class="tooltiptext"><strong>Класс эмиссии CO₂</strong> <br> Эмисcия CO₂ определяется в рамках экологических норм. Это важный фактор, определяющий сумму налога: больше выбросов – выше налог. Класс эмисcии указан в техпаспорте, ч. «I», п. «14». В техпаспортах выданных до 2005 года, эта информация находится в п. «1».</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
                         <option value="">--выбрать--</option>

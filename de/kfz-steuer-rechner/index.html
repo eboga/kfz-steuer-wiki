@@ -567,7 +567,7 @@
             </div>
 
             <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
-                <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4'">
+                <div hidden [hidden]="calculatorState.initialRegistration == '' || calculatorState.initialRegistration == 'a2' || calculatorState.initialRegistration == 'a3' || calculatorState.initialRegistration == 'a4' || calculatorState.initialRegistration == 'a5'">
                     <label class="tooltip">Schadstoffklasse <sub>*</sub><span class="tooltiptext"><strong>Schadstoffklasse</strong><br>Die Schadstoffklasse wird im Rahmen von Abgasnormen festgelegt. Sie zeigt den Schadstoffausstoß des Fahrzeugs an. Dieser ist ein wichtiger Faktor für die Höhe der Kfz-Steuer: Je niedriger die Klasse, umso höher die Abgaben. Die Schadstoffklasse steht in der Zulassungsbescheinigung Teil I, Punkt 14. In Zulassungsbescheinigungen, die vor 2005 ausgestellt wurden, finden Sie die Information in Feld 1.</span></label>
                     <select class="form-control qm-sm-12-12" name="emmision-class" on="change:AMP.setState({calculatorState: {emmisionClass: event.value, multiplier: calculatorState.initialRegistration!=0 && event.value!=0 && calculatorState.engineType!=0?combinations[calculatorState.initialRegistration][event.value][calculatorState.engineType].multiplier:'0'}})">
                         <option value="">Bitte auswählen</option>
@@ -830,9 +830,9 @@ Fahrzeughalter, die einen Schwerbehindertenausweis besitzen, werden von der Kfz-
 
 <div class="c-FAQ-item" id="unterschied-kfz-steuer-benzin-diesel">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput1001561" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput3229591" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput1001561">
+            <label class="c-FAQ-label" for="faqInput3229591">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -848,9 +848,9 @@ Fahrzeughalter, die einen Schwerbehindertenausweis besitzen, werden von der Kfz-
         </div>
 <div class="c-FAQ-item" id="berechnung-kfz-steuer-ab-2021">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput5581572" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput9679662" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput5581572">
+            <label class="c-FAQ-label" for="faqInput9679662">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -866,9 +866,9 @@ Fahrzeughalter, die einen Schwerbehindertenausweis besitzen, werden von der Kfz-
         </div>
 <div class="c-FAQ-item" id="pkw-anhaenger-besteuerung">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput1731603" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput9489693" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput1731603">
+            <label class="c-FAQ-label" for="faqInput9489693">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -884,9 +884,9 @@ Fahrzeughalter, die einen Schwerbehindertenausweis besitzen, werden von der Kfz-
         </div>
 <div class="c-FAQ-item" id="anmeldung-kfz-steuer">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput9511614" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput199724" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput9511614">
+            <label class="c-FAQ-label" for="faqInput199724">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -902,9 +902,9 @@ Fahrzeughalter, die einen Schwerbehindertenausweis besitzen, werden von der Kfz-
         </div>
 <div class="c-FAQ-item" id="steuerbefreiung-kfz-steuer">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput7311635" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2569745" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput7311635">
+            <label class="c-FAQ-label" for="faqInput2569745">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -920,9 +920,9 @@ Fahrzeughalter, die einen Schwerbehindertenausweis besitzen, werden von der Kfz-
         </div>
 <div class="c-FAQ-item" id="sparen-ohne-steuerbefreiung">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2851656" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput8589766" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput2851656">
+            <label class="c-FAQ-label" for="faqInput8589766">
 
                 <div class="c-FAQ-icon"></div>
 
