@@ -1,0 +1,141 @@
+.c-CtaBanner {
+    --c-cta-banner-background-alpha: 0.6;
+    --c-cta-banner-background-color: 228 237 246;
+    --c-cta-banner-background-image: none;
+    background-color: rgb(var(--c-cta-banner-background-color));
+    background-image: linear-gradient(rgb(var(--c-cta-banner-background-color) / var(--c-cta-banner-background-alpha)), rgb(var(--c-cta-banner-background-color) / var(--c-cta-banner-background-alpha))), var(--c-cta-banner-background-image);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    gap: 20px;
+    padding: 24px 15px 29px;
+
+    @media (min-width: 768px) {
+        --c-cta-banner-background-alpha: 0.5;
+        align-items: center;
+        background-size: contain;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    @media (min-width: 1024px) {
+        --c-cta-banner-background-alpha: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+
+
+    &.isAppearanceCtaBannerAuto {
+        --c-cta-banner-background-image: url(/assets/images/banners/kfz-versicherung-vergleich-3805311.jpg);
+    }
+
+
+
+    &.isAppearanceCtaBannerMoto {
+        --c-cta-banner-background-image: url(/assets/images/banners/motorradversicherung-vergleich-4662882.jpg);
+    }
+}
+
+
+
+.c-CtaBanner-paper {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    @media (min-width: 768px) {
+        grid-column-end: 6;
+        grid-row: 1 / -1;
+    }
+
+    @media (min-width: 1024px) {
+        grid-column-end: 5;
+    }
+
+
+
+    & > * {
+        font-weight: normal;
+        list-style-type: none;
+        margin: 15px 0 0;
+        padding: 0;
+    }
+
+    & > :first-child {
+        margin-top: 0;
+    }
+}
+
+
+
+.c-CtaBanner-title {
+    flex: 1 100%;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -1.1px;
+    line-height: 1.2;
+}
+
+
+
+.c-CtaBanner-list {
+    & > .o-Item {
+        align-items: baseline;
+        display: flex;
+        font-size: 15px;
+        line-height: 1.5;
+
+        & > .o-Icon {
+            fill: rgb(118 185 96);
+            height: 7px;
+            margin-right: 7px;
+            min-width: 13px;
+            width: 12px;
+        }
+
+        & > .o-Text {}
+    }
+}
+
+
+
+.c-CtaBanner-form {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
+    @media (min-width: 768px) {
+        grid-column: 6 / 13;
+        grid-row: 1 / -1;
+    }
+
+    @media (min-width: 1024px) {
+        grid-column: 5 / 11;
+    }
+
+    .isLayoutCtaBannerC &,
+    .isLayoutCtaBannerB & {
+        @media (min-width: 1024px) {
+            grid-column: 5 / 9;
+        }
+    }
+
+    .isAppearanceCtaBannerAuto &,
+    .isAppearanceCtaBannerMoto & {
+        max-width: 320px;
+    }
+}
+
+
+
+.c-CtaBanner-coin {
+    display: none;
+    grid-column: 10 / span 2;
+    grid-row: 1 / -1;
+
+    .isLayoutCtaBannerB & {
+        @media (min-width: 1024px) {
+            display: grid;
+        }
+    }
+}

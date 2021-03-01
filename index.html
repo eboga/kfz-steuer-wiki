@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,15 +15,19 @@
     <meta name="google-site-verification" content="-Rdl_JC8tz0meYwHaaJY-WwiyVKrdP0Vyts35RBVsIw" />
     <meta name="robots" content="follow, noindex" />
 </head>
+
 <body>
-<script>
-    var lang = navigator.language || navigator.userLanguage;
-    if (lang.indexOf('de') == 0)
-        window.location = '/de/';
-//    elseif (lang.indexOf('es') == 1)
-//        window.location = '/es/'
-    else
-        window.location = '/en/';
-</script>
+    <script>
+        const lang = navigator.language || navigator.userLanguage;
+        if (lang.indexOf('de') == 0) {
+            window.location = '/de/';
+        } else if (lang.indexOf('es') == 1) {
+            window.location = '/es/';
+        } else {
+            window.location = '/en/';
+        }
+    </script>
+
 </body>
+
 </html>

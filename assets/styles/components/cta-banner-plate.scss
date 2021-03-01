@@ -1,0 +1,31 @@
+.c-CtaBannerPlate {
+    display: grid;
+}
+
+
+
+.c-CtaBannerPlate-icon {}
+
+
+
+.c-CtaBannerPlate-input {
+    border-radius: 10px;
+    border: 6px solid rgb(0 0 0);
+    font-size: 90px;
+    font-weight: 600;
+    height: 100%;
+    padding: 0 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+
+    .isAppearanceCtaBannerMoto & {
+        border-radius: 6px;
+        border-width: 3px;
+        font-size: 55px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

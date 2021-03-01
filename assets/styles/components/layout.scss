@@ -1,0 +1,352 @@
+.heading h2 {
+  margin-top: 0;
+  /*font-size: 2.25rem;*/
+  font-weight: 600;
+  color: #010340;
+  line-height: 1;
+  /*margin-bottom: 3.125rem;*/
+}
+.heading h1 {
+  margin-top: 0;
+  font-size: .8125rem;
+  color: rgba(1, 3, 64, 0.5);
+  font-weight: 400;
+  line-height: normal;
+  /*margin-bottom: 1.25rem;*/
+}
+
+.text-right {
+  text-align: right;
+}
+.vehicle svg.icon {
+  height: 30px;
+  width: 27px;
+}
+
+@media only screen and (max-width: 39.9375em) {
+  .heading h1 {
+    margin-bottom: .75rem;
+  }
+  .heading h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+  .vehicle-list {
+    padding: 0 .25em;
+    margin-top: 1.5rem;
+  }
+  .vehicle .pkw svg.icon {
+    width: 20px;
+  }
+  .vehicle .motorrad svg.icon {
+    width: 20px;
+  }
+  .vehicle .wohnmobil svg.icon {
+    width: 20px;
+  }
+  .vehicle .wohnwagen svg.icon {
+    width: 20px;
+  }
+  .vehicle .lkw svg.icon {
+    width: 20px;
+  }
+  .vehicle .anhaenger svg.icon {
+    width: 20px;
+  }
+  .vehicle .efz svg.icon {
+    width: 20px;
+  }
+  .vehicle .oldtimer svg.icon {
+    width: 20px;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .heading h1 {
+    margin-bottom: 1.25rem;
+  }
+  .heading h2 {
+    font-size: 2.25rem;
+    margin-bottom: 3.125rem;
+  }
+  .vehicle svg.icon {
+    padding-top: 12px;
+  }
+  .vehicle .pkw svg.icon {
+    width: 32px;
+  }
+  .vehicle .motorrad svg.icon {
+    width: 27px;
+  }
+  .vehicle .amhaenger svg.icon {
+    width: 34px;
+  }
+  .vehicle .wohnwagen svg.icon {
+    width: 34px;
+  }
+  .vehicle .lkw svg.icon {
+    width: 35px;
+  }
+  .vehicle .wohnmobil svg.icon {
+    width: 28px;
+  }
+  .vehicle .efz svg.icon {
+    width: 32px;
+  }
+  .vehicle .oldtimer svg.icon {
+    width: 38px;
+  }
+}
+
+.vehicle-list {
+  display: flex;
+}
+.vehicle-list a:not(:last-child) {
+  margin-right: 1px;
+}
+
+
+@media only screen and (max-width: 39.9375em) {
+  .vehicle-list a:last-child.active:after {
+    width: 100%;
+    margin: auto 0;
+  }
+  .vehicle-list a {
+    height: 42px;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .vehicle-list a:last-child.active:after {
+    width: 100%;
+    margin: auto 0;
+    /*width: 110px;*/
+    /*margin: auto 0 auto -10px;*/
+  }
+  .vehicle-list a {
+    height: 64px;
+  }
+}
+
+.vehicle-list a {
+  flex-grow: 1;
+  position: relative;
+  line-height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  /*height: 64px;*/
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  text-align: center;
+}
+
+
+.vehicle-list a:first-child.active:after {
+  /*width: 110px;*/
+  width: 100%;
+  margin: auto -10px auto 0;
+}
+.vehicle-list a.active:after {
+  /*width: calc(100% + 20px);*/
+  /*margin: auto -10px;*/
+  height: 10px;
+  background: rgb(255, 255, 255);
+  content: '';
+  box-shadow: none;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  margin: auto 0;
+  /*width: 110px;*/
+  /*margin: auto 0 auto -10px;*/
+}
+@media (hover: hover) {
+  .vehicle-list a:last-child:hover:after {
+    width: 110px;
+    margin: auto 0 auto -10px;
+  }
+  .vehicle-list a:first-child:hover:after {
+    width: 110px;
+    margin: auto -10px auto 0;
+  }
+  .vehicle-list a.color:not(.active):hover { color: rgba(1, 3, 64, 0.7); background-color: rgba(255, 255, 255, .8); }
+  .vehicle-list a:not(.active):hover.color svg.icon { fill: rgba(1, 3, 64, .6); }
+
+  .vehicle-list a:hover:after {
+    width: calc(100% + 20px);
+    margin: auto -10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    content: '';
+    box-shadow: none;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+  }
+}
+.sub-text {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vehicle-list a.color{ color: rgba(1, 3, 64, 0.5); }
+
+
+@media only screen and (max-width: 39.9375em) {
+  .vehicle-list a.color.active {
+    height: 42px;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .vehicle-list a.color.active {
+    height: 64px;
+  }
+}
+
+
+.vehicle-list a.color.active {
+  color: #256bfb;
+  background-color: #fff;
+  box-shadow: 0 0 14px 0 rgba(28, 28, 28, 0.18);
+  cursor: default;
+  pointer-events: none;
+}
+
+
+.vehicle-list a.color svg.icon { fill: rgba(1, 3, 64, .4); }
+.vehicle-list a.color svg.icon.active { fill: #256bfb; }
+.share-box-wrapper, .share-box-wrapper .pure-g {
+  margin-bottom: 0;
+}
+
+.tax-result {
+  color: #256bfb;
+}
+
+article {
+    overflow-x: hidden;
+}
+
+article .button {
+  float: left;
+}
+
+article,
+.c-Article {
+    & > div {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 39.940em) {
+  .vehicle-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ***********************************************************/
+/* *********************** HOME PAGE *********************** */
+/* ***********************************************************/
+@media only screen and (max-width: 39.9375em) {
+  .home-vehicle-list {
+    margin: 2rem 0;
+  }
+  .home-vehicle-list div:nth-child(odd) .single-vehicle {
+    margin-right: 3px;
+  }
+  .home-vehicle-list div:nth-child(even) .single-vehicle {
+    margin-left: 3px;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .home-vehicle-list {
+    margin: 0 0 3rem 0;
+  }
+  .single-vehicle {
+    margin-right: 5px;
+  }
+}
+
+.single-vehicle {
+  position: relative;
+  height: 85px;
+  background: #fff;
+  align-self: center;
+  margin-bottom: 6px;
+  justify-content: center;
+}
+.single-vehicle a {
+  padding: 1.1rem 0;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  line-height: normal;
+}
+.single-vehicle .pkw svg {
+  width: 38px;
+  height: 22px;
+}
+.single-vehicle .motorrad svg {
+  width: 33px;
+  height: 21px;
+}
+.single-vehicle .wohnmobil svg {
+  width: 41px;
+  height: 25px;
+}
+.single-vehicle .anhaenger svg {
+  width: 41px;
+  height: 29px;
+}
+.single-vehicle .lkw svg {
+  width: 43px;
+  height: 25px;
+}
+.single-vehicle .wohnwagen svg {
+  width: 35px;
+  height: 23px;
+}
+.single-vehicle .efz svg {
+  width: 39px;
+  height: 22px;
+}
+.single-vehicle .oldtimer svg {
+  width: 46px;
+  height: 21px;
+}
+.single-vehicle .text-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 0 1rem 0;
+  bottom: 0;
+}
+.single-vehicle:hover {
+  background: #256bfb;
+}
+.single-vehicle:hover svg, .single-vehicle:hover a span.text-link {
+  fill: white;
+  color: white;
+}
+/* ***********************************************************/
+/* *********************** /HOME PAGE ********************** */
+/* ***********************************************************/

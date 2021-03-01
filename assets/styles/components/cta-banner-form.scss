@@ -1,0 +1,110 @@
+.c-CtaBannerForm {
+    --c-cta-banner-plate-moto-width: 300;
+    --c-cta-banner-plate-moto-height: 160;
+    --c-cta-banner-plate-auto-width: 976;
+    --c-cta-banner-plate-auto-height: 136;
+    display: grid;
+    gap: 15px 10px;
+
+    .isAppearanceCtaBannerMoto & {
+        align-items: end;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+
+.c-CtaBannerForm-field {
+    display: grid;
+    gap: 15px;
+    grid-auto-columns: minmax(0, 1fr);
+}
+
+
+
+.c-CtaBannerForm-label {
+    font-size: 14px;
+    font-weight: 500;
+
+    .isAppearanceCtaBannerMoto & {
+        white-space: nowrap;
+    }
+}
+
+
+
+.c-CtaBannerForm-submit {
+    & .o-Btn {
+        align-items: center;
+        background-color: rgb(118 185 96);
+        border: 0;
+        color: rgb(255 255 255);
+        display: grid;
+        font-weight: 600;
+        min-height: 40px;
+        padding: 8px 15px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+
+        & > .o-Icon {
+            fill: currentColor;
+            height: 11px;
+            position: absolute;
+            right: 15px;
+            width: 13px;
+        }
+    }
+
+
+
+    .isAppearanceCtaBannerAuto & {
+        position: relative;
+
+        &:before {
+            content: '';
+            float: left;
+            padding-bottom: calc(var(--c-cta-banner-plate-auto-height) / var(--c-cta-banner-plate-auto-width) * 100%);
+        }
+
+        & > .o-Btn {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        &:after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+    }
+
+
+
+    .isAppearanceCtaBannerMoto & {
+        position: relative;
+
+        &:before {
+            content: '';
+            float: left;
+            padding-bottom: calc(var(--c-cta-banner-plate-moto-height) / var(--c-cta-banner-plate-moto-width) * 100%);
+        }
+
+        & > .o-Btn {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        &:after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+    }
+}

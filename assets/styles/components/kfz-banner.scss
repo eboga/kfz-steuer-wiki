@@ -1,0 +1,122 @@
+/* ************************************************************************* */
+/* ******************************** KFZ BOX ******************************** */
+/* ************************************************************************* */
+.kfz-teaser-box-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+}
+.kfz-teaser-box-usp ul li svg {
+    height: 15px;
+    width: 18px;
+    margin-left: -19px;
+    fill: #76b960;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+.kfz-teaser-box-text {
+    font-size: 14px;
+    padding: .75rem 0;
+}
+.tcpp-iframe-kfz iframe {
+    width: 100%;
+}
+.kfz-teaser-sidebar-box {
+    background: rgba(231, 217, 180, .5);
+    padding: 30px;
+}
+.kfz-teaser-box-sidebar-subtitle {
+    color: #e25d30;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.kfz-teaser-box-sidebar-usp {
+    font-size: 15px;
+    line-height: 1.73;
+    border-bottom: 1px solid rgba(56,59,51,.12);
+}
+.kfz-teaser-box-sidebar-usp ul {
+    margin: 0 0 0 20px;
+    list-style: none;
+    padding: 10px 0;
+}
+.kfz-teaser-box-sidebar-usp ul li {
+    line-height: normal;
+    margin-bottom: .5rem;
+}
+.kfz-teaser-box-sidebar-text {
+    font-size: 13px;
+    padding: 10px 0 12px;
+}
+.kfz-teaser-sidebar-box input.kfz-teaser-button {
+    background: #e25d30;
+    color: #fff;
+    font-size: 17px;
+    width: 240px;
+    padding: .7rem 0;
+    margin-top: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 0;
+}
+.kfz-teaser-sidebar-box input.tc24topField {
+    position: relative;
+    width: 52px;
+    left: 28px;
+    height: 28px;
+    top: 5px;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    outline: 0;
+}
+.kfz-teaser-sidebar-box div.tc24topInput {
+    background: url(/assets/images/plate.jpg) 0 0 no-repeat;
+    width: 240px;
+    border: 0;
+    height: 40px;
+    position: relative;
+    background-size: 240px 40px;
+}
+/* ************************************************************************* */
+/* ******************************* /KFZ BOX ******************************** */
+/* ************************************************************************* */
+
+.motorbike-teaser-box-sidebar-subtitle {
+    color: #e25d30;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+input.motorbike-teaser-button {
+    background: #e25d30;
+    color: #fff;
+    font-size: 17px;
+    width: 240px;
+    padding: .7rem 0;
+    margin-top: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 0;
+}
+input.tc24topInputMotorbike {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: 0;
+    border: 1px solid #a8a8a8;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    top: 6px;
+}
+div.tc24topInputMotorbike {
+    background: url(/assets/images/motorrad-kennzeichen.png) no-repeat 46px 0;
+    text-align: center;
+    height: 105px;
+    background-size: 150px;
+}

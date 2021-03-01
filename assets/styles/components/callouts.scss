@@ -1,0 +1,11 @@
+.c-Callouts {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+
+    &--duo {
+        @media (min-width: 48em) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

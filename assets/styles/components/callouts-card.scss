@@ -1,0 +1,63 @@
+.c-CalloutsCard {
+    --c-callouts-card-accent: 90 155 231;
+    border-left: 2px solid rgb(var(--c-callouts-card-accent));
+    padding-left: 15px;
+
+    &--red {
+        --c-callouts-card-accent: 255 64 61;
+    }
+
+    &--green {
+        --c-callouts-card-accent: 116 222 116;
+    }
+
+    &--box {
+        background-color: rgb(var(--c-callouts-card-accent) / 0.1);
+        border-width: 0;
+        padding: 20px 30px;
+    }
+}
+
+
+
+.c-CalloutsCard-title {
+    align-items: baseline;
+    color: rgb(var(--c-callouts-card-accent));
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+
+    & > svg {
+        fill: currentColor;
+        height: 14px;
+        margin-right: 6px;
+        transform: translateY(0.1em);
+        width: 14px;
+    }
+
+    & > span {
+        width: 100%;
+    }
+}
+
+
+
+.c-CalloutsCard-text {
+    font-size: 15px;
+    margin-top: 9px;
+
+    a {
+        &[href*="://"]:not([href*="kfz-steuer.wiki"])::after {
+            background-image: url(/assets/images/icons/arrow-link-external.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            content: '';
+            display: inline-block;
+            height: 9px;
+            margin-bottom: 1px;
+            margin-left: 8px;
+            margin-right: 4px;
+            width: 9px;
+        }
+    }
+}
