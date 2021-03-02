@@ -19,20 +19,21 @@
     
 
 
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+        <script>
+            window.googletag = window.googletag || {cmd: []};
+            googletag.cmd.push(function() {
+                googletag.defineSlot('/89800079/kfz-steuer-wiki-in-content-ad', [[970, 90], [970, 250], [300, 250]], 'div-gpt-ad-1614327210152-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+            });
+        </script>
+    
 
     <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/89800079/kfz-steuer-wiki-in-content-ad', [[970, 90], [970, 250], [300, 250]], 'div-gpt-ad-1614327210152-0').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.pubads().collapseEmptyDivs();
-            googletag.enableServices();
-        });
-
-
-
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
         ga('create', 'UA-121940569-1', 'auto');
         ga('send', 'pageview');
@@ -108,7 +109,10 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 
-<body>
+
+
+
+<body class="">
 
 
 
@@ -408,9 +412,8 @@
                         <option value="b1">Евро 3, D3 и выше</option>
                         <option value="b2">Евро 2</option>
                         <option value="b3">Евро 1</option>
-                        <option value="b4">не низкий уровень эмиссии (вождение разрешено во время озоновой тревоги)</option>
-                        <option value="b5">не низкий уровень эмиссии (вождение запрещено во время озоновой тревоги)</option>
-                        <option value="b6">другой</option>
+                        <option value="b4">Евро 0 (Вождение разрешено во время тревоги озоном)</option>
+                        <option value="b5">другой</option>
                     </select>
                 </div>
                 <div class="jsCalcCarCo2" hidden>

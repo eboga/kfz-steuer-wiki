@@ -13,6 +13,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.isLayoutFullPage {
+    background-color: transparent;
+}
+
 @media only screen and (min-width: 40em) and (max-width: 63.9375em) {
     body {
         padding: 0 .5rem;

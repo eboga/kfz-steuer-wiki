@@ -230,10 +230,6 @@
   color: #256bfb;
 }
 
-article {
-    overflow-x: hidden;
-}
-
 article .button {
   float: left;
 }
@@ -243,6 +239,10 @@ article,
     & > div {
         margin-top: 35px;
         margin-bottom: 35px;
+    }
+
+    & > [id*="tcpp-"] {
+        margin-bottom: 0;
     }
 
     & > :first-child {

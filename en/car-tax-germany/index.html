@@ -19,20 +19,21 @@
     
 
 
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
+    
+        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+        <script>
+            window.googletag = window.googletag || {cmd: []};
+            googletag.cmd.push(function() {
+                googletag.defineSlot('/89800079/kfz-steuer-wiki-in-content-ad', [[970, 90], [970, 250], [300, 250]], 'div-gpt-ad-1614327210152-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+            });
+        </script>
+    
 
     <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-            googletag.defineSlot('/89800079/kfz-steuer-wiki-in-content-ad', [[970, 90], [970, 250], [300, 250]], 'div-gpt-ad-1614327210152-0').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.pubads().collapseEmptyDivs();
-            googletag.enableServices();
-        });
-
-
-
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
         ga('create', 'UA-121940569-1', 'auto');
         ga('send', 'pageview');
@@ -108,7 +109,10 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
 </head>
 
-<body>
+
+
+
+<body class="">
 
 
 
@@ -423,10 +427,9 @@
                         <option value="">Please select</option>
                         <option value="b1">Euro 3, D3 or better</option>
                         <option value="b2">Euro 2</option>
-                        <option value="b3">Euro1</option>
-                        <option value="b4">not low-emission with permission while ozone warning</option>
-                        <option value="b5">not low-emission with no permission while ozone warning</option>
-                        <option value="b6">all other</option>
+                        <option value="b3">Euro 1</option>
+                        <option value="b4">Euro 0 (with permission while ozone warning)</option>
+                        <option value="b5">all other</option>
                     </select>
                 </div>
                 <div class="jsCalcCarCo2" hidden>
