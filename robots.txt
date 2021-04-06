@@ -1,3 +1,6 @@
+User-agent: sistrix
+Disallow: /
+
 User-agent: AhrefsBot
 Disallow: /
 
@@ -17,6 +20,12 @@ User-agent: adscanner
 Disallow: /
 
 User-agent: LCC
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: SurveyBot
 Disallow: /
 
 User-agent: VelenPublicWebCrawler
