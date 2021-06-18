@@ -1,28 +1,47 @@
-User-agent: sistrix
+
+User-agent: adscanner
 Disallow: /
 
 User-agent: AhrefsBot
 Disallow: /
 
+User-agent: BLEXBot
+Disallow: /
+
 User-agent: Dotbot
-Disallow:/
+Disallow: /
 
 User-agent: Dotspotsbot
-Disallow:/
-
-User-agent: SemrushBot
 Disallow: /
 
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: adscanner
+User-agent: ia_archiver
 Disallow: /
 
 User-agent: LCC
 Disallow: /
 
-User-agent: ia_archiver
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+User-agent: SearchmetricsBot
+Disallow: /
+
+User-agent: Seekbot
+Disallow: /
+
+User-agent: SEOkicks
+Disallow: /
+
+User-agent: SEOkicks-Robot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: sistrix
 Disallow: /
 
 User-agent: SurveyBot
@@ -30,3 +49,10 @@ Disallow: /
 
 User-agent: VelenPublicWebCrawler
 Disallow: /
+
+User-agent: xovi
+Disallow: /
+
+User-agent: XoviBot
+Disallow: /
+
