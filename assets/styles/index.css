@@ -1023,7 +1023,7 @@ ul.footer-about-us li:last-child {
   }
 }
 /* ************************************************************************* */
-/* ******************************** KFZ BOX ******************************** */
+/* ******************************** Kfz BOX ******************************** */
 /* ************************************************************************* */
 .kfz-teaser-box-title {
   margin-bottom: 10px;
@@ -1119,7 +1119,7 @@ ul.footer-about-us li:last-child {
 }
 
 /* ************************************************************************* */
-/* ******************************* /KFZ BOX ******************************** */
+/* ******************************* /Kfz BOX ******************************** */
 /* ************************************************************************* */
 .motorbike-teaser-box-sidebar-subtitle {
   color: #e25d30;
@@ -1465,49 +1465,57 @@ article > :last-child,
 }
 
 .single-vehicle .pkw svg,
-.single-vehicle .kfz-steuer-rechner svg {
+.single-vehicle .kfz-steuer-rechner svg,
+.single-vehicle .car-tax-calculator svg {
   width: 38px;
   height: 22px;
 }
 
 .single-vehicle .motorrad svg,
-.single-vehicle .motorrad-steuer-rechner svg {
+.single-vehicle .motorrad-steuer-rechner svg,
+.single-vehicle .motorcycle-tax-calculator svg {
   width: 33px;
   height: 21px;
 }
 
 .single-vehicle .wohnmobil svg,
-.single-vehicle .wohnmobil-steuer-rechner svg {
+.single-vehicle .wohnmobil-steuer-rechner svg,
+.single-vehicle .rv-tax-calculator svg {
   width: 41px;
   height: 25px;
 }
 
 .single-vehicle .anhaenger svg,
-.single-vehicle .anhaenger-steuer-rechner svg {
+.single-vehicle .anhaenger-steuer-rechner svg,
+.single-vehicle .trailer-tax-calculator svg {
   width: 41px;
   height: 29px;
 }
 
 .single-vehicle .lkw svg,
-.single-vehicle .lkw-steuer-rechner svg {
+.single-vehicle .lkw-steuer-rechner svg,
+.single-vehicle .truck-tax-calculator svg {
   width: 43px;
   height: 25px;
 }
 
 .single-vehicle .wohnwagen svg,
-.single-vehicle .wohnwagen-steuer-rechner svg {
+.single-vehicle .wohnwagen-steuer-rechner svg,
+.single-vehicle .caravan-tax-calculator svg {
   width: 35px;
   height: 23px;
 }
 
 .single-vehicle .efz svg,
-.single-vehicle .elektro-fahrzeug-steuer-rechner svg {
+.single-vehicle .elektro-fahrzeug-steuer-rechner svg,
+.single-vehicle .electric-car-tax-calculator svg {
   width: 39px;
   height: 22px;
 }
 
 .single-vehicle .oldtimer svg,
-.single-vehicle .oldtimer-steuer-rechner svg {
+.single-vehicle .oldtimer-steuer-rechner svg,
+.single-vehicle .oldtimer-car-tax-calculator svg {
   width: 46px;
   height: 21px;
 }
