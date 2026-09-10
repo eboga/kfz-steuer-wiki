@@ -371,12 +371,19 @@
 
                 <div class="calculator-container pure-form pure-form-stacked">
     <div class="inner-calc">
-        <div class="pure-g">
+        <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+                <label class="tooltip">Fecha del primer registro del vehículo <sub>*</sub><span class="tooltiptext"><strong>Fecha del primer registro (Erstzulassung - EZ)</strong><br>La encontrará en el certificado de matriculación (Zulassungsbescheinigung Teil I), campo B. Los vehículos eléctricos matriculados por primera vez entre el 18.05.2011 y el 31.12.2030 están exentos del impuesto durante diez años a partir de ese día, como máximo hasta el 31.12.2035 (§ 3d KraftStG). Si el vehículo fue transformado posteriormente a propulsión eléctrica, introduzca en su lugar el día en que la autoridad de matriculación confirmó la transformación.</span></label>
+                <input class="qm-sm-12-12 jsCalcEvRegistrationInput" type="date" name="initial-registration">
+            </div>
+            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <label class="tooltip">Masa total permitida <sub>*</sub><span class="tooltiptext">Por favor introduzca la masa total permitida para este vehículo</span></label>
                 <input class="qm-sm-12-12 numeric-input jsCalcEvTotalInput" type="number" name="total-mass">
             </div>
-            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+        </div>
+
+        <div class="pure-g row">
+            <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
                         <label class="tooltip">Período de registro<span class="tooltiptext"><strong>Registro estacional </strong><br>Usted puede registrar su vehículo por menos de 12 meses. Usted puede escoger registrar su vehículo entre 2 y 11 meses. Usted tiene permitido usar su vehículo en calles públicas durante este período.</span></label>
@@ -426,8 +433,14 @@
         </div>
     </div>
 
+    
     <div class="calculator-message jsCalcEvResult">
-        <h2>El impuesto por año de este vehículo sería el siguiente: </h2><span class="result_number jsCalcEvResultValue">0,00 €</span><h2> </h2>
+        <h2>El monto del impuesto por año de este vehículo sería el siguiente: </h2><span class="result_number jsCalcEvResultValue">0,00 €</span><h2> </h2>
+        <p class="jsCalcEvNote" hidden
+           data-missing="Por favor, introduzca la fecha del primer registro. La calculadora la necesita para comprobar si su vehículo sigue exento del impuesto según el § 3d KraftStG."
+           data-exempt="Exento del impuesto hasta el <strong>{date}</strong> (§ 3d KraftStG). Cuando termine la exención, el impuesto sobre el vehículo será de <strong>{tax}</strong>."
+           data-expired="La exención del impuesto según el § 3d KraftStG terminó el {date}. Desde entonces se aplica la mitad del impuesto por peso."
+           data-no-exemption="Los vehículos eléctricos matriculados por primera vez a partir del 01.01.2031 ya no reciben ninguna exención. Desde el principio se aplica la mitad del impuesto por peso (§ 9 apdo. 2 KraftStG)."></p>
     </div>
 </div>
 

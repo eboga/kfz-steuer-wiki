@@ -387,12 +387,19 @@
 
                 <div class="calculator-container pure-form pure-form-stacked">
     <div class="inner-calc">
-        <div class="pure-g">
+        <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+                <label class="tooltip">Date of first registration <sub>*</sub><span class="tooltiptext"><strong>Date of first registration (Erstzulassung - EZ)</strong><br>You can find it on your registration certificate (Zulassungsbescheinigung Teil I), field B. Electric vehicles first registered between 18.05.2011 and 31.12.2030 are exempt from vehicle tax for ten years from that day, but no longer than until 31.12.2035 (Section 3d KraftStG). For a vehicle converted to electric drive later, enter the day on which the registration authority confirmed the conversion instead.</span></label>
+                <input class="qm-sm-12-12 jsCalcEvRegistrationInput" type="date" name="initial-registration">
+            </div>
+            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <label class="tooltip">Permitted total mass <sub>*</sub><span class="tooltiptext">Please enter the permitted total mass of the vehicle.</span></label>
                 <input class="qm-sm-12-12 numeric-input jsCalcEvTotalInput" type="number" name="total-mass">
             </div>
-            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+        </div>
+
+        <div class="pure-g row">
+            <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
                         <label class="tooltip">Registration period<span class="tooltiptext"><strong>Seasonal registration</strong><br>You may register your vehicle for less than 12 months. You can choose to register between 2 and 11 months. You are allowed to use your car on public roads during this period.</span></label>
@@ -442,8 +449,14 @@
         </div>
     </div>
 
+    
     <div class="calculator-message jsCalcEvResult">
         <h2>Tax per year for this vehicle will be: </h2><span class="result_number jsCalcEvResultValue">0,00 €</span><h2> </h2>
+        <p class="jsCalcEvNote" hidden
+           data-missing="Please enter the date of first registration. The calculator needs it to check whether your vehicle is still tax-exempt under Section 3d KraftStG."
+           data-exempt="Tax-exempt until <strong>{date}</strong> (Section 3d KraftStG). After the exemption ends, the vehicle tax will be <strong>{tax}</strong>."
+           data-expired="The tax exemption under Section 3d KraftStG ended on {date}. Since then, half of the weight-based tax applies."
+           data-no-exemption="Electric vehicles first registered on or after 01.01.2031 no longer receive a tax exemption. Half of the weight-based tax applies from the start (Section 9 (2) KraftStG)."></p>
     </div>
 </div>
 

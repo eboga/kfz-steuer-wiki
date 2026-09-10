@@ -371,12 +371,19 @@
 
                 <div class="calculator-container pure-form pure-form-stacked">
     <div class="inner-calc">
-        <div class="pure-g">
+        <div class="pure-g row">
             <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
+                <label class="tooltip">Дата первой регистрации <sub>*</sub><span class="tooltiptext"><strong>Дата первой регистрации (Erstzulassung - EZ)</strong> <br> Дата первой регистрации указана в техпаспорте, ч. «I», п. «B». Электромобили, впервые зарегистрированные с 18.05.2011 по 31.12.2030, освобождены от транспортного налога на десять лет с этого дня, но не дольше чем до 31.12.2035 (§ 3d KraftStG). Если автомобиль был переоборудован на электропривод позднее, укажите вместо этого день, когда регистрационный орган подтвердил переоборудование.</span></label>
+                <input class="qm-sm-12-12 jsCalcEvRegistrationInput" type="date" name="initial-registration">
+            </div>
+            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
                 <label class="tooltip">Допустимая общая масса в КГ <sub>*</sub><span class="tooltiptext">Допустимая общая масса указана в техпаспорте, ч. «I», поле «F.2». Обратите внимание, что она может отличаться от технически допустимой общей массы.</span></label>
                 <input class="qm-sm-12-12 numeric-input jsCalcEvTotalInput" type="number" name="total-mass">
             </div>
-            <div class="qm-md-6-12 qm-sm-12-12 p-l-10">
+        </div>
+
+        <div class="pure-g row">
+            <div class="qm-md-6-12 qm-sm-12-12 p-r-10">
                 <div class="pure-g">
                     <div class="qm-md-12-12 qm-sm-12-12">
                         <label class="tooltip">Длительность регистрации<span class="tooltiptext"><strong>Сезонная регистрация</strong> <br> ТС также можно регистрировать лишь на определённый срок. Длительностью от 2 до 11 месяцев. Такая сезонная регистрация обозначается двумя цифрами, которые проштампованы с правой стороны номерного знака. В течение этого периода ТС может перемещаться по дорогам общего пользования.</span></label>
@@ -426,8 +433,14 @@
         </div>
     </div>
 
+    
     <div class="calculator-message jsCalcEvResult">
-        <h2>Транспортный налог составит:</h2><span class="result_number jsCalcEvResultValue">0,00 €</span><h2>&nbsp;</h2>
+        <h2>Транспортный налог составит:</h2><span class="result_number jsCalcEvResultValue">0,00 €</span><h2></h2>
+        <p class="jsCalcEvNote" hidden
+           data-missing="Укажите дату первой регистрации. Без неё калькулятор не может проверить, действует ли ещё освобождение от налога по § 3d KraftStG."
+           data-exempt="Освобождение от налога до <strong>{date}</strong> (§ 3d KraftStG). После окончания освобождения транспортный налог составит <strong>{tax}</strong>."
+           data-expired="Освобождение от налога по § 3d KraftStG закончилось {date}. С тех пор применяется половина налога по массе."
+           data-no-exemption="Электромобили, впервые зарегистрированные с 01.01.2031, освобождения от налога больше не получают. С самого начала применяется половина налога по массе (§ 9 абз. 2 KraftStG)."></p>
     </div>
 </div>
 
