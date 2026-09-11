@@ -429,7 +429,7 @@
                     </select>
                 </div>
                 <div class="jsCalcCarCo2" hidden>
-                    <label class="tooltip">CO2-Emissionen in g/km <sub>*</sub><span class="tooltiptext">Den CO2-Wert Ihres Pkw finden Sie in der Zulassungsbescheinigung Teil I, Feld V.7. Folgende Freigrenzen werden automatisch berücksichtigt:<br> Bei Fahrzeugen mit Erstzulassung vom 01.07.2009 – 31.12.2011: 120 g/km<br><br>Bei Fahrzeugen mit Erstzulassung vom 01.01.2012 – 31.12.2013: 110 g/km<br><br>Bei Fahrzeugen mit Erstzulassung ab 01.01.2014: 95 g/km</span></label>
+                    <label class="tooltip">CO2-Emissionen in g/km <sub>*</sub><span class="tooltiptext">Den CO2-Wert Ihres Pkw finden Sie in der Zulassungsbescheinigung Teil I, Feld V.7. Folgende Freigrenzen werden automatisch berücksichtigt:<br> Bei Fahrzeugen mit Erstzulassung vom 01.07.2009 – 31.12.2011: <span class='nobreak'>120 g/km</span><br><br>Bei Fahrzeugen mit Erstzulassung vom 01.01.2012 – 31.12.2013: <span class='nobreak'>110 g/km</span><br><br>Bei Fahrzeugen mit Erstzulassung ab 01.01.2014: <span class='nobreak'>95 g/km</span></span></label>
                     <input class="qm-sm-12-12 numeric-input jsCalcCarCo2Input" type="number" name="co2-emissions">
                 </div>
             </div>
@@ -600,7 +600,7 @@
 <p>Erstzulassung, Hubraum und Motorart stehen in der Zulassungsbescheinigung Teil I in den Feldern <strong>B</strong>, <strong>P.1</strong> und <strong>P.3</strong>. Je nach Erstzulassungsdatum fragt der Rechner zusätzlich den CO₂-Wert aus Feld <strong>V.7</strong> oder die Schadstoffklasse aus Feld <strong>14.1</strong> ab.</p>
 
 <p>Die Kfz-Steuer für einen Pkw setzt sich aus zwei Teilen zusammen: einem Betrag je angefangene
-100 cm³ Hubraum und einem Betrag je Gramm CO₂ pro Kilometer. Welche Sätze gelten, entscheidet
+<span class="nobreak">100 cm³</span> Hubraum und einem Betrag je Gramm CO₂ pro Kilometer. Welche Sätze gelten, entscheidet
 allein das <strong>Datum der Erstzulassung</strong>. Seit dem 1. Januar 2021 steigt der CO₂-Anteil in sechs
 Stufen an, für ältere Fahrzeuge gilt eine feste Freigrenze, und Autos von vor Juli 2009 werden
 noch ganz ohne CO₂ nach der Schadstoffklasse besteuert.</p>
@@ -668,9 +668,9 @@ noch ganz ohne CO₂ nach der Schadstoffklasse besteuert.</p>
 
 <h2 id="erstzulassung-ab-dem-1-januar-2021-hubraum-plus-co-staffel">Erstzulassung ab dem 1. Januar 2021: Hubraum plus CO₂-Staffel</h2>
 
-<p>Der Hubraumteil beträgt <span class="blue"><strong>2,00 €</strong></span> je angefangene
-100 cm³ beim Benziner (und beim Wankelmotor) und <span class="blue"><strong>9,50 €</strong></span>
-beim Diesel. Die ersten <strong>95 g/km CO₂ bleiben frei</strong>. Alles darüber wird in sechs Stufen zerlegt,
+<p>Der Hubraumteil beträgt <span class="nobreak">2,00 €</span> je angefangene
+<span class="nobreak">100 cm³</span> beim Benziner (und beim Wankelmotor) und <span class="nobreak">9,50 €</span>
+beim Diesel. Die ersten <strong><span class="nobreak">95 g/km</span> CO₂ bleiben frei</strong>. Alles darüber wird in sechs Stufen zerlegt,
 und jede Stufe hat ihren eigenen Satz – nicht der ganze CO₂-Wert wird mit einem Satz
 multipliziert.</p>
 
@@ -683,36 +683,36 @@ multipliziert.</p>
 </tr>
 </thead>
 <tbody>
-<tr><td>1</td><td>über 95 bis 115 g/km</td><td class="blue"><strong>2,00 €</strong></td></tr>
-<tr><td>2</td><td>über 115 bis 135 g/km</td><td class="blue"><strong>2,20 €</strong></td></tr>
-<tr><td>3</td><td>über 135 bis 155 g/km</td><td class="blue"><strong>2,50 €</strong></td></tr>
-<tr><td>4</td><td>über 155 bis 175 g/km</td><td class="blue"><strong>2,90 €</strong></td></tr>
-<tr><td>5</td><td>über 175 bis 195 g/km</td><td class="blue"><strong>3,40 €</strong></td></tr>
-<tr><td>6</td><td>über 195 g/km</td><td class="blue"><strong>4,00 €</strong></td></tr>
+<tr><td>1</td><td>über 95 bis <span class="nobreak">115 g/km</span></td><td><span class="nobreak">2,00 €</span></td></tr>
+<tr><td>2</td><td>über 115 bis <span class="nobreak">135 g/km</span></td><td><span class="nobreak">2,20 €</span></td></tr>
+<tr><td>3</td><td>über 135 bis <span class="nobreak">155 g/km</span></td><td><span class="nobreak">2,50 €</span></td></tr>
+<tr><td>4</td><td>über 155 bis <span class="nobreak">175 g/km</span></td><td><span class="nobreak">2,90 €</span></td></tr>
+<tr><td>5</td><td>über 175 bis <span class="nobreak">195 g/km</span></td><td><span class="nobreak">3,40 €</span></td></tr>
+<tr><td>6</td><td>über <span class="nobreak">195 g/km</span></td><td><span class="nobreak">4,00 €</span></td></tr>
 </tbody>
 </table>
 
-<p><strong>Beispiel: Benziner, 1.395 cm³, 128 g/km, Erstzulassung 2022</strong></p>
+<p><strong>Beispiel: Benziner, <span class="nobreak">1.395 cm³</span>, <span class="nobreak">128 g/km</span>, Erstzulassung 2022</strong></p>
 
 <ul>
-  <li>Hubraum: 1.395 cm³ ergeben 14 angefangene 100 cm³ → 14 × <span class="blue"><strong>2,00 €</strong></span> = <span class="blue"><strong>28,00 €</strong></span></li>
-  <li>Stufe 1: die 20 Gramm von 95 bis 115 g/km → 20 × <span class="blue"><strong>2,00 €</strong></span> = <span class="blue"><strong>40,00 €</strong></span></li>
-  <li>Stufe 2: die 13 Gramm von 115 bis 128 g/km → 13 × <span class="blue"><strong>2,20 €</strong></span> = <span class="blue"><strong>28,60 €</strong></span></li>
-  <li>Jahressteuer <span class="blue"><strong>96,60 €</strong></span>, zu zahlen sind <span class="blue"><strong>96 €</strong></span></li>
+  <li>Hubraum: <span class="nobreak">1.395 cm³</span> ergeben 14 angefangene <span class="nobreak">100 cm³</span> → 14 × <span class="nobreak">2,00 €</span> = <span class="nobreak">28,00 €</span></li>
+  <li>Stufe 1: die 20 Gramm von 95 bis <span class="nobreak">115 g/km</span> → 20 × <span class="nobreak">2,00 €</span> = <span class="nobreak">40,00 €</span></li>
+  <li>Stufe 2: die 13 Gramm von 115 bis <span class="nobreak">128 g/km</span> → 13 × <span class="nobreak">2,20 €</span> = <span class="nobreak">28,60 €</span></li>
+  <li>Jahressteuer <span class="nobreak">96,60 €</span>, zu zahlen sind <span class="blue nobreak"><strong>96 €</strong></span></li>
 </ul>
 
-<p><strong>Beispiel: Diesel, 1.968 cm³, 155 g/km, Erstzulassung 2023</strong></p>
+<p><strong>Beispiel: Diesel, <span class="nobreak">1.968 cm³</span>, <span class="nobreak">155 g/km</span>, Erstzulassung 2023</strong></p>
 
 <ul>
-  <li>Hubraum: 20 × <span class="blue"><strong>9,50 €</strong></span> = <span class="blue"><strong>190,00 €</strong></span></li>
-  <li>CO₂: 40,00 € (Stufe 1) + 44,00 € (Stufe 2) + 50,00 € (Stufe 3) = <span class="blue"><strong>134,00 €</strong></span></li>
-  <li>Jahressteuer und zu zahlender Betrag: <span class="blue"><strong>324,00 €</strong></span></li>
+  <li>Hubraum: 20 × <span class="nobreak">9,50 €</span> = <span class="nobreak">190,00 €</span></li>
+  <li>CO₂: <span class="nobreak">40,00 €</span> (Stufe 1) + <span class="nobreak">44,00 €</span> (Stufe 2) + <span class="nobreak">50,00 €</span> (Stufe 3) = <span class="nobreak">134,00 €</span></li>
+  <li>Jahressteuer und zu zahlender Betrag: <span class="blue nobreak"><strong>324,00 €</strong></span></li>
 </ul>
 
 <h2 id="erstzulassung-1-juli-2009-bis-31-dezember-2020-feste-freigrenze">Erstzulassung 1. Juli 2009 bis 31. Dezember 2020: feste Freigrenze</h2>
 
 <p>Für diese Fahrzeuge gilt derselbe Hubraumteil, aber ein einheitlicher CO₂-Satz von
-<span class="blue"><strong>2,00 €</strong></span> je Gramm – und zwar erst oberhalb einer
+<span class="nobreak">2,00 €</span> je Gramm – und zwar erst oberhalb einer
 Freigrenze, die vom Zulassungsjahr abhängt:</p>
 
 <table class="pure-table">
@@ -723,18 +723,18 @@ Freigrenze, die vom Zulassungsjahr abhängt:</p>
 </tr>
 </thead>
 <tbody>
-<tr><td>1. Juli 2009 bis 31. Dezember 2011</td><td class="blue"><strong>120 g/km</strong></td></tr>
-<tr><td>1. Januar 2012 bis 31. Dezember 2013</td><td class="blue"><strong>110 g/km</strong></td></tr>
-<tr><td>1. Januar 2014 bis 31. Dezember 2020</td><td class="blue"><strong>95 g/km</strong></td></tr>
+<tr><td>1. Juli 2009 bis 31. Dezember 2011</td><td><strong><span class="nobreak">120 g/km</span></strong></td></tr>
+<tr><td>1. Januar 2012 bis 31. Dezember 2013</td><td><strong><span class="nobreak">110 g/km</span></strong></td></tr>
+<tr><td>1. Januar 2014 bis 31. Dezember 2020</td><td><strong><span class="nobreak">95 g/km</span></strong></td></tr>
 </tbody>
 </table>
 
-<p>Ein Diesel mit 1.598 cm³ und 110 g/km aus dem Jahr 2016 kostet damit 16 × 9,50 € = 152,00 €
-plus 15 g × 2,00 € = 30,00 €, zusammen <span class="blue"><strong>182 €</strong></span> im Jahr.</p>
+<p>Ein Diesel mit <span class="nobreak">1.598 cm³</span> und <span class="nobreak">110 g/km</span> aus dem Jahr 2016 kostet damit 16 × <span class="nobreak">9,50 €</span> = <span class="nobreak">152,00 €</span>
+plus 15 g × <span class="nobreak">2,00 €</span> = <span class="nobreak">30,00 €</span>, zusammen <span class="nobreak">182 €</span> im Jahr.</p>
 
 <h2 id="erstzulassung-bis-30-juni-2009-hubraum-und-schadstoffklasse">Erstzulassung bis 30. Juni 2009: Hubraum und Schadstoffklasse</h2>
 
-<p>Hier spielt der CO₂-Wert keine Rolle. Gezahlt wird je angefangene 100 cm³ Hubraum, gestaffelt
+<p>Hier spielt der CO₂-Wert keine Rolle. Gezahlt wird je angefangene <span class="nobreak">100 cm³</span> Hubraum, gestaffelt
 nach Abgasstufe:</p>
 
 <table class="pure-table">
@@ -747,29 +747,29 @@ nach Abgasstufe:</p>
 </thead>
 <tbody>
 <tr>
-<td>Euro 3 und besser (Grenzwerte bis 2,5 t)</td>
-<td class="blue"><strong>6,75 €</strong></td>
-<td class="blue"><strong>15,44 €</strong></td>
+<td>Euro 3 und besser (Grenzwerte bis <span class="nobreak">2,5 t</span>)</td>
+<td><span class="nobreak">6,75 €</span></td>
+<td><span class="nobreak">15,44 €</span></td>
 </tr>
 <tr>
 <td>Euro 2</td>
-<td class="blue"><strong>7,36 €</strong></td>
-<td class="blue"><strong>16,05 €</strong></td>
+<td><span class="nobreak">7,36 €</span></td>
+<td><span class="nobreak">16,05 €</span></td>
 </tr>
 <tr>
 <td>Euro 1</td>
-<td class="blue"><strong>15,13 €</strong></td>
-<td class="blue"><strong>27,35 €</strong></td>
+<td><span class="nobreak">15,13 €</span></td>
+<td><span class="nobreak">27,35 €</span></td>
 </tr>
 <tr>
 <td>Euro 0 (ehemals ohne Ozonfahrverbot)</td>
-<td class="blue"><strong>21,07 €</strong></td>
-<td class="blue"><strong>33,29 €</strong></td>
+<td><span class="nobreak">21,07 €</span></td>
+<td><span class="nobreak">33,29 €</span></td>
 </tr>
 <tr>
 <td>Euro 0 (übrige)</td>
-<td class="blue"><strong>25,36 €</strong></td>
-<td class="blue"><strong>37,58 €</strong></td>
+<td><span class="nobreak">25,36 €</span></td>
+<td><span class="nobreak">37,58 €</span></td>
 </tr>
 </tbody>
 </table>
@@ -794,14 +794,14 @@ Ziffern; im alten Fahrzeugschein in Feld 1. Der Zoll ordnet sie so zu:</p>
 </table>
 
 <p>Ein 1.968-cm³-Diesel mit Euro 4 aus dem Jahr 2007 fällt damit in die oberste Zeile und kostet
-20 × 15,44 € = <span class="blue"><strong>308 €</strong></span> im Jahr.</p>
+20 × <span class="nobreak">15,44 €</span> = <span class="nobreak">308 €</span> im Jahr.</p>
 
 <p>Zwei Sonderfälle in diesem Zeitraum:</p>
 
 <ul>
   <li><strong>Wankelmotoren</strong> werden nicht nach Hubraum, sondern nach Gewicht besteuert – mit
-denselben Sätzen wie leichte Nutzfahrzeuge (11,25 €, 12,02 € und 12,78 € je angefangene
-200 kg). Der Rechner oben bildet diesen Fall nicht ab.</li>
+denselben Sätzen wie leichte Nutzfahrzeuge (<span class="nobreak">11,25 €</span>, <span class="nobreak">12,02 €</span> und <span class="nobreak">12,78 €</span> je angefangene
+<span class="nobreak">200 kg</span>). Der Rechner oben bildet diesen Fall nicht ab.</li>
   <li>Für Erstzulassungen zwischen dem <strong>5. November 2008 und dem 30. Juni 2009</strong> vergleicht das
 Hauptzollamt beide Berechnungsarten und setzt die günstigere an (Günstigerprüfung). Auch das
 nimmt der Rechner nicht vorweg.</li>
@@ -824,19 +824,19 @@ Werte nach den Sätzen für Erstzulassungen ab 2021, gerundet auf den zu zahlend
 </tr>
 </thead>
 <tbody>
-<tr><td>999 cm³</td><td>Benzin</td><td>110 g/km</td><td>20,00 €</td><td>30,00 €</td><td class="blue"><strong>50 €</strong></td></tr>
-<tr><td>1.197 cm³</td><td>Benzin</td><td>125 g/km</td><td>24,00 €</td><td>62,00 €</td><td class="blue"><strong>86 €</strong></td></tr>
-<tr><td>1.498 cm³</td><td>Benzin</td><td>140 g/km</td><td>30,00 €</td><td>96,50 €</td><td class="blue"><strong>126 €</strong></td></tr>
-<tr><td>1.984 cm³</td><td>Benzin</td><td>165 g/km</td><td>40,00 €</td><td>163,00 €</td><td class="blue"><strong>203 €</strong></td></tr>
-<tr><td>2.995 cm³</td><td>Benzin</td><td>205 g/km</td><td>60,00 €</td><td>300,00 €</td><td class="blue"><strong>360 €</strong></td></tr>
-<tr><td>1.598 cm³</td><td>Diesel</td><td>120 g/km</td><td>152,00 €</td><td>51,00 €</td><td class="blue"><strong>203 €</strong></td></tr>
-<tr><td>1.968 cm³</td><td>Diesel</td><td>142 g/km</td><td>190,00 €</td><td>101,50 €</td><td class="blue"><strong>291 €</strong></td></tr>
-<tr><td>2.967 cm³</td><td>Diesel</td><td>190 g/km</td><td>285,00 €</td><td>243,00 €</td><td class="blue"><strong>528 €</strong></td></tr>
+<tr><td><span class="nobreak">999 cm³</span></td><td>Benzin</td><td><span class="nobreak">110 g/km</span></td><td><span class="blue nobreak"><strong>20,00 €</strong></span></td><td><span class="blue nobreak"><strong>30,00 €</strong></span></td><td><span class="blue nobreak"><strong>50 €</strong></span></td></tr>
+<tr><td><span class="nobreak">1.197 cm³</span></td><td>Benzin</td><td><span class="nobreak">125 g/km</span></td><td><span class="blue nobreak"><strong>24,00 €</strong></span></td><td><span class="blue nobreak"><strong>62,00 €</strong></span></td><td><span class="blue nobreak"><strong>86 €</strong></span></td></tr>
+<tr><td><span class="nobreak">1.498 cm³</span></td><td>Benzin</td><td><span class="nobreak">140 g/km</span></td><td><span class="blue nobreak"><strong>30,00 €</strong></span></td><td><span class="blue nobreak"><strong>96,50 €</strong></span></td><td><span class="blue nobreak"><strong>126 €</strong></span></td></tr>
+<tr><td><span class="nobreak">1.984 cm³</span></td><td>Benzin</td><td><span class="nobreak">165 g/km</span></td><td><span class="blue nobreak"><strong>40,00 €</strong></span></td><td><span class="blue nobreak"><strong>163,00 €</strong></span></td><td><span class="blue nobreak"><strong>203 €</strong></span></td></tr>
+<tr><td><span class="nobreak">2.995 cm³</span></td><td>Benzin</td><td><span class="nobreak">205 g/km</span></td><td><span class="blue nobreak"><strong>60,00 €</strong></span></td><td><span class="blue nobreak"><strong>300,00 €</strong></span></td><td><span class="blue nobreak"><strong>360 €</strong></span></td></tr>
+<tr><td><span class="nobreak">1.598 cm³</span></td><td>Diesel</td><td><span class="nobreak">120 g/km</span></td><td><span class="blue nobreak"><strong>152,00 €</strong></span></td><td><span class="blue nobreak"><strong>51,00 €</strong></span></td><td><span class="blue nobreak"><strong>203 €</strong></span></td></tr>
+<tr><td><span class="nobreak">1.968 cm³</span></td><td>Diesel</td><td><span class="nobreak">142 g/km</span></td><td><span class="blue nobreak"><strong>190,00 €</strong></span></td><td><span class="blue nobreak"><strong>101,50 €</strong></span></td><td><span class="blue nobreak"><strong>291 €</strong></span></td></tr>
+<tr><td><span class="nobreak">2.967 cm³</span></td><td>Diesel</td><td><span class="nobreak">190 g/km</span></td><td><span class="blue nobreak"><strong>285,00 €</strong></span></td><td><span class="blue nobreak"><strong>243,00 €</strong></span></td><td><span class="blue nobreak"><strong>528 €</strong></span></td></tr>
 </tbody>
 </table>
 
-<p>Der Diesel-Aufschlag fällt vor allem beim Hubraum an: 9,50 € statt 2,00 € je 100 cm³ sind bei
-zwei Litern Hubraum schon 150 € Unterschied, bevor überhaupt ein Gramm CO₂ gezählt wird.</p>
+<p>Der Diesel-Aufschlag fällt vor allem beim Hubraum an: <span class="nobreak">9,50 €</span> statt <span class="nobreak">2,00 €</span> je <span class="nobreak">100 cm³</span> sind bei
+zwei Litern Hubraum schon <span class="nobreak">150 €</span> Unterschied, bevor überhaupt ein Gramm CO₂ gezählt wird.</p>
 
 <h2 id="hsn-und-tsn-warum-die-schlüsselnummern-hier-nicht-weiterhelfen">HSN und TSN: warum die Schlüsselnummern hier nicht weiterhelfen</h2>
 
@@ -859,19 +859,19 @@ danach gilt dauerhaft die halbe Steuer. Wie sich das rechnet, steht auf der Seit
   <li><strong>Hybride</strong> – auch Plug-in-Hybride und Fahrzeuge mit Range Extender – sind
 steuerlich normale Verbrenner. Sie profitieren nur indirekt von ihrem niedrigeren CO₂-Wert.</li>
   <li><strong>Oldtimer mit H-Kennzeichen</strong> zahlen eine Pauschale statt der Hubraumsteuer, für Pkw
-<span class="blue"><strong>191,73 €</strong></span> im Jahr. Details auf der Seite zur
+<span class="nobreak">191,73 €</span> im Jahr. Details auf der Seite zur
 <a href="/oldtimer-steuer-rechner/">Oldtimer-Steuer</a>.</li>
   <li><strong>Youngtimer</strong>, also Fahrzeuge knapp unter 30 Jahren, haben keinen eigenen Steuerstatus. Für
 sie gilt die Regel ihres Erstzulassungsjahrs, bei Baujahren vor Juli 2009 also die
 Schadstoffklassen-Tabelle.</li>
   <li><strong>Schwerbehinderte Halter</strong> mit dem Merkzeichen „H“, „Bl“ oder „aG“ im Ausweis sind ganz von
-der Steuer befreit. Mit orangefarbenem Flächenaufdruck im Ausweis wird die Steuer um 50 %
+der Steuer befreit. Mit orangefarbenem Flächenaufdruck im Ausweis wird die Steuer um <span class="nobreak">50 %</span>
 ermäßigt – dann allerdings nur, wenn auf die unentgeltliche Beförderung im
 Nahverkehr verzichtet wird. Die Vergünstigung gilt für ein Fahrzeug und nur auf Antrag.</li>
 </ul>
 
 <p>Ausgelaufen sind dagegen zwei Regelungen, die in älteren Ratgebern noch auftauchen: die
-<strong>30-Euro-Entlastung für Pkw bis 95 g/km</strong> (nur für Erstzulassungen vom 12. Juni 2020
+<strong>30-Euro-Entlastung für Pkw bis <span class="nobreak">95 g/km</span></strong> (nur für Erstzulassungen vom 12. Juni 2020
 bis zum 31. Dezember 2024 und spätestens am 31. Dezember 2025 beendet) sowie die <strong>Befreiung für
 Euro-6-Diesel</strong> der Zulassungsjahre 2011 bis 2013, die am 31. Dezember 2013 endete.</p>
 
@@ -889,13 +889,13 @@ eingezogen. Eine Aufteilung ist nur bei größeren Beträgen erlaubt und kostet 
 </tr>
 </thead>
 <tbody>
-<tr><td>mehr als 500 €</td><td>halbjährlich</td><td class="blue"><strong>3 %</strong></td></tr>
-<tr><td>mehr als 1.000 €</td><td>vierteljährlich</td><td class="blue"><strong>6 %</strong></td></tr>
+<tr><td>mehr als <span class="nobreak">500 €</span></td><td>halbjährlich</td><td><strong><span class="nobreak">3 %</span></strong></td></tr>
+<tr><td>mehr als <span class="nobreak">1.000 €</span></td><td>vierteljährlich</td><td><strong><span class="nobreak">6 %</span></strong></td></tr>
 </tbody>
 </table>
 
-<p>Der zu entrichtende Betrag wird immer <strong>auf volle Euro nach unten abgerundet</strong>: Aus 96,60 €
-werden 96 €. Eine gesetzliche Mindeststeuer gibt es nicht, die Steuerpflicht dauert aber
+<p>Der zu entrichtende Betrag wird immer <strong>auf volle Euro nach unten abgerundet</strong>: Aus <span class="nobreak">96,60 €</span>
+werden <span class="nobreak">96 €</span>. Eine gesetzliche Mindeststeuer gibt es nicht, die Steuerpflicht dauert aber
 mindestens einen Monat.</p>
 
 <p>Bei einem <strong>Saisonkennzeichen</strong> zahlen Sie für jeden Tag des Betriebszeitraums ein
@@ -909,9 +909,9 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
 <div class="c-FAQ-item" id="unterschied-kfz-steuer-benzin-diesel">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput472591" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput3548371" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput472591">
+            <label class="c-FAQ-label" for="faqInput3548371">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -919,15 +919,15 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
             </label>
 
-            <div class="c-FAQ-answer"><p>Ja, und zwar beim Hubraumteil der Steuer: <strong>2,00 €</strong> je angefangene 100 cm³ beim Ottomotor, <strong>9,50 €</strong> beim Dieselmotor. Der CO₂-Teil ist für beide gleich.<br /><br />Bei zwei Litern Hubraum sind das 40 € gegenüber 190 € – ein Unterschied von 150 €, bevor überhaupt ein Gramm CO₂ gezählt wird. Bei Erstzulassungen bis zum 30. Juni 2009 ist der Abstand noch größer: Dort stehen je nach Abgasstufe 6,75 € bis 25,36 € (Benzin) gegen 15,44 € bis 37,58 € (Diesel) je angefangene 100 cm³.</p>
+            <div class="c-FAQ-answer"><p>Ja, und zwar beim Hubraumteil der Steuer: <span class="nobreak">2,00 €</span> je angefangene <span class="nobreak">100 cm³</span> beim Ottomotor, <span class="nobreak">9,50 €</span> beim Dieselmotor. Der CO₂-Teil ist für beide gleich.<br /><br />Bei zwei Litern Hubraum sind das <span class="nobreak">40 €</span> gegenüber <span class="nobreak">190 €</span> – ein Unterschied von <span class="nobreak">150 €</span>, bevor überhaupt ein Gramm CO₂ gezählt wird. Bei Erstzulassungen bis zum 30. Juni 2009 ist der Abstand noch größer: Dort stehen je nach Abgasstufe <span class="nobreak">6,75 €</span> bis <span class="nobreak">25,36 €</span> (Benzin) gegen <span class="nobreak">15,44 €</span> bis <span class="nobreak">37,58 €</span> (Diesel) je angefangene <span class="nobreak">100 cm³</span>.</p>
 </div>
 
         </div>
 <div class="c-FAQ-item" id="berechnung-kfz-steuer-ab-2021">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput4062592" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput1538382" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput4062592">
+            <label class="c-FAQ-label" for="faqInput1538382">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -935,15 +935,15 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
             </label>
 
-            <div class="c-FAQ-answer"><p>Seit dem 1. Januar 2021 wird der CO₂-Anteil der Steuer in <strong>sechs Stufen</strong> berechnet. Die ersten 95 g/km bleiben frei, alles darüber wird auf die Stufen verteilt:<br />über 95 bis 115 g/km: <strong>2,00 €</strong> je g/km<br />über 115 bis 135 g/km: <strong>2,20 €</strong><br />über 135 bis 155 g/km: <strong>2,50 €</strong><br />über 155 bis 175 g/km: <strong>2,90 €</strong><br />über 175 bis 195 g/km: <strong>3,40 €</strong><br />über 195 g/km: <strong>4,00 €</strong><br /><br />Der Hubraumteil bleibt unverändert. Für Erstzulassungen bis zum 31. Dezember 2020 gilt dagegen ein einheitlicher Satz von 2,00 € je g/km oberhalb einer Freigrenze von 120, 110 oder 95 g/km, je nach Zulassungsjahr.</p>
+            <div class="c-FAQ-answer"><p>Seit dem 1. Januar 2021 wird der CO₂-Anteil der Steuer in <strong>sechs Stufen</strong> berechnet. Die ersten <span class="nobreak">95 g/km</span> bleiben frei, alles darüber wird auf die Stufen verteilt:<br />über 95 bis <span class="nobreak">115 g/km</span>: <span class="nobreak">2,00 €</span> je g/km<br />über 115 bis <span class="nobreak">135 g/km</span>: <span class="nobreak">2,20 €</span><br />über 135 bis <span class="nobreak">155 g/km</span>: <span class="nobreak">2,50 €</span><br />über 155 bis <span class="nobreak">175 g/km</span>: <span class="nobreak">2,90 €</span><br />über 175 bis <span class="nobreak">195 g/km</span>: <span class="nobreak">3,40 €</span><br />über <span class="nobreak">195 g/km</span>: <span class="nobreak">4,00 €</span><br /><br />Der Hubraumteil bleibt unverändert. Für Erstzulassungen bis zum 31. Dezember 2020 gilt dagegen ein einheitlicher Satz von <span class="nobreak">2,00 €</span> je g/km oberhalb einer Freigrenze von 120, 110 oder <span class="nobreak">95 g/km</span>, je nach Zulassungsjahr.</p>
 </div>
 
         </div>
 <div class="c-FAQ-item" id="kfz-steuer-bundesland">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput8572593" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput9388383" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput8572593">
+            <label class="c-FAQ-label" for="faqInput9388383">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -957,9 +957,9 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
         </div>
 <div class="c-FAQ-item" id="co2-wert-finden">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput1862604" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput3198394" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput1862604">
+            <label class="c-FAQ-label" for="faqInput3198394">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -973,9 +973,9 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
         </div>
 <div class="c-FAQ-item" id="kfz-steuer-hsn-tsn">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput7012605" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput7868395" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput7012605">
+            <label class="c-FAQ-label" for="faqInput7868395">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -989,9 +989,9 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
         </div>
 <div class="c-FAQ-item" id="steuerbefreiung-kfz-steuer">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput62616" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput1168406" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput62616">
+            <label class="c-FAQ-label" for="faqInput1168406">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -999,15 +999,15 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
             </label>
 
-            <div class="c-FAQ-answer"><p><strong>Reine Elektrofahrzeuge</strong> sind bei Erstzulassung zwischen dem 18. Mai 2011 und dem 31. Dezember 2030 für zehn Jahre befreit, längstens bis zum 31. Dezember 2035; danach zahlen sie dauerhaft die halbe Gewichtssteuer. Hybride und Fahrzeuge mit Range Extender sind davon ausgenommen.<br /><br /><strong>Schwerbehinderte Halter</strong> mit dem Merkzeichen „H“, „Bl“ oder „aG“ im Ausweis sind ganz befreit; mit orangefarbenem Flächenaufdruck wird die Steuer um 50 % ermäßigt, dann allerdings ohne die unentgeltliche Beförderung im Nahverkehr. Beides gilt für ein Fahrzeug und nur auf Antrag.<br /><br /><strong>Ausländische Pkw</strong> sind bei vorübergehendem Aufenthalt bis zu einem Jahr befreit, sofern sie nicht der entgeltlichen Beförderung dienen.</p>
+            <div class="c-FAQ-answer"><p><strong>Reine Elektrofahrzeuge</strong> sind bei Erstzulassung zwischen dem 18. Mai 2011 und dem 31. Dezember 2030 für zehn Jahre befreit, längstens bis zum 31. Dezember 2035; danach zahlen sie dauerhaft die halbe Gewichtssteuer. Hybride und Fahrzeuge mit Range Extender sind davon ausgenommen.<br /><br /><strong>Schwerbehinderte Halter</strong> mit dem Merkzeichen „H“, „Bl“ oder „aG“ im Ausweis sind ganz befreit; mit orangefarbenem Flächenaufdruck wird die Steuer um <span class="nobreak">50 %</span> ermäßigt, dann allerdings ohne die unentgeltliche Beförderung im Nahverkehr. Beides gilt für ein Fahrzeug und nur auf Antrag.<br /><br /><strong>Ausländische Pkw</strong> sind bei vorübergehendem Aufenthalt bis zu einem Jahr befreit, sofern sie nicht der entgeltlichen Beförderung dienen.</p>
 </div>
 
         </div>
 <div class="c-FAQ-item" id="sparen-ohne-steuerbefreiung">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput3782617" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput5358407" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput3782617">
+            <label class="c-FAQ-label" for="faqInput5358407">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -1015,15 +1015,15 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
             </label>
 
-            <div class="c-FAQ-answer"><p>Drei Ansätze, in der Reihenfolge ihrer Wirkung:<br /><br /><strong>Beim Kauf auf den CO₂-Wert achten.</strong> Weil die Sätze stufenweise steigen, wirken schon wenige Gramm: Zwischen 155 g/km und 175 g/km liegen 58 € Steuer im Jahr, jedes Jahr aufs Neue.<br /><br /><strong>Saisonkennzeichen</strong>, wenn das Fahrzeug ohnehin nur einen Teil des Jahres genutzt wird. Berechnet wird dann für jeden Tag des Betriebszeitraums ein Dreihundertfünfundsechzigstel der Jahressteuer.<br /><br /><strong>Jährlich statt in Raten zahlen.</strong> Die halbjährliche Zahlweise kostet 3 %, die vierteljährliche 6 % Aufgeld.<br /><br />Eine Nachrüstung senkt die Kfz-Steuer dagegen in aller Regel nicht: Maßgeblich ist der bei der Erstzulassung festgestellte CO₂-Wert.</p>
+            <div class="c-FAQ-answer"><p>Drei Ansätze, in der Reihenfolge ihrer Wirkung:<br /><br /><strong>Beim Kauf auf den CO₂-Wert achten.</strong> Weil die Sätze stufenweise steigen, wirken schon wenige Gramm: Zwischen <span class="nobreak">155 g/km</span> und <span class="nobreak">175 g/km</span> liegen <span class="nobreak">58 €</span> Steuer im Jahr, jedes Jahr aufs Neue.<br /><br /><strong>Saisonkennzeichen</strong>, wenn das Fahrzeug ohnehin nur einen Teil des Jahres genutzt wird. Berechnet wird dann für jeden Tag des Betriebszeitraums ein Dreihundertfünfundsechzigstel der Jahressteuer.<br /><br /><strong>Jährlich statt in Raten zahlen.</strong> Die halbjährliche Zahlweise kostet <span class="nobreak">3 %</span>, die vierteljährliche <span class="nobreak">6 %</span> Aufgeld.<br /><br />Eine Nachrüstung senkt die Kfz-Steuer dagegen in aller Regel nicht: Maßgeblich ist der bei der Erstzulassung festgestellte CO₂-Wert.</p>
 </div>
 
         </div>
 <div class="c-FAQ-item" id="anmeldung-kfz-steuer">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput7732618" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput138418" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput7732618">
+            <label class="c-FAQ-label" for="faqInput138418">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -1037,9 +1037,9 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
         </div>
 <div class="c-FAQ-item" id="pkw-anhaenger-besteuerung">
 
-            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput2142629" type="checkbox" />
+            <input class="c-FAQ-input h-VisuallyHidden" id="faqInput3248419" type="checkbox" />
 
-            <label class="c-FAQ-label" for="faqInput2142629">
+            <label class="c-FAQ-label" for="faqInput3248419">
 
                 <div class="c-FAQ-icon"></div>
 
@@ -1047,11 +1047,11 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
             </label>
 
-            <div class="c-FAQ-answer"><p>Getrennt vom Zugfahrzeug und allein nach Gewicht: <strong>7,46 €</strong> je angefangene 200 kg zulässiges Gesamtgewicht, höchstens 373,24 € im Jahr. Ein 750-kg-Anhänger kostet damit 29 € im Jahr.<br /><br />Die Nichterhebung nach § 10 KraftStG, bei der die Steuer auf das Zugfahrzeug wandert, gilt für Anhänger hinter Pkw <strong>nicht</strong>. Einzelheiten und die Ausnahmen stehen auf der Seite zur <a href="/anhaenger-steuer-rechner/">Kfz-Steuer für Anhänger</a>.</p>
+            <div class="c-FAQ-answer"><p>Getrennt vom Zugfahrzeug und allein nach Gewicht: <span class="nobreak">7,46 €</span> je angefangene <span class="nobreak">200 kg</span> zulässiges Gesamtgewicht, höchstens <span class="nobreak">373,24 €</span> im Jahr. Ein 750-kg-Anhänger kostet damit <span class="nobreak">29 €</span> im Jahr.<br /><br />Die Nichterhebung nach § 10 KraftStG, bei der die Steuer auf das Zugfahrzeug wandert, gilt für Anhänger hinter Pkw <strong>nicht</strong>. Einzelheiten und die Ausnahmen stehen auf der Seite zur <a href="/anhaenger-steuer-rechner/">Kfz-Steuer für Anhänger</a>.</p>
 </div>
 
         </div>
-<script type="application/ld+json" hidden="">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Werden Benzin- und Dieselmotoren unterschiedlich besteuert?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Ja, und zwar beim Hubraumteil der Steuer: <strong>2,00 €</strong> je angefangene 100 cm³ beim Ottomotor, <strong>9,50 €</strong> beim Dieselmotor. Der CO₂-Teil ist für beide gleich.<br /><br />Bei zwei Litern Hubraum sind das 40 € gegenüber 190 € – ein Unterschied von 150 €, bevor überhaupt ein Gramm CO₂ gezählt wird. Bei Erstzulassungen bis zum 30. Juni 2009 ist der Abstand noch größer: Dort stehen je nach Abgasstufe 6,75 € bis 25,36 € (Benzin) gegen 15,44 € bis 37,58 € (Diesel) je angefangene 100 cm³.</p>\n" } }, { "@type": "Question", "name": "Was gilt für Autos mit Erstzulassung ab 2021?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Seit dem 1. Januar 2021 wird der CO₂-Anteil der Steuer in <strong>sechs Stufen</strong> berechnet. Die ersten 95 g/km bleiben frei, alles darüber wird auf die Stufen verteilt:<br />über 95 bis 115 g/km: <strong>2,00 €</strong> je g/km<br />über 115 bis 135 g/km: <strong>2,20 €</strong><br />über 135 bis 155 g/km: <strong>2,50 €</strong><br />über 155 bis 175 g/km: <strong>2,90 €</strong><br />über 175 bis 195 g/km: <strong>3,40 €</strong><br />über 195 g/km: <strong>4,00 €</strong><br /><br />Der Hubraumteil bleibt unverändert. Für Erstzulassungen bis zum 31. Dezember 2020 gilt dagegen ein einheitlicher Satz von 2,00 € je g/km oberhalb einer Freigrenze von 120, 110 oder 95 g/km, je nach Zulassungsjahr.</p>\n" } }, { "@type": "Question", "name": "Ist die Kfz-Steuer in jedem Bundesland gleich hoch?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Ja. Die Kraftfahrzeugsteuer ist eine <strong>Bundessteuer</strong> und seit 2009 bundeseinheitlich geregelt. Für dasselbe Fahrzeug fällt in Nordrhein-Westfalen (NRW), Bayern, Berlin oder Mecklenburg-Vorpommern exakt derselbe Betrag an.<br /><br />Unterschiedlich ist nur, welches der Hauptzollämter zuständig ist – das richtet sich nach dem Wohnsitz des Halters. Auf die Höhe hat das keinen Einfluss. Ein Kalkulator, der nach dem Bundesland fragt, rechnet etwas anderes aus als die Kfz-Steuer.<br /><br />Bis 2009 war die Kfz-Steuer eine Ländersteuer; die Sätze waren aber auch damals bundesweit im Kraftfahrzeugsteuergesetz festgelegt.</p>\n" } }, { "@type": "Question", "name": "Wo finde ich den CO₂-Wert meines Autos?", "acceptedAnswer": { "@type": "Answer", "text": "<p>In <strong>Feld V.7</strong> der Zulassungsbescheinigung Teil I. Maßgeblich ist der WLTP-Prüfwert.<br /><br />In Fahrzeugscheinen, die vor 2009 ausgestellt wurden, ist kein CO₂-Wert eingetragen. Für diese Fahrzeuge zählt stattdessen die Abgasstufe, die sich aus den letzten beiden Ziffern der Schlüsselnummer in <strong>Feld 14.1</strong> ergibt (im alten Fahrzeugschein: Feld 1).<br /><br />Die weiteren Angaben stehen in Feld <strong>B</strong> (Erstzulassung), <strong>P.1</strong> (Hubraum) und <strong>P.3</strong> (Kraftstoffart).</p>\n" } }, { "@type": "Question", "name": "Kann ich die Kfz-Steuer über HSN und TSN berechnen?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Nicht sinnvoll. HSN und TSN – die Hersteller- und die Typschlüsselnummer aus den Feldern 2.1 und 2.2 – benennen den Fahrzeugtyp, sind für die Steuer aber ohne Bedeutung. Besteuert werden Hubraum, Antriebsart und CO₂-Wert, und die stehen in derselben Zulassungsbescheinigung zwei Zeilen weiter unten.<br /><br />Nicht zu verwechseln damit ist die <strong>Emissionsschlüsselnummer in Feld 14.1</strong>: Sie ist für Fahrzeuge mit Erstzulassung bis Juni 2009 tatsächlich entscheidend, weil sich aus ihr die Abgasstufe ergibt.</p>\n" } }, { "@type": "Question", "name": "Welche Autos sind von der Kfz-Steuer befreit?", "acceptedAnswer": { "@type": "Answer", "text": "<p><strong>Reine Elektrofahrzeuge</strong> sind bei Erstzulassung zwischen dem 18. Mai 2011 und dem 31. Dezember 2030 für zehn Jahre befreit, längstens bis zum 31. Dezember 2035; danach zahlen sie dauerhaft die halbe Gewichtssteuer. Hybride und Fahrzeuge mit Range Extender sind davon ausgenommen.<br /><br /><strong>Schwerbehinderte Halter</strong> mit dem Merkzeichen „H“, „Bl“ oder „aG“ im Ausweis sind ganz befreit; mit orangefarbenem Flächenaufdruck wird die Steuer um 50 % ermäßigt, dann allerdings ohne die unentgeltliche Beförderung im Nahverkehr. Beides gilt für ein Fahrzeug und nur auf Antrag.<br /><br /><strong>Ausländische Pkw</strong> sind bei vorübergehendem Aufenthalt bis zu einem Jahr befreit, sofern sie nicht der entgeltlichen Beförderung dienen.</p>\n" } }, { "@type": "Question", "name": "Wie lässt sich Kfz-Steuer sparen?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Drei Ansätze, in der Reihenfolge ihrer Wirkung:<br /><br /><strong>Beim Kauf auf den CO₂-Wert achten.</strong> Weil die Sätze stufenweise steigen, wirken schon wenige Gramm: Zwischen 155 g/km und 175 g/km liegen 58 € Steuer im Jahr, jedes Jahr aufs Neue.<br /><br /><strong>Saisonkennzeichen</strong>, wenn das Fahrzeug ohnehin nur einen Teil des Jahres genutzt wird. Berechnet wird dann für jeden Tag des Betriebszeitraums ein Dreihundertfünfundsechzigstel der Jahressteuer.<br /><br /><strong>Jährlich statt in Raten zahlen.</strong> Die halbjährliche Zahlweise kostet 3 %, die vierteljährliche 6 % Aufgeld.<br /><br />Eine Nachrüstung senkt die Kfz-Steuer dagegen in aller Regel nicht: Maßgeblich ist der bei der Erstzulassung festgestellte CO₂-Wert.</p>\n" } }, { "@type": "Question", "name": "Wie melde ich die Kfz-Steuer für mein Auto an?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Gar nicht – das geschieht automatisch. Mit der Zulassung wird das Fahrzeug steuerpflichtig; die Zulassungsbehörde übermittelt die Fahrzeugdaten an das zuständige Hauptzollamt, das die Steuer festsetzt und den Bescheid verschickt.<br /><br />Für den Einzug erteilen Sie dem Hauptzollamt ein <strong>SEPA-Lastschriftmandat</strong>; es muss nicht Ihr eigenes Konto sein. Bestehen Steuerrückstände aus einem früheren Fahrzeug, müssen diese vor einer neuen Zulassung beglichen werden.</p>\n" } }, { "@type": "Question", "name": "Wie wird ein Pkw-Anhänger besteuert?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Getrennt vom Zugfahrzeug und allein nach Gewicht: <strong>7,46 €</strong> je angefangene 200 kg zulässiges Gesamtgewicht, höchstens 373,24 € im Jahr. Ein 750-kg-Anhänger kostet damit 29 € im Jahr.<br /><br />Die Nichterhebung nach § 10 KraftStG, bei der die Steuer auf das Zugfahrzeug wandert, gilt für Anhänger hinter Pkw <strong>nicht</strong>. Einzelheiten und die Ausnahmen stehen auf der Seite zur <a href=\"/anhaenger-steuer-rechner/\">Kfz-Steuer für Anhänger</a>.</p>\n" } } ] }</script>
+<script type="application/ld+json" hidden="">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Werden Benzin- und Dieselmotoren unterschiedlich besteuert?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Ja, und zwar beim Hubraumteil der Steuer: <span class=\"nobreak\">2,00 €</span> je angefangene <span class=\"nobreak\">100 cm³</span> beim Ottomotor, <span class=\"nobreak\">9,50 €</span> beim Dieselmotor. Der CO₂-Teil ist für beide gleich.<br /><br />Bei zwei Litern Hubraum sind das <span class=\"nobreak\">40 €</span> gegenüber <span class=\"nobreak\">190 €</span> – ein Unterschied von <span class=\"nobreak\">150 €</span>, bevor überhaupt ein Gramm CO₂ gezählt wird. Bei Erstzulassungen bis zum 30. Juni 2009 ist der Abstand noch größer: Dort stehen je nach Abgasstufe <span class=\"nobreak\">6,75 €</span> bis <span class=\"nobreak\">25,36 €</span> (Benzin) gegen <span class=\"nobreak\">15,44 €</span> bis <span class=\"nobreak\">37,58 €</span> (Diesel) je angefangene <span class=\"nobreak\">100 cm³</span>.</p>\n" } }, { "@type": "Question", "name": "Was gilt für Autos mit Erstzulassung ab 2021?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Seit dem 1. Januar 2021 wird der CO₂-Anteil der Steuer in <strong>sechs Stufen</strong> berechnet. Die ersten <span class=\"nobreak\">95 g/km</span> bleiben frei, alles darüber wird auf die Stufen verteilt:<br />über 95 bis <span class=\"nobreak\">115 g/km</span>: <span class=\"nobreak\">2,00 €</span> je g/km<br />über 115 bis <span class=\"nobreak\">135 g/km</span>: <span class=\"nobreak\">2,20 €</span><br />über 135 bis <span class=\"nobreak\">155 g/km</span>: <span class=\"nobreak\">2,50 €</span><br />über 155 bis <span class=\"nobreak\">175 g/km</span>: <span class=\"nobreak\">2,90 €</span><br />über 175 bis <span class=\"nobreak\">195 g/km</span>: <span class=\"nobreak\">3,40 €</span><br />über <span class=\"nobreak\">195 g/km</span>: <span class=\"nobreak\">4,00 €</span><br /><br />Der Hubraumteil bleibt unverändert. Für Erstzulassungen bis zum 31. Dezember 2020 gilt dagegen ein einheitlicher Satz von <span class=\"nobreak\">2,00 €</span> je g/km oberhalb einer Freigrenze von 120, 110 oder <span class=\"nobreak\">95 g/km</span>, je nach Zulassungsjahr.</p>\n" } }, { "@type": "Question", "name": "Ist die Kfz-Steuer in jedem Bundesland gleich hoch?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Ja. Die Kraftfahrzeugsteuer ist eine <strong>Bundessteuer</strong> und seit 2009 bundeseinheitlich geregelt. Für dasselbe Fahrzeug fällt in Nordrhein-Westfalen (NRW), Bayern, Berlin oder Mecklenburg-Vorpommern exakt derselbe Betrag an.<br /><br />Unterschiedlich ist nur, welches der Hauptzollämter zuständig ist – das richtet sich nach dem Wohnsitz des Halters. Auf die Höhe hat das keinen Einfluss. Ein Kalkulator, der nach dem Bundesland fragt, rechnet etwas anderes aus als die Kfz-Steuer.<br /><br />Bis 2009 war die Kfz-Steuer eine Ländersteuer; die Sätze waren aber auch damals bundesweit im Kraftfahrzeugsteuergesetz festgelegt.</p>\n" } }, { "@type": "Question", "name": "Wo finde ich den CO₂-Wert meines Autos?", "acceptedAnswer": { "@type": "Answer", "text": "<p>In <strong>Feld V.7</strong> der Zulassungsbescheinigung Teil I. Maßgeblich ist der WLTP-Prüfwert.<br /><br />In Fahrzeugscheinen, die vor 2009 ausgestellt wurden, ist kein CO₂-Wert eingetragen. Für diese Fahrzeuge zählt stattdessen die Abgasstufe, die sich aus den letzten beiden Ziffern der Schlüsselnummer in <strong>Feld 14.1</strong> ergibt (im alten Fahrzeugschein: Feld 1).<br /><br />Die weiteren Angaben stehen in Feld <strong>B</strong> (Erstzulassung), <strong>P.1</strong> (Hubraum) und <strong>P.3</strong> (Kraftstoffart).</p>\n" } }, { "@type": "Question", "name": "Kann ich die Kfz-Steuer über HSN und TSN berechnen?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Nicht sinnvoll. HSN und TSN – die Hersteller- und die Typschlüsselnummer aus den Feldern 2.1 und 2.2 – benennen den Fahrzeugtyp, sind für die Steuer aber ohne Bedeutung. Besteuert werden Hubraum, Antriebsart und CO₂-Wert, und die stehen in derselben Zulassungsbescheinigung zwei Zeilen weiter unten.<br /><br />Nicht zu verwechseln damit ist die <strong>Emissionsschlüsselnummer in Feld 14.1</strong>: Sie ist für Fahrzeuge mit Erstzulassung bis Juni 2009 tatsächlich entscheidend, weil sich aus ihr die Abgasstufe ergibt.</p>\n" } }, { "@type": "Question", "name": "Welche Autos sind von der Kfz-Steuer befreit?", "acceptedAnswer": { "@type": "Answer", "text": "<p><strong>Reine Elektrofahrzeuge</strong> sind bei Erstzulassung zwischen dem 18. Mai 2011 und dem 31. Dezember 2030 für zehn Jahre befreit, längstens bis zum 31. Dezember 2035; danach zahlen sie dauerhaft die halbe Gewichtssteuer. Hybride und Fahrzeuge mit Range Extender sind davon ausgenommen.<br /><br /><strong>Schwerbehinderte Halter</strong> mit dem Merkzeichen „H“, „Bl“ oder „aG“ im Ausweis sind ganz befreit; mit orangefarbenem Flächenaufdruck wird die Steuer um <span class=\"nobreak\">50 %</span> ermäßigt, dann allerdings ohne die unentgeltliche Beförderung im Nahverkehr. Beides gilt für ein Fahrzeug und nur auf Antrag.<br /><br /><strong>Ausländische Pkw</strong> sind bei vorübergehendem Aufenthalt bis zu einem Jahr befreit, sofern sie nicht der entgeltlichen Beförderung dienen.</p>\n" } }, { "@type": "Question", "name": "Wie lässt sich Kfz-Steuer sparen?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Drei Ansätze, in der Reihenfolge ihrer Wirkung:<br /><br /><strong>Beim Kauf auf den CO₂-Wert achten.</strong> Weil die Sätze stufenweise steigen, wirken schon wenige Gramm: Zwischen <span class=\"nobreak\">155 g/km</span> und <span class=\"nobreak\">175 g/km</span> liegen <span class=\"nobreak\">58 €</span> Steuer im Jahr, jedes Jahr aufs Neue.<br /><br /><strong>Saisonkennzeichen</strong>, wenn das Fahrzeug ohnehin nur einen Teil des Jahres genutzt wird. Berechnet wird dann für jeden Tag des Betriebszeitraums ein Dreihundertfünfundsechzigstel der Jahressteuer.<br /><br /><strong>Jährlich statt in Raten zahlen.</strong> Die halbjährliche Zahlweise kostet <span class=\"nobreak\">3 %</span>, die vierteljährliche <span class=\"nobreak\">6 %</span> Aufgeld.<br /><br />Eine Nachrüstung senkt die Kfz-Steuer dagegen in aller Regel nicht: Maßgeblich ist der bei der Erstzulassung festgestellte CO₂-Wert.</p>\n" } }, { "@type": "Question", "name": "Wie melde ich die Kfz-Steuer für mein Auto an?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Gar nicht – das geschieht automatisch. Mit der Zulassung wird das Fahrzeug steuerpflichtig; die Zulassungsbehörde übermittelt die Fahrzeugdaten an das zuständige Hauptzollamt, das die Steuer festsetzt und den Bescheid verschickt.<br /><br />Für den Einzug erteilen Sie dem Hauptzollamt ein <strong>SEPA-Lastschriftmandat</strong>; es muss nicht Ihr eigenes Konto sein. Bestehen Steuerrückstände aus einem früheren Fahrzeug, müssen diese vor einer neuen Zulassung beglichen werden.</p>\n" } }, { "@type": "Question", "name": "Wie wird ein Pkw-Anhänger besteuert?", "acceptedAnswer": { "@type": "Answer", "text": "<p>Getrennt vom Zugfahrzeug und allein nach Gewicht: <span class=\"nobreak\">7,46 €</span> je angefangene <span class=\"nobreak\">200 kg</span> zulässiges Gesamtgewicht, höchstens <span class=\"nobreak\">373,24 €</span> im Jahr. Ein 750-kg-Anhänger kostet damit <span class=\"nobreak\">29 €</span> im Jahr.<br /><br />Die Nichterhebung nach § 10 KraftStG, bei der die Steuer auf das Zugfahrzeug wandert, gilt für Anhänger hinter Pkw <strong>nicht</strong>. Einzelheiten und die Ausnahmen stehen auf der Seite zur <a href=\"/anhaenger-steuer-rechner/\">Kfz-Steuer für Anhänger</a>.</p>\n" } } ] }</script>
 </div>
 
 <div class="c-Callouts">
@@ -1070,7 +1070,7 @@ Der Betriebszeitraum muss mindestens zwei und darf höchstens elf volle Monate u
 
     
         <div class="c-CalloutsCard-text c-Article">
-      <p>Stand: 10. September 2026. Rechtsgrundlage sind § 8, § 9, § 11 und § 18 des <a href="https://www.gesetze-im-internet.de/kraftstg/" target="_blank" rel="noreferrer noopener nofollow">Kraftfahrzeugsteuergesetzes</a> in der seit dem 1. Januar 2026 geltenden Fassung sowie die Übersicht <a href="https://www.zoll.de/DE/Fachthemen/Steuern/Verkehrsteuern/Kraftfahrzeugsteuer/Grundsaetze_Besteuerung/Steuerhoehe/steuerhoehe_node.html" target="_blank" rel="noreferrer noopener nofollow">Steuerhöhe</a> der Zollverwaltung, dort auch die Zuordnung der Emissionsschlüssel zu den Euro-Normen. Alle Beträge sind eigene Berechnungen nach diesen Sätzen und ersetzen nicht den Steuerbescheid des Hauptzollamts.</p>
+      <p>Stand: 10. September 2026. Rechtsgrundlage sind § 8, § 9, § 11 und § 18 des <a href="https://www.gesetze-im-internet.de/kraftstg/" target="_blank" rel="noreferrer noopener">Kraftfahrzeugsteuergesetzes</a> in der seit dem 1. Januar 2026 geltenden Fassung sowie die Übersicht <a href="https://www.zoll.de/DE/Fachthemen/Steuern/Verkehrsteuern/Kraftfahrzeugsteuer/Grundsaetze_Besteuerung/Steuerhoehe/steuerhoehe_node.html" target="_blank" rel="noreferrer noopener">Steuerhöhe</a> der Zollverwaltung, dort auch die Zuordnung der Emissionsschlüssel zu den Euro-Normen. Alle Beträge sind eigene Berechnungen nach diesen Sätzen und ersetzen nicht den Steuerbescheid des Hauptzollamts.</p>
     </div>
     
 

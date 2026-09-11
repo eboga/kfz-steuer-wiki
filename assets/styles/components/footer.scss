@@ -6,6 +6,10 @@
         text-align: center;
     }
 }
+/* Abstand zum letzten Inhaltsblock (Callout „Stand und Quellen“) – Erkan, 11.09.2026 */
+footer {
+    margin-top: 40px;
+}
 footer ul {
     margin-left: 0;
     margin-top: 0;

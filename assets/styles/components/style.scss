@@ -270,3 +270,8 @@ span.tooltiptext {
 select option,select option:hover{
     padding:5px;
 }
+
+/* Beträge und Zahl+Einheit nicht umbrechen (Erkan, 11.09.2026) – gesetzt von betraege-blau.py */
+.nobreak {
+    white-space: nowrap;
+}
