@@ -28,6 +28,15 @@ function weightBracketTax(totalMass, brackets) {
     return result;
 }
 
+// Nutzfahrzeuge bis 3.500 kg (§ 9 Abs. 1 Nr. 3 KraftStG): nur nach Gewicht, je angefangene 200 kg,
+// kein Höchstbetrag und keine Schadstoffklasse. Genutzt vom Lkw-Rechner und (zur Hälfte, § 9 Abs. 2)
+// vom Elektro-Rechner.
+const LIGHT_TRUCK_RATES = [
+    { min: 0, max: 2000, multiplier: 11.25 },
+    { min: 2000, max: 3000, multiplier: 12.02 },
+    { min: 3000, max: 3500, multiplier: 12.78 },
+];
+
 // Nutzfahrzeuge über 3.500 kg (§ 9 Abs. 1 Nr. 4 KraftStG): Staffel je angefangene 200 kg mit
 // Höchstbetrag je Klasse. Die Schlüssel sind die Werte der Schadstoffklassen-Auswahl im Lkw-Rechner:
 // a1 = S 2 und besser, a2 = S 1, a3 = G 1, a4 = übrige. Die S-2-Staffel gilt zur Hälfte auch für
@@ -137,42 +146,33 @@ function calculateDays(selectFrom, selectTo) {
 
 
 
+// Sprache der Seite (<html lang="…">) als BCP-47-Kennung für die Betragsformatierung; unbekannte oder
+// fehlende Angabe fällt auf Deutsch zurück. Die Sprache steht beim Laden fest, also einmal ermitteln.
+const MONEY_LOCALES = {
+    de: 'de-DE',
+    en: 'en-US',
+    es: 'es-ES',
+    ru: 'ru-RU',
+    pl: 'pl-PL',
+    tr: 'tr-TR',
+};
+
+const MONEY_LOCALE = MONEY_LOCALES[
+    ((document.documentElement && document.documentElement.lang) || 'de').slice(0, 2).toLowerCase()
+] || MONEY_LOCALES.de;
+
+// Betrag mit Euro-Zeichen in der Schreibweise der Seitensprache: Tausender- und Dezimalzeichen und die
+// Stellung des Euro-Zeichens kommen aus der Sprache (de 1.234,00 €, en €1,234.00, tr €1.234,00).
+// Immer zwei Nachkommastellen, auch bei vollen Euro-Beträgen.
 function formatTax(price) {
-    price = parseFloat(price, 10);
+    const value = parseFloat(price);
 
-    const grouping = '.';
-    const separator = ',';
-    const precision = 2;
-
-    const split = price.toFixed(precision).split('.');
-    const integer = split[0];
-    const fractional = split[1];
-
-    const formatted = integer.replace(
-        /^\d+/,
-        (number) => [...number].map(
-            (digit, index, digits) => {
-                let result = '';
-
-                if (!index || (digits.length - index) % 3) {
-                    result += '';
-                } else {
-                    result += grouping;
-                }
-
-                result += digit;
-
-                return result;
-            }
-        ).join(''),
-    );
-
-    let result = formatted;
-    if (fractional.length > 0) {
-        result += separator + fractional;
-    }
-
-    return result;
+    return (isNaN(value) ? 0 : value).toLocaleString(MONEY_LOCALE, {
+        style: 'currency',
+        currency: 'EUR',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    });
 }
 
 
@@ -254,7 +254,7 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
         } else {
             elementResultLess.hidden = true;
             elementResultMore.hidden = false;
-            elementResultMoreValue.textContent = `${formatTax(price)} €`;
+            elementResultMoreValue.textContent = formatTax(price);
         }
     }
 
@@ -489,7 +489,7 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
     function printResult(state) {
         const price = parseInt(state.price, 10);
 
-        elementResultValue.textContent = `${formatTax(price)} €`;
+        elementResultValue.textContent = formatTax(price);
     }
 
 
@@ -670,7 +670,7 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
     function printResult(state) {
         const price = parseInt(state.price, 10);
 
-        elementResultValue.textContent = `${formatTax(price)} €`;
+        elementResultValue.textContent = formatTax(price);
     }
 
 
@@ -802,16 +802,6 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
     const elementStandardBtn = document.querySelector('.jsCalcEvStandardBtn');
     const elementTotalInput = document.querySelector('.jsCalcEvTotalInput');
 
-    // Nutzfahrzeuge bis 3.500 kg (§ 9 Abs. 1 Nr. 3 KraftStG): nur nach Gewicht, kein Höchstbetrag.
-    const LIGHT_TRUCK_RATES = [
-        { min: 0, max: 2000, multiplier: 11.25 },
-        { min: 2000, max: 3000, multiplier: 12.02 },
-        { min: 3000, max: 3500, multiplier: 12.78 },
-    ];
-
-
-
-
 
 
     // Jahressteuer nach Ablauf der Befreiung: die Hälfte der Nutzfahrzeugsteuer (§ 9 Abs. 2) – bis
@@ -883,8 +873,8 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
             }
         }
 
-        elementResultValue.textContent = `${formatTax(taxNow)} €`;
-        elementNote.innerHTML = note.replace('{tax}', `${formatTax(tax)} €`);
+        elementResultValue.textContent = formatTax(taxNow);
+        elementNote.innerHTML = note.replace('{tax}', formatTax(tax));
         elementNote.hidden = false;
     }
 
@@ -1020,9 +1010,9 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
         const price = parseInt(state.price, 10);
 
         if (type === 1 || type === 2) {
-            elementResultValue.textContent = `${formatTax(price)} €`;
+            elementResultValue.textContent = formatTax(price);
         } else {
-            elementResultValue.textContent = `${Number(0).toFixed(2)} €`;
+            elementResultValue.textContent = formatTax(0);
         }
     }
 
@@ -1188,7 +1178,7 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
     function printResult(state) {
         const price = parseInt(state.price, 10) || 0;
 
-        elementResultValue.textContent = `${formatTax(price)} €`;
+        elementResultValue.textContent = formatTax(price);
     }
 
 
@@ -1324,7 +1314,7 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
     function printResult(state) {
         const price = parseInt(state.price, 10);
 
-        elementResultValue.textContent = `${formatTax(price)} €`;
+        elementResultValue.textContent = formatTax(price);
     }
 
 
@@ -1456,28 +1446,30 @@ function handleSelectMonthsFrom(selectFrom, selectTo) {
 
 
 
+    // Bis 3.500 kg zählt allein das Gewicht (§ 9 Abs. 1 Nr. 3 KraftStG) – ohne Höchstbetrag und ohne
+    // Schadstoffklasse; die Auswahl im Formular bleibt dort also wirkungslos. Erst darüber gilt die
+    // Staffel des § 9 Abs. 1 Nr. 4 mit Klasse und Höchstbetrag.
     function calculateTax(state) {
-        let result = 0;
-
-        const emission = state.emission;
         const days = parseInt(state.days, 10);
-        const total = parseInt(state.total, 10);
+        const total = parseInt(state.total, 10) || 0;
 
-        const rates = TRUCK_RATES[emission];
+        if (total <= 3500) {
+            return taxForPeriod(weightBracketTax(total, LIGHT_TRUCK_RATES), days);
+        }
+
+        const rates = TRUCK_RATES[state.emission];
 
         if (!rates) {
             return 0;
         }
 
-        result = Math.min(weightBracketTax(total, rates.plans), rates.maximum);
-
-        return taxForPeriod(result, days);
+        return taxForPeriod(Math.min(weightBracketTax(total, rates.plans), rates.maximum), days);
     }
 
     function printResult(state) {
         const price = parseInt(state.price, 10) || 0;
 
-        elementResultValue.textContent = `${formatTax(price)} €`;
+        elementResultValue.textContent = formatTax(price);
     }
 
 
