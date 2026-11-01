@@ -1,5 +1,9 @@
+// Own advertising banner below the calculators (and on the homepage during the insurance season):
+// text + number-plate graphic + button + "save up to" badge. The whole banner is ONE link to the
+// on-site CHECK24 comparison (_includes/components/cta-banner.html). No rounded corners anywhere.
+
 .c-CtaBanner {
-    --c-cta-banner-background-alpha: 0.6;
+    --c-cta-banner-background-alpha: 0.85;
     --c-cta-banner-background-color: 228 237 246;
     --c-cta-banner-background-image: none;
     background-color: rgb(var(--c-cta-banner-background-color));
@@ -7,9 +11,17 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
+    color: rgba(1, 3, 64, 0.8);
     display: grid;
     gap: 20px;
+    margin: 20px 0;
     padding: 24px 15px 29px;
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+        color: rgba(1, 3, 64, 0.8);
+    }
 
     @media (min-width: 768px) {
         --c-cta-banner-background-alpha: 0.5;
@@ -36,6 +48,19 @@
     &.isAppearanceCtaBannerMoto {
         --c-cta-banner-background-image: url(/assets/images/banners/motorradversicherung-vergleich-4662882.jpg);
     }
+}
+
+
+
+// "Anzeige" – the banner links to a partner comparison, so it is labelled as advertising.
+.c-CtaBanner-label {
+    background-color: rgb(255 255 255 / 0.85);
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 0 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 
@@ -70,7 +95,6 @@
 
 
 .c-CtaBanner-title {
-    flex: 1 100%;
     font-size: 22px;
     font-weight: 600;
     letter-spacing: -1.1px;
@@ -93,16 +117,18 @@
             min-width: 13px;
             width: 12px;
         }
-
-        & > .o-Text {}
     }
 }
 
 
 
-.c-CtaBanner-form {
+// Middle column: short line, number plate, button – stacked.
+.c-CtaBanner-action {
+    display: grid;
+    gap: 12px;
     grid-column: 1 / -1;
     grid-row: 2 / 3;
+    max-width: 320px;
 
     @media (min-width: 768px) {
         grid-column: 6 / 13;
@@ -110,32 +136,79 @@
     }
 
     @media (min-width: 1024px) {
-        grid-column: 5 / 11;
-    }
-
-    .isLayoutCtaBannerC &,
-    .isLayoutCtaBannerB & {
-        @media (min-width: 1024px) {
-            grid-column: 5 / 9;
-        }
-    }
-
-    .isAppearanceCtaBannerAuto &,
-    .isAppearanceCtaBannerMoto & {
-        max-width: 320px;
+        grid-column: 5 / 9;
     }
 }
 
 
 
-.c-CtaBanner-coin {
+.c-CtaBanner-hint {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+.c-CtaBanner-plate {
+    display: block;
+    width: 100%;
+}
+
+
+
+.c-CtaBanner-button {
+    align-items: center;
+    background-color: rgb(118 185 96);
+    color: rgb(255 255 255);
+    display: grid;
+    font-weight: 600;
+    min-height: 44px;
+    padding: 8px 15px;
+    position: relative;
+    text-align: center;
+    transition-duration: 0.3s;
+
+    .c-CtaBanner:hover & {
+        background-color: rgb(92 160 72);
+    }
+
+    & > .o-Icon {
+        fill: currentColor;
+        height: 11px;
+        position: absolute;
+        right: 15px;
+        width: 13px;
+    }
+}
+
+
+
+// "Bis zu 850 € im Jahr sparen" – only on wide screens.
+.c-CtaBanner-badge {
+    align-items: center;
+    align-self: center;
+    background-color: rgb(46 113 185);
+    color: rgb(255 255 255);
     display: none;
+    flex-direction: column;
+    font-size: 12px;
     grid-column: 10 / span 2;
     grid-row: 1 / -1;
+    height: 100px;
+    justify-content: center;
+    line-height: 1.2;
+    padding: 0.8em;
+    text-align: center;
+    width: 100px;
 
-    .isLayoutCtaBannerB & {
-        @media (min-width: 1024px) {
-            display: grid;
-        }
+    @media (min-width: 1024px) {
+        display: flex;
     }
+}
+
+
+
+.c-CtaBanner-badgeAmount {
+    font-size: 2.2em;
+    font-weight: 600;
 }
